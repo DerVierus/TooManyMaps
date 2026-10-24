@@ -102,7 +102,12 @@
    "date": "2026-09-01",
    "url": "https://www.ndr.de/podcast/sonnenfinsternis-1999-dollywood,audio-3451486.html"
   },
-  "wiki": "en:Dollywood"
+  "wiki": "en:Pigeon_Forge,_Tennessee",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Pigeon_Forge%2C_TN_2016.03.27_%2824%29.jpg/330px-Pigeon_Forge%2C_TN_2016.03.27_%2824%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Pigeon_Forge%2C_Tennessee",
+   "article": "Pigeon Forge, Tennessee"
+  }
  },
  {
   "id": 6,
@@ -206,6 +211,12 @@
    "title": "drahtseilmann / newtopia",
    "date": "2026-07-15",
    "url": "https://www.ndr.de/podcast/drahtseilmann-newtopia,audio-3357806.html"
+  },
+  "wiki": "en:Königs_Wusterhausen",
+  "image": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/5/5a/K%C3%B6nigs_Wusterhausen_in_LDS.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/K%C3%B6nigs_Wusterhausen",
+   "article": "Königs Wusterhausen"
   }
  },
  {
@@ -354,6 +365,12 @@
    "title": "der wal / michael press tour",
    "date": "2026-04-29",
    "url": "https://www.ndr.de/podcast/der-wal-michael-press-tour,audio-3240374.html"
+  },
+  "wiki": "de:Wismar",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/DEU_Wismar_COA.svg/langde-330px-DEU_Wismar_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Wismar",
+   "article": "Wismar"
   }
  },
  {
@@ -453,6 +470,12 @@
    "title": "rösrath / aschaffenburg",
    "date": "2025-11-12",
    "url": "https://www.ndr.de/podcast/roesrath-aschaffenburg,audio-327148.html"
+  },
+  "wiki": "en:Rösrath",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Panorama_R%C3%B6srath_bis_K%C3%B6ln_%28cropped%29.jpg/330px-Panorama_R%C3%B6srath_bis_K%C3%B6ln_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/R%C3%B6srath",
+   "article": "Rösrath"
   }
  },
  {
@@ -772,6 +795,12 @@
    "title": "bräuche / höhlensilvester",
    "date": "2024-12-25",
    "url": "https://www.ndr.de/podcast/braeuche-hoehlensilvester,audio1781458.html"
+  },
+  "wiki": "en:Michel_Siffre",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Michel_SiffreP1010680mod.jpg/330px-Michel_SiffreP1010680mod.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Michel_Siffre",
+   "article": "Michel Siffre"
   }
  },
  {
@@ -898,6 +927,12 @@
    "title": "elmer mccurdy / mr. blobby",
    "date": "2024-10-02",
    "url": "https://www.ndr.de/media/tmt-elmer-mccurdy-mr-blobby,audio1725578.html"
+  },
+  "wiki": "en:Guthrie,_Oklahoma",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Downtown-guthrie-oklahoma.jpg/330px-Downtown-guthrie-oklahoma.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Guthrie%2C_Oklahoma",
+   "article": "Guthrie, Oklahoma"
   }
  },
  {
@@ -1025,7 +1060,12 @@
    "date": "2024-06-19",
    "url": "https://www.ndr.de/media/erster-lockdown-fernsehsender-paul-nipkow,audio1658362.html"
   },
-  "wiki": "de:Funkturm_Berlin"
+  "wiki": "en:Berlin_Radio_Tower",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Berlin_-_Funkturm2.jpg/330px-Berlin_-_Funkturm2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Berlin_Radio_Tower",
+   "article": "Berlin Radio Tower"
+  }
  },
  {
   "id": 50,
@@ -1085,6 +1125,12 @@
    "title": "gammler / voynich-manuskript",
    "date": "2024-05-15",
    "url": "https://www.ndr.de/media/gammler-voynich-manuskript,audio1633700.html"
+  },
+  "wiki": "en:Voynich_manuscript",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Voynich_Manuscript_%2832%29.jpg/330px-Voynich_Manuscript_%2832%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+   "article": "Voynich manuscript"
   }
  },
  {
@@ -1146,7 +1192,12 @@
    "date": "2024-02-21",
    "url": "https://www.ndr.de/media/weisse-euter-mothman,audio1576850.html"
   },
-  "wiki": "en:Ubre_Blanca"
+  "wiki": "en:Isla_de_la_Juventud",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Isla_de_la_Juventud.jpg/330px-Isla_de_la_Juventud.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Isla_de_la_Juventud",
+   "article": "Isla de la Juventud"
+  }
  },
  {
   "id": 56,
@@ -1618,6 +1669,12 @@
    "title": "selena vs. hailey / heide-mörder",
    "date": "2023-04-05",
    "url": "https://www.ndr.de/media/selena-vs-hailey-heide-moerder-,audio1354026.html"
+  },
+  "wiki": "de:Landtag_Schleswig-Holstein",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Landtag_SH_Logo.svg/langde-330px-Landtag_SH_Logo.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Schleswig-Holsteinischer_Landtag",
+   "article": "Schleswig-Holsteinischer Landtag"
   }
  },
  {
@@ -1634,6 +1691,12 @@
    "title": "emukrieg / snapewives",
    "date": "2023-03-22",
    "url": "https://www.ndr.de/media/emukrieg-snapewives,audio1344016.html"
+  },
+  "wiki": "en:Emu",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Emu_1_-_Tidbinbilla.jpg/330px-Emu_1_-_Tidbinbilla.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Emu",
+   "article": "Emu"
   }
  },
  {
@@ -1760,6 +1823,12 @@
    "title": "love-and-peace festival / kriegsbär wojtek",
    "date": "2022-11-01",
    "url": "https://www.ndr.de/media/love-and-peace-festival-kriegsbaer-wojtek,audio1244096.html"
+  },
+  "wiki": "de:Love-and-Peace-Festival",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Jimi_Hendrix_memorial_P7230128.JPG/330px-Jimi_Hendrix_memorial_P7230128.JPG?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Love-and-Peace-Festival",
+   "article": "Love-and-Peace-Festival"
   }
  },
  {
@@ -1776,6 +1845,12 @@
    "title": "love-and-peace festival / kriegsbär wojtek",
    "date": "2022-11-01",
    "url": "https://www.ndr.de/media/love-and-peace-festival-kriegsbaer-wojtek,audio1244096.html"
+  },
+  "wiki": "en:Wojtek_(bear)",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Wojtek_the_bear.jpg/330px-Wojtek_the_bear.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Wojtek",
+   "article": "Wojtek"
   }
  },
  {
@@ -1793,7 +1868,12 @@
    "date": "2022-10-18",
    "url": "https://www.ndr.de/media/spezi-krieg-armie-hammer,audio1234868.html"
   },
-  "wiki": "de:Spezi"
+  "wiki": "de:Augsburg",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/DEU_Augsburg_COA_1811.svg/langde-330px-DEU_Augsburg_COA_1811.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Augsburg",
+   "article": "Augsburg"
+  }
  },
  {
   "id": 87,
@@ -1809,6 +1889,12 @@
    "title": "friedrich der große / spinnen - mit @magnuswho",
    "date": "2022-10-04",
    "url": "https://www.ndr.de/media/friedrich-der-grosse-spinnen-mit-magnuswho,audio1225774.html"
+  },
+  "wiki": "en:Sanssouci",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Schloss_Sanssouci_2014.jpg/330px-Schloss_Sanssouci_2014.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Sanssouci",
+   "article": "Sanssouci"
   }
  },
  {
