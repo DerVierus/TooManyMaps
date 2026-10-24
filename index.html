@@ -250,6 +250,42 @@
 
   #toggle { display: none; }
 
+  /* ---------- Easter Eggs ---------- */
+  .count-row { display: flex; align-items: center; justify-content: space-between; padding-right: 16px; }
+  .count-row .count { padding-bottom: 8px; }
+  .egg-badge {
+    padding: 2px 9px; margin-bottom: 8px; font-size: 12px; font-weight: 600;
+    background: var(--chrome); color: var(--ink);
+  }
+  h1 { cursor: default; user-select: none; }
+  .egg { font-size: 24px; line-height: 30px; text-align: center; filter: drop-shadow(0 2px 3px rgba(0,0,0,.35)); }
+  .egg.ship { font-size: 28px; }
+  .egg.emu { transition: transform .2s; }
+  .egg.eyes span { font-size: 11px; letter-spacing: 3px; color: #ff1a1a; text-shadow: 0 0 6px #ff0000, 0 0 12px #ff0000; }
+  .egg-wave { background: linear-gradient(120deg, #a855f7, var(--orange)); }
+  .oracle { display: flex; gap: 8px; margin-top: 10px; }
+  .oracle button { flex: 1; font-size: 13px; padding: 7px; }
+  .oracle-result { margin-top: 8px; font-size: 13px; font-weight: 600; min-height: 1em; }
+  .hints { list-style: none; margin: 0; padding: 0; font-size: 13px; max-height: 260px; overflow-y: auto; }
+  .hints li { padding: 6px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+  .hints li.got { color: var(--ink); }
+  .win .hints { pointer-events: auto !important; }
+  #toast {
+    position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px);
+    max-width: calc(100% - 32px); padding: 10px 16px; border-radius: 12px;
+    background: #1d2327; color: #fff; font-size: 14px; box-shadow: 0 8px 24px rgba(0,0,0,.3);
+    opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; z-index: 5000;
+  }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+  aside > .titlebar { overflow: hidden; }
+  .tab.chaos { animation: pop .25s ease-out; min-width: 40px; max-width: 70px; flex: 0 1 auto; }
+  @keyframes pop { from { transform: translateY(12px); opacity: 0; } }
+  /* Spezi-Modus: Cola trifft Orange */
+  body.spezi {
+    --orange: #ff8a00; --teal: #4a2c1d;
+    --grad: linear-gradient(135deg, #ff8a00, #4a2c1d);
+  }
+
   /* Sehr kleine Handys: Fenster kompakter, damit es samt Titelleiste auf den Bildschirm passt. */
   @media (max-width: 720px) and (max-height: 720px) {
     .win .addressbar { display: none; }
@@ -291,7 +327,7 @@
     <input id="q" type="search" placeholder="🔍 Ort, Land oder Folge …" autocomplete="off">
     <button id="near" title="Orte nach Entfernung zu deinem Standort sortieren">📍 Nähe</button>
   </div>
-  <div class="count" id="count"></div>
+  <div class="count-row"><div class="count" id="count"></div><button id="eggs" class="egg-badge" type="button">🥚</button></div>
   <ul id="list"></ul>
   <footer id="note">
     <button id="hide-note" type="button" aria-label="Hinweis ausblenden" title="Hinweis ausblenden">×</button>
@@ -300,6 +336,7 @@
   </footer>
 </aside>
 <div id="map"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script src="vendor/leaflet.js"></script>
 <script src="vendor/leaflet.markercluster.js"></script>
@@ -437,6 +474,8 @@ function episodeHtml(p) {
 
 function popupHtml(p) {
   if (p.kind === 'index') return atlantisIndexHtml();
+  if (p.kind === 'egg') return eggHtml(p);
+  if (p.kind === 'hints') return eggHintsHtml();
   if (p.kind === 'atlantis') return atlantisTabHtml(p);
   const gmaps = `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`;
   return `${chromeHtml(p.topic, slug(p.name), otherTabHtml(p))}
@@ -729,6 +768,203 @@ map.on('popupopen', e => {
   const room = Math.min(e.popup.getElement().offsetHeight + 40, map.getSize().y - 30);
   map.panInside(e.popup.getLatLng(), { paddingTopLeft: [20, room] });
 });
+
+// ---------- Easter Eggs ----------
+// Versteckte Kleinigkeiten zu Folgen des Podcasts. Gefundene Eier merkt sich der Browser.
+const eggs = [];
+const countable = () => eggs.filter(e => e.count !== false);
+const found = new Set();
+try { JSON.parse(localStorage.getItem('tmm-eggs') || '[]').forEach(id => found.add(id)); } catch (e) {}
+const eggLayer = L.layerGroup().addTo(map);
+const toastEl = document.getElementById('toast');
+const eggBadge = document.getElementById('eggs');
+
+function toast(msg) {
+  toastEl.innerHTML = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toast.t);
+  toast.t = setTimeout(() => toastEl.classList.remove('show'), 3200);
+}
+
+function updateEggBadge() {
+  const n = countable().length;
+  eggBadge.textContent = `🥚 ${found.size}/${n}`;
+  eggBadge.title = found.size === n ? 'Alle Easter Eggs gefunden!' : 'Easter Eggs – Hinweise anzeigen';
+}
+
+function findEgg(egg) {
+  if (found.has(egg.id)) return;
+  found.add(egg.id);
+  try { localStorage.setItem('tmm-eggs', JSON.stringify([...found])); } catch (e) {}
+  updateEggBadge();
+  const n = countable().length;
+  toast(found.size === n
+    ? `🏆 <b>Alle ${n} Easter Eggs gefunden!</b> too many tabs, too many maps.`
+    : `🥚 Easter Egg gefunden: <b>${esc(egg.name)}</b> (${found.size}/${n})`);
+}
+
+function eggHtml(egg) {
+  return `${chromeHtml(egg.name, 'egg/' + egg.id, '')}
+    <div class="wave egg-wave">${egg.emoji} <span>Easter Egg</span></div>
+    <div class="page">
+      <h3>${esc(egg.name)}</h3>
+      <div>${egg.text}</div>
+      ${egg.extra ? egg.extra() : ''}
+    </div>`;
+}
+
+// Ein Ei auf der Karte, das erst ab einer Zoomstufe (und ggf. Bedingung) auftaucht.
+function addEgg(egg) {
+  egg.kind = 'egg';
+  eggs.push(egg);
+  if (egg.lat == null) return egg;  // Ei ohne Kartenpunkt (z. B. Tastatur-Trick)
+  egg.marker = L.marker([egg.lat, egg.lng], {
+    icon: L.divIcon({ className: 'egg ' + (egg.cls || ''), html: egg.icon || egg.emoji, iconSize: [30, 30] }),
+    title: egg.tooltip || '', zIndexOffset: 500,
+  }).on('click', () => egg.onClick ? egg.onClick(egg) : (openPlace(egg), findEgg(egg)));
+  return egg;
+}
+
+function updateEggVisibility() {
+  const z = map.getZoom();
+  eggs.forEach(egg => {
+    if (!egg.marker) return;
+    const show = z >= egg.minZoom && (!egg.when || egg.when());
+    if (show && !eggLayer.hasLayer(egg.marker)) eggLayer.addLayer(egg.marker);
+    if (!show && eggLayer.hasLayer(egg.marker)) eggLayer.removeLayer(egg.marker);
+  });
+}
+map.on('zoomend', updateEggVisibility);
+
+// 1) Nessie im Loch Ness – aus „nosferatu / kryptozoologie“
+addEgg({ id: 'nessie', name: 'Nessie', emoji: '🦕', lat: 57.29, lng: -4.47, minZoom: 8,
+  tooltip: '???', hint: 'Caros Kryptozoologie-Tabs schicken Grüße in die schottischen Highlands.',
+  text: 'Doch! Da ist sie! Die Kryptozoologie hatte recht. (Folge „nosferatu / kryptozoologie“)' });
+
+// 2) Honigdachs Stoffel – bricht aus, sobald man ihn anklicken will
+addEgg({ id: 'stoffel', name: 'Stoffel, der Honigdachs', emoji: '🦡', lat: -24.505, lng: 30.915, minZoom: 9,
+  tooltip: 'Stoffel', hint: 'In Südafrika ist jemand ausgebrochen. Mal wieder.', tries: 0,
+  text: 'Erwischt! Kein Gehege der Welt hält Stoffel – aber dich hat er unterschätzt.',
+  onClick(egg) {
+    if (egg.tries++ < 2) {
+      const ll = egg.marker.getLatLng();
+      egg.marker.setLatLng([ll.lat + (Math.random() - .5) * .02, ll.lng + (Math.random() - .5) * .02]);
+      toast('🦡 Stoffel ist schon wieder ausgebrochen!');
+      return;
+    }
+    egg.lat = egg.marker.getLatLng().lat; egg.lng = egg.marker.getLatLng().lng;
+    openPlace(egg); findEgg(egg);
+  } });
+
+// 3) Krake Pauls Orakel – sagt voraus, wer heute den besseren Tab hat
+addEgg({ id: 'paul', name: 'Pauls Orakel', emoji: '🐙', lat: 51.4918, lng: 6.8850, minZoom: 13,
+  tooltip: 'Wer gewinnt?', hint: 'Ein Orakel aus Oberhausen hat noch eine letzte Vorhersage.',
+  text: 'Krake Paul hat aus dem Jenseits noch eine letzte Vorhersage: Wer hat diese Woche den besseren Tab?',
+  extra: () => `<div class="oracle"><button type="button" data-oracle="Caro">📦 Caro</button><button type="button" data-oracle="Miguel">📦 Miguel</button></div>
+    <div class="oracle-result"></div>` });
+
+// 4) Das Vampir-Piratenschiff kreuzt um Atlantis
+const ship = addEgg({ id: 'piraten', name: 'Die Vampir-Piraten', emoji: '🏴‍☠️', lat: 33, lng: -24, minZoom: 3,
+  tooltip: 'Ahoi?', hint: 'Rund um eine versunkene Stadt ist nachts ein Schiff unterwegs.', cls: 'ship',
+  text: 'Ahoi! Die Vampir-Piraten von Atlantis kreuzen hier seit der Tour 2025 – und sammeln jeden Tab ein, der keinen Ort hat.' });
+let shipAngle = 0;
+setInterval(() => {
+  if (!eggLayer.hasLayer(ship.marker)) return;
+  shipAngle += 0.01;
+  ship.marker.setLatLng([33 + 2.2 * Math.sin(shipAngle), -27 + 3 * Math.cos(shipAngle)]);
+}, 120);
+
+// 5) Die Stinkebox – das tmt-Aufnahmestudio im NDR-Funkhaus
+addEgg({ id: 'stinkebox', name: 'Die Stinkebox', emoji: '🎙️', lat: 53.5770, lng: 9.9900, minZoom: 14,
+  tooltip: 'Psst – Aufnahme läuft', hint: 'Wo in Hamburg wird eigentlich aufgenommen? Es riecht etwas …',
+  text: 'Hier, in der legendären „tmt-Stinkebox“, werden die Tabs geschlossen. Bitte nicht lüften, das gehört zum Sound.' });
+
+// 6) Die Emus von Campion – flüchten, sobald die Maus kommt
+['emu1', 'emu2', 'emu3'].forEach((id, i) => {
+  addEgg({ id: 'emus-' + i, group: 'emus', name: 'Die Emus von Campion', emoji: '🐦', lat: -31.0 - i * .06, lng: 118.38 + i * .08, minZoom: 8,
+    tooltip: 'Emu', cls: 'emu', hint: i ? null : 'Im Westen Australiens wurde ein Krieg verloren. Die Sieger laufen noch frei herum.',
+    text: '1932 hatte die Armee Maschinengewehre. Die Emus hatten Beine. Die Emus haben gewonnen.' });
+});
+// Nur ein Ei für alle drei Emus zählen
+const emuEggs = eggs.filter(e => e.group === 'emus');
+emuEggs.slice(1).forEach(e => { e.count = false; });
+emuEggs.forEach(e => {
+  // Die ersten drei Annäherungen weichen sie aus – dann geben sie (ausnahmsweise) auf.
+  e.fled = 0;
+  e.marker.on('mouseover', () => {
+    if (e.fled++ >= 3) return;
+    const ll = e.marker.getLatLng();
+    e.marker.setLatLng([ll.lat + (Math.random() - .5) * .05, ll.lng + (Math.random() - .5) * .05]);
+  });
+  e.marker.off('click').on('click', () => { openPlace(e); findEgg(emuEggs[0]); });
+});
+
+// 7) Mothman – nur nachts (zwischen 21 und 6 Uhr) zu sehen
+const night = () => { const h = new Date().getHours(); return h >= 21 || h < 6; };
+addEgg({ id: 'mothman', name: 'Mothman', emoji: '👁️', lat: 38.87, lng: -82.10, minZoom: 9, when: night, cls: 'eyes', icon: '<span>● ●</span>',
+  tooltip: '…', hint: 'In West Virginia leuchten rote Augen. Aber nur, wenn es dunkel ist.',
+  text: 'Du hast ihn gesehen. Er hat dich gesehen. Komm lieber tagsüber wieder. (Folge „weißer euter von kuba / mothman“)' });
+
+// 8) Bernd das Brot in Erfurt
+addEgg({ id: 'bernd', name: 'Bernd das Brot', emoji: '🍞', lat: 50.9786, lng: 11.0284, minZoom: 16,
+  tooltip: 'Mist.', hint: 'Ganz nah ranzoomen am Erfurter Fischmarkt. Jemand ist schlecht gelaunt.',
+  text: '„Mist.“ – Bernd ist wieder da und hat keine Lust. (Folge „national bible bee / bernd das brot entführung“)' });
+
+// 9) Spezi-Modus: „spezi“ ins Suchfeld tippen
+const speziEgg = addEgg({ id: 'spezi', name: 'Spezi-Modus', emoji: '🥤',
+  hint: 'Tippe das Getränk aus dem längsten Krieg der tmt-Geschichte ins Suchfeld.' });
+qEl.addEventListener('input', () => {
+  if (norm(qEl.value) !== 'spezi') return;
+  document.body.classList.toggle('spezi');
+  toast(document.body.classList.contains('spezi') ? '🥤 Spezi-Modus an – Cola trifft Orange.' : '🥤 Spezi-Modus aus.');
+  findEgg(speziEgg);
+});
+
+// 10) Zu viele Tabs: fünfmal schnell aufs Logo klicken
+const tabsEgg = addEgg({ id: 'chaos', name: 'Too many tabs!', emoji: '🗂️',
+  hint: 'Das Logo verträgt mehr Klicks, als man denkt. Schnell hintereinander.' });
+let logoClicks = [];
+document.querySelector('h1').addEventListener('click', () => {
+  const now = Date.now();
+  logoClicks = logoClicks.filter(t => now - t < 1500).concat(now);
+  if (logoClicks.length < 5) return;
+  logoClicks = [];
+  const bar = document.querySelector('aside > .titlebar');
+  const names = shuffle(places.concat(tabs)).slice(0, 14).map(labelOf);
+  names.forEach((n, i) => setTimeout(() => {
+    const t = document.createElement('div');
+    t.className = 'tab ghost chaos';
+    t.innerHTML = `<span class="fav"></span><span>${esc(n)}</span>`;
+    bar.appendChild(t);
+    setTimeout(() => t.remove(), 3500);
+  }, i * 90));
+  toast('🗂️ <b>too many tabs!</b> Bitte schließe ein paar, bevor du neue öffnest.');
+  findEgg(tabsEgg);
+});
+const shuffle = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
+
+// Hinweis-Fenster über das 🥚-Abzeichen
+function eggHintsHtml() {
+  return `${chromeHtml('Easter Eggs', 'easter-eggs', '')}
+    <div class="wave egg-wave">🥚 <span>${found.size} von ${countable().length} gefunden</span></div>
+    <div class="page"><ul class="hints">${countable().map(e => `<li class="${found.has(e.id) ? 'got' : ''}">
+      ${found.has(e.id) ? `${e.emoji} <b>${esc(e.name)}</b>` : `❓ ${esc(e.hint)}`}</li>`).join('')}</ul></div>`;
+}
+eggBadge.addEventListener('click', () => {
+  const c = map.getCenter();
+  openPlace({ id: 'hints', kind: 'hints', lat: c.lat, lng: c.lng });
+});
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-oracle]');
+  if (!b) return;
+  const winner = Math.random() < .5 ? 'Caro' : 'Miguel';
+  b.closest('.page').querySelector('.oracle-result').textContent =
+    `🐙 Paul kriecht zur Box von … ${winner}! ${winner === b.dataset.oracle ? 'Du hattest recht.' : 'Tja. Paul irrt sich nie.'}`;
+});
+
+updateEggBadge();
+updateEggVisibility();
 
 Promise.all([fetch('data/places.json'), fetch('data/atlantis.json')].map(f => f.then(r => r.json())))
   .then(([placeData, tabData]) => {

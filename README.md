@@ -49,6 +49,10 @@ Neuer Atlantis-Tab in `data/atlantis.json`:
 
 Bekommt ein Atlantis-Thema später doch einen echten Ort, den Eintrag aus `atlantis.json` löschen und in `places.json` anlegen.
 
+## Easter Eggs
+
+Auf der Karte sind zehn Easter Eggs versteckt (🥚-Zähler in der Seitenleiste, mit Hinweisen). Gefundene Eier merkt sich der Browser. Der Code steht in `index.html` unter „Easter Eggs“.
+
 ## Online stellen (GitHub Pages)
 
 Repo → **Settings → Pages** → „Deploy from a branch“ → Branch `main`, Ordner `/ (root)`. Nach ein, zwei Minuten ist die Karte unter `https://<user>.github.io/toomanymaps/` erreichbar.
