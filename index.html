@@ -31,7 +31,8 @@
     background: #e9eef0;
     display: flex;
   }
-  #map { flex: 1; height: 100%; background: #e9eef0; }
+  /* Wasserblau des Kartenstils – auch für den Überhang über/unter der Welt. */
+  #map { flex: 1; height: 100%; background: rgb(158,189,255); }
   a { color: inherit; }
 
   /* ---------- Browser-Chrome (Seitenleiste und Popups teilen sich das) ---------- */
@@ -166,7 +167,7 @@
   /* Gesten auf dem Fenster gehen an die Karte durch (verschieben, zoomen) – nur Links und Buttons
      bleiben klickbar. So lässt sich die Karte auch auf kleinen Displays bei offenem Fenster bewegen. */
   .win, .win * { pointer-events: none !important; }
-  .win a, .win button { pointer-events: auto !important; }
+  .win a, .win button, .win input, .win .atl-list { pointer-events: auto !important; }
   /* Zweiter Tab im Popup = anderes Thema derselben Folge. */
   button.tab.other {
     font: inherit; font-size: 12px; font-weight: 400; border: 0; border-radius: 9px 9px 0 0;
@@ -199,12 +200,53 @@
   .page .visit { font-size: 13px; }
   .page .warn { font-size: 11px; color: var(--muted); margin-top: 6px; font-style: italic; }
   .actions { display: flex; gap: 8px; margin-top: 12px; }
-  .actions a {
+  .actions a, .actions button {
     flex: 1; text-align: center; text-decoration: none; font-size: 13px; font-weight: 600;
     padding: 7px 8px; border-radius: 999px;
   }
   .actions .primary { background: var(--grad); color: #fff; }
   .actions .secondary { background: var(--chrome); color: var(--ink); }
+  .actions button { font: inherit; font-size: 13px; font-weight: 600; border: 0; cursor: pointer; }
+
+  /* ---------- Atlantis ---------- */
+  .fav.atl, .tab .fav.atl, #list .fav.atl { background: linear-gradient(135deg, #1d4ed8, var(--teal)); }
+  .atl-marker {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 35% 30%, #5eead4, var(--teal) 55%, #0b7f8c);
+    border: 3px solid #fff; border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,106,43,.55), 0 3px 12px rgba(0,0,0,.35);
+  }
+  .atl-marker span { font-size: 19px; line-height: 1; }
+  .atl-marker b {
+    position: absolute; top: 44px; left: 50%; transform: translateX(-50%);
+    font-size: 12px; color: #0b4f6c; background: rgba(255,255,255,.85);
+    padding: 1px 7px; border-radius: 999px; white-space: nowrap;
+  }
+  .wave {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; color: #fff; font-size: 18px;
+    background: linear-gradient(120deg, #1d4ed8, var(--teal) 60%, #5eead4);
+  }
+  .wave span { font-size: 12px; font-weight: 600; letter-spacing: .02em; opacity: .95; }
+  .wave.big { font-size: 26px; padding: 12px 14px; }
+  .wave.big span { font-size: 18px; }
+  .atl-intro { font-size: 13px; margin-bottom: 8px; }
+  .atl-filter {
+    width: 100%; font: inherit; font-size: 13px; padding: 6px 12px; margin-bottom: 6px;
+    border: 2px solid transparent; border-radius: 999px; background: var(--chrome); outline: none;
+  }
+  .atl-filter:focus { border-color: var(--teal); background: #fff; }
+  .atl-list { max-height: 210px; overflow-y: auto; margin: 0 -6px; }
+  .atl-item {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 8px; width: 100%;
+    font: inherit; font-size: 13px; text-align: left; color: var(--ink);
+    background: none; border: 0; border-radius: 8px; padding: 5px 8px; cursor: pointer;
+  }
+  .atl-item:hover { background: #effaf9; filter: none; }
+  .atl-item b { font-weight: 500; }
+  .atl-item small { flex: none; color: var(--muted); font-size: 11px; }
+  .atl-empty { font-size: 12px; color: var(--muted); padding: 6px 8px; }
+  #list li.atl-entry { background: linear-gradient(135deg, rgba(29,78,216,.08), rgba(18,194,181,.12)); }
 
   #toggle { display: none; }
 
@@ -269,8 +311,65 @@ const map = L.map('map', {
   minZoom: 2,
   maxZoom: 18,
   zoomSnap: 0.5,
-  maxBounds: [[-85, -400], [85, 400]],
 }).setView([30, 10], 2);
+
+// ---------- Blauer Überhang ----------
+// Über und unter der Welt darf man bis zu einer halben Kartenhöhe weiterschieben, damit hohe
+// Fenster weit im Norden nicht abgeschnitten werden. Die Fläche dort ist das Wasserblau der Karte.
+function worldOverhang(viewHeight) {
+  const z = map.getZoom();
+  const cy = map.project(map.getCenter(), z).y;
+  const worldH = 256 * Math.pow(2, z);
+  const top = Math.max(0, viewHeight / 2 - cy);
+  const bottom = Math.max(0, cy + viewHeight / 2 - worldH);
+  return { top, bottom, cy, z };
+}
+
+function clampVertical() {
+  const z = map.getZoom();
+  const cy = map.project(map.getCenter(), z).y;
+  const worldH = 256 * Math.pow(2, z);
+  const dy = cy < 0 ? -cy : cy > worldH ? worldH - cy : 0;
+  if (Math.abs(dy) > 0.5) map.panBy([0, dy]);
+}
+map.on('moveend', clampVertical);
+
+// MapLibre hält seine Ansicht immer innerhalb der Welt. Ragt der Ausschnitt darüber hinaus, bekommt
+// der MapLibre-Canvas nur den Weltanteil (nach unten versetzt), darüber scheint das Blau durch.
+L.MaplibreGL.include({
+  _update: function () {
+    if (!this._map) return;
+    this._offset = this._map.containerPointToLayerPoint([0, 0]);
+    if (this._zooming) return;
+
+    const size = this.getSize();
+    const gl = this._glMap;
+    const offset = this._map.getSize().multiplyBy(this.options.padding);
+    const o = worldOverhang(size.y);
+    const h = Math.max(1, Math.round(size.y - o.top - o.bottom));
+    const topLeft = this._map.containerPointToLayerPoint([0, 0]).subtract(offset).add([0, o.top]);
+
+    L.DomUtil.setPosition(this._container, this._roundPoint(topLeft));
+    this._transformGL(gl, o);
+
+    if (gl.transform.width !== size.x || gl.transform.height !== h) {
+      this._container.style.width = size.x + 'px';
+      this._container.style.height = h + 'px';
+      gl.resize();
+    } else if (gl._update) {
+      gl._update();
+    } else {
+      gl.update();
+    }
+  },
+  _transformGL: function (gl, o) {
+    o = o || worldOverhang(this.getSize().y);
+    const cx = this._map.project(this._map.getCenter(), o.z).x;
+    const c = this._map.unproject([cx, o.cy + (o.top - o.bottom) / 2], o.z);
+    gl.transform.center = maplibregl.LngLat.convert([c.lng, c.lat]);
+    gl.transform.zoom = o.z - 1;
+  },
+});
 
 // Grundkarte: OpenFreeMap (Vektorkacheln, kostenlos, ohne API-Key) – Städte ab mittlerem Zoom,
 // Straßen erst beim Reinzoomen.
@@ -278,6 +377,10 @@ const base = L.maplibreGL({
   style: 'https://tiles.openfreemap.org/styles/liberty',
   attribution: '<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank">OpenMapTiles</a> Daten © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>-Mitwirkende',
 }).addTo(map);
+
+// Die erste Positionierung macht das Plugin noch ohne Überhang-Korrektur – einmal nachziehen.
+base.getMaplibreMap().once('load', () => base._update());
+map.on('resize', () => base._update());
 
 // Beschriftungen auf Deutsch, falls OSM einen deutschen Namen kennt („Wien“ statt „Vienna“).
 base.getMaplibreMap().once('load', function () {
@@ -296,6 +399,25 @@ const slug = s => s.toLowerCase()
   .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
   .normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const norm = t => t.normalize('NFC').replace(/ /g, ' ').replace(/[‘’]/g, "'").toLowerCase().trim();
+
+// ---------- Atlantis ----------
+// Alle Tabs ohne echten Ort liegen gesammelt in Atlantis – Gruß an die
+// „Vampir-Piraten von Atlantis“-Tour. Mitten im Atlantik, westlich der Säulen des Herakles.
+const ATLANTIS = { id: 'atlantis', kind: 'index', name: 'Atlantis', lat: 33.0, lng: -27.0 };
+
+function chromeHtml(activeLabel, urlPath, other) {
+  return `
+    <div class="titlebar">
+      <div class="lights"><button class="light-close" type="button" aria-label="Schließen" title="Schließen">×</button><i></i><i></i></div>
+      <div class="tab active"><span class="fav"></span><span>${esc(activeLabel)}</span></div>
+      ${other}
+    </div>
+    <div class="addressbar">
+      <span class="nav">←→⟳</span>
+      <span class="url">toomanytabs://<b>${esc(urlPath)}</b></span>
+    </div>`;
+}
 
 function photoHtml(p) {
   const ph = '<div class="ph">🗺️</div>';
@@ -306,33 +428,63 @@ function photoHtml(p) {
   </div>`;
 }
 
+function episodeHtml(p) {
+  return `<a class="ep" href="${esc(p.episode.url)}" target="_blank" rel="noopener">
+      🎧 <b>${esc(p.episode.title)}</b>
+      <small>${fmtDate(p.episode.date)}</small>
+    </a>`;
+}
+
 function popupHtml(p) {
+  if (p.kind === 'index') return atlantisIndexHtml();
+  if (p.kind === 'atlantis') return atlantisTabHtml(p);
   const gmaps = `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`;
-  return `
-    <div class="titlebar">
-      <div class="lights"><button class="light-close" type="button" aria-label="Schließen" title="Schließen">×</button><i></i><i></i></div>
-      <div class="tab active"><span class="fav"></span><span>${esc(p.topic)}</span></div>
-      ${otherTabHtml(p)}
-    </div>
-    <div class="addressbar">
-      <span class="nav">←→⟳</span>
-      <span class="url">toomanytabs://<b>${esc(slug(p.name))}</b></span>
-    </div>
+  return `${chromeHtml(p.topic, slug(p.name), otherTabHtml(p))}
     ${photoHtml(p)}
     <div class="page">
       <h3>${esc(p.name)}</h3>
       <div class="region">${esc(p.region)}</div>
       <div>${esc(p.info)}</div>
-      <a class="ep" href="${esc(p.episode.url)}" target="_blank" rel="noopener">
-        🎧 <b>${esc(p.episode.title)}</b>
-        <small>${fmtDate(p.episode.date)}</small>
-      </a>
+      ${episodeHtml(p)}
       <div class="visit">🧭 ${esc(p.visit)}</div>
       ${p.uncertain ? '<div class="warn">Zuordnung oder Lage ist nicht ganz sicher.</div>' : ''}
       <div class="actions">
         <a class="primary" href="${gmaps}" target="_blank" rel="noopener">📍 Google Maps</a>
         <a class="secondary" href="${esc(p.episode.url)}" target="_blank" rel="noopener">▶ Folge</a>
       </div>
+    </div>`;
+}
+
+function atlantisTabHtml(t) {
+  return `${chromeHtml(t.topic, 'atlantis/' + slug(t.topic), otherTabHtml(t))}
+    <div class="wave">🌊 <span>Atlantis · Tab ohne Ort</span></div>
+    <div class="page">
+      <h3>${esc(t.topic)}</h3>
+      <div>${esc(t.info)}</div>
+      ${episodeHtml(t)}
+      <div class="actions">
+        <a class="primary" href="${esc(t.episode.url)}" target="_blank" rel="noopener">▶ Folge</a>
+        <button class="secondary to-atlantis" type="button">🔱 Alle Atlantis-Tabs</button>
+      </div>
+    </div>`;
+}
+
+function atlantisListHtml(filter) {
+  const f = norm(filter || '');
+  const items = tabs.filter(t => !f || t.haystack.includes(f));
+  if (!items.length) return '<div class="atl-empty">Nichts gefunden.</div>';
+  return items.map(t => `<button class="atl-item" type="button" data-id="${t.id}">
+      <b>${esc(t.topic)}</b><small>${fmtDate(t.episode.date)}</small></button>`).join('');
+}
+
+function atlantisIndexHtml() {
+  return `${chromeHtml('Atlantis', 'atlantis', randomTabHtml())}
+    <div class="wave big">🔱 <span>Atlantis</span></div>
+    <div class="page">
+      <div class="atl-intro">Hier, irgendwo zwischen Vampir-Piraten und versunkenem Kontinent, landen alle
+        <b>${tabs.length} Tabs</b>, die keinen echten Ort haben.</div>
+      <input class="atl-filter" type="search" placeholder="🔍 Tab suchen …" autocomplete="off">
+      <div class="atl-list">${atlantisListHtml('')}</div>
     </div>`;
 }
 
@@ -350,10 +502,19 @@ map.addLayer(cluster);
 // Echte Marker (statt CircleMarker), damit markercluster zoomToShowLayer funktioniert.
 const dotIcon = L.divIcon({ className: 'dot', iconSize: [22, 22] });
 
+// Atlantis bekommt einen eigenen, größeren Marker außerhalb der Cluster.
+L.marker([ATLANTIS.lat, ATLANTIS.lng], {
+  icon: L.divIcon({ className: 'atl-marker', html: '<span>🔱</span><b>Atlantis</b>', iconSize: [40, 40] }),
+  title: 'Atlantis – alle Tabs ohne Ort', zIndexOffset: 1000,
+}).on('click', () => openPlace(ATLANTIS)).addTo(map);
+
 let places = [];
+let tabs = [];          // Atlantis-Tabs (Themen ohne echten Ort)
+const byId = new Map(); // id → Ort oder Atlantis-Tab
 let userPos = null;
 let shownPlaces = [];
-let openId = null;      // Ort, dessen Popup gerade offen ist
+let shownTabs = [];
+let openId = null;      // Ort/Tab, dessen Fenster gerade offen ist
 let nextRandom = null;  // Ziel des Zufalls-Tabs, wird vorab angezeigt
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
@@ -376,40 +537,60 @@ const popup = L.popup({
 
 function openPlace(p) {
   map.closePopup(popup);
-  openId = p.id;
+  openId = String(p.id);
   popup.setLatLng([p.lat, p.lng]).setContent(popupHtml(p)).openOn(map);
 }
 
 function focus(p) {
+  document.querySelectorAll('#list li').forEach(li => li.classList.toggle('active', li.dataset.id === String(p.id)));
+  if (p.kind !== 'place') {
+    if (map.getZoom() < 4) map.setView([p.lat, p.lng], 4, { animate: false });
+    openPlace(p);
+    return;
+  }
   // Ort ist durch die Suche ausgeblendet (z. B. über den „anderen Tab“ angesteuert): Suche leeren.
   if (!shownPlaces.includes(p)) { qEl.value = ''; render(); }
   // Erst nah genug ranzoomen, damit das Popup auch bei Orten weit im Norden Platz hat.
   if (map.getZoom() < 5) map.setView([p.lat, p.lng], 5, { animate: false });
   cluster.zoomToShowLayer(p.marker, () => openPlace(p));
-  document.querySelectorAll('#list li').forEach(li => li.classList.toggle('active', li.dataset.id == p.id));
 }
 
-// Das andere Thema derselben Folge (z. B. „wiener zentralfriedhof“ zu „lugner city“).
-// Liegt es auf der Karte, öffnet der Tab diesen Ort; sonst ist er nur grau und nicht klickbar.
+// Das andere Thema derselben Folge (z. B. „wiener zentralfriedhof“ zu „lugner city“) – entweder ein
+// echter Ort oder ein Atlantis-Tab. Ausgegraut nur bei Folgen mit einem einzigen Thema.
 function otherTabHtml(p) {
-  const norm = t => t.toLowerCase().replace(/[‘’]/g, "'").trim();
   const other = p.episode.title.replace(/\s+[–-]\s+mit .*$/i, '').split(' / ')
     .map(t => t.trim()).find(t => t && norm(t) !== norm(p.topic));
   if (!other) return '';
-  const target = places.find(q => q.episode.url === p.episode.url && norm(q.topic) === norm(other));
-  return target
-    ? `<button class="tab other" type="button" data-id="${target.id}" title="Zum anderen Tab der Folge: ${esc(target.name)}"><span class="fav"></span><span>${esc(other)}</span></button>`
-    : `<button class="tab other" type="button" disabled title="Dieses Thema hat keinen Ort auf der Karte"><span class="fav"></span><span>${esc(other)}</span></button>`;
+  const target = places.find(q => q.episode.url === p.episode.url && norm(q.topic) === norm(other))
+    || tabs.find(q => q.episode.url === p.episode.url && norm(q.topic) === norm(other));
+  if (!target) {
+    return `<button class="tab other" type="button" disabled><span class="fav"></span><span>${esc(other)}</span></button>`;
+  }
+  const where = target.kind === 'place' ? target.name : 'Atlantis';
+  return `<button class="tab other" type="button" data-id="${target.id}" title="Zum anderen Tab der Folge (${esc(where)})">` +
+    `<span class="fav${target.kind === 'atlantis' ? ' atl' : ''}"></span><span>${esc(other)}</span></button>`;
 }
 
+function randomTabHtml() {
+  const name = nextRandom ? labelOf(nextRandom) : 'Zufälliger Tab';
+  return `<button class="tab random" type="button" title="Zufälliger Tab: ${esc(name)}">` +
+    `<span class="dice">🎲</span><span class="label">${esc(name)}</span></button>`;
+}
+
+const labelOf = p => p.kind === 'atlantis' ? p.topic : p.name;
+
+// Halb echte Orte, halb Atlantis – sonst landet man wegen der vielen Atlantis-Tabs fast nur dort.
 function pickRandom(excludeId) {
-  const pool = (shownPlaces.length >= 2 ? shownPlaces : places).filter(p => p.id !== excludeId);
-  return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
+  const without = list => list.filter(p => String(p.id) !== String(excludeId));
+  let a = without(shownPlaces), t = without(shownTabs);
+  if (a.length + t.length < 1) { a = without(places); t = without(tabs); }
+  const from = !t.length || (a.length && Math.random() < 0.5) ? a : t;
+  return from.length ? from[Math.floor(Math.random() * from.length)] : null;
 }
 
 function updateRandomLabels() {
   document.querySelectorAll('.tab.random').forEach(b => {
-    const name = nextRandom ? nextRandom.name : 'Zufälliger Tab';
+    const name = nextRandom ? labelOf(nextRandom) : 'Zufälliger Tab';
     b.querySelector('.label').textContent = name;
     b.title = 'Zufälliger Tab: ' + name;
   });
@@ -424,33 +605,53 @@ function goRandom() {
 }
 
 document.addEventListener('click', e => {
-  if (e.target.closest('.tab.random')) {
-    e.preventDefault(); e.stopPropagation();
+  const hit = sel => e.target.closest(sel);
+  let el;
+  if (hit('.tab.random')) {
     goRandom();
-  } else if (e.target.closest('.tab.other')) {
-    e.preventDefault(); e.stopPropagation();
-    const id = e.target.closest('.tab.other').dataset.id;
-    if (id) focus(places.find(p => p.id == id));
-  } else if (e.target.closest('.light-close')) {
-    e.preventDefault(); e.stopPropagation();
+  } else if ((el = hit('.tab.other'))) {
+    if (el.dataset.id) focus(byId.get(el.dataset.id));
+  } else if ((el = hit('.atl-item'))) {
+    focus(byId.get(el.dataset.id));
+  } else if (hit('.to-atlantis')) {
+    focus(ATLANTIS);
+  } else if (hit('.light-close')) {
     map.closePopup(popup);
+  } else {
+    return;
   }
+  e.preventDefault(); e.stopPropagation();
+});
+
+document.addEventListener('input', e => {
+  if (!e.target.matches('.atl-filter')) return;
+  e.target.closest('.page').querySelector('.atl-list').innerHTML = atlantisListHtml(e.target.value);
 });
 
 function render() {
-  const q = qEl.value.trim().toLowerCase();
-  let shown = places.filter(p => !q || p.haystack.includes(q));
+  const q = norm(qEl.value);
+  const shown = places.filter(p => !q || p.haystack.includes(q));
   if (userPos) {
     shown.forEach(p => p.dist = distKm(userPos, p));
     shown.sort((a, b) => a.dist - b.dist);
   } else {
     shown.sort((a, b) => b.episode.date.localeCompare(a.episode.date) || a.name.localeCompare(b.name));
   }
+  // Atlantis-Tabs erscheinen in der Liste nur bei einer Suche; ohne Suche gibt es einen Sammeleintrag.
+  const shownT = q ? tabs.filter(t => t.haystack.includes(q)) : [];
 
   cluster.clearLayers();
   cluster.addLayers(shown.map(p => p.marker));
 
-  listEl.innerHTML = shown.map(p => `
+  const atlEntry = q ? '' : `
+    <li data-id="atlantis" class="atl-entry">
+      <span class="fav atl"></span>
+      <div class="txt">
+        <div class="name">🔱 Atlantis</div>
+        <div class="meta">${tabs.length} Tabs ohne echten Ort – alle Themen, die sonst nirgends hinpassen</div>
+      </div>
+    </li>`;
+  listEl.innerHTML = atlEntry + shown.map(p => `
     <li data-id="${p.id}">
       <span class="fav"></span>
       <div class="txt">
@@ -459,11 +660,23 @@ function render() {
         <div class="meta">🎧 ${esc(p.episode.title)} · ${fmtDate(p.episode.date)}</div>
       </div>
       ${userPos ? `<span class="dist">${Math.round(p.dist).toLocaleString('de-DE')} km</span>` : ''}
+    </li>`).join('') + shownT.map(t => `
+    <li data-id="${t.id}">
+      <span class="fav atl"></span>
+      <div class="txt">
+        <div class="name">${esc(t.topic)}</div>
+        <div class="meta">🔱 Atlantis · Tab ohne Ort</div>
+        <div class="meta">🎧 ${esc(t.episode.title)} · ${fmtDate(t.episode.date)}</div>
+      </div>
     </li>`).join('');
-  countEl.textContent = `${shown.length} von ${places.length} Orten · ${shown.length} offene Tabs`;
+  countEl.textContent = q
+    ? `${shown.length} Orte · ${shownT.length} Tabs in Atlantis gefunden`
+    : `${places.length} Orte · ${tabs.length} Tabs in Atlantis`;
 
   shownPlaces = shown;
-  if (!nextRandom || nextRandom.id === openId || (shown.length >= 2 && !shown.includes(nextRandom))) {
+  shownTabs = q ? shownT : tabs;
+  const pool = shownPlaces.concat(shownTabs);
+  if (!nextRandom || String(nextRandom.id) === openId || (pool.length >= 2 && !pool.includes(nextRandom))) {
     nextRandom = pickRandom(openId);
   }
   updateRandomLabels();
@@ -471,7 +684,7 @@ function render() {
 
 listEl.addEventListener('click', e => {
   const li = e.target.closest('li');
-  if (li) focus(places.find(p => p.id == li.dataset.id));
+  if (li) focus(li.dataset.id === 'atlantis' ? ATLANTIS : byId.get(li.dataset.id));
 });
 qEl.addEventListener('input', render);
 
@@ -499,15 +712,15 @@ document.getElementById('toggle').addEventListener('click', () => {
   map.invalidateSize();
 });
 
-// Auf dem Handy ist die Karte sonst zu niedrig fürs Popup: Liste beim Öffnen einklappen.
 map.on('popupclose', () => { openId = null; });
 
 map.on('popupopen', e => {
   // Der Zufalls-Tab darf nie auf den gerade offenen Ort zeigen.
-  if (nextRandom && nextRandom.id === openId) {
+  if (nextRandom && String(nextRandom.id) === openId) {
     nextRandom = pickRandom(openId);
     updateRandomLabels();
   }
+  // Auf dem Handy ist die Karte sonst zu niedrig fürs Popup: Liste beim Öffnen einklappen.
   if (!matchMedia('(max-width: 720px)').matches || panel.classList.contains('collapsed')) return;
   panel.classList.add('collapsed');
   map.invalidateSize();
@@ -517,15 +730,23 @@ map.on('popupopen', e => {
   map.panInside(e.popup.getLatLng(), { paddingTopLeft: [20, room] });
 });
 
-fetch('data/places.json')
-  .then(r => r.json())
-  .then(data => {
-    places = data;
+Promise.all([fetch('data/places.json'), fetch('data/atlantis.json')].map(f => f.then(r => r.json())))
+  .then(([placeData, tabData]) => {
+    places = placeData;
     places.forEach(p => {
-      p.haystack = [p.name, p.region, p.topic, p.episode.title, p.info].join(' ').toLowerCase();
+      p.kind = 'place';
+      p.haystack = norm([p.name, p.region, p.topic, p.episode.title, p.info].join(' '));
       p.marker = L.marker([p.lat, p.lng], { icon: dotIcon, title: p.name, alt: p.name })
         .on('click', () => openPlace(p));
+      byId.set(String(p.id), p);
     });
+    tabs = tabData;
+    tabs.forEach(t => {
+      Object.assign(t, { kind: 'atlantis', name: t.topic, lat: ATLANTIS.lat, lng: ATLANTIS.lng });
+      t.haystack = norm([t.topic, t.episode.title, t.info].join(' '));
+      byId.set(t.id, t);
+    });
+    byId.set('atlantis', ATLANTIS);
     render();
   })
   .catch(() => {
