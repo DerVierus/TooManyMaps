@@ -7,175 +7,296 @@
 <meta name="description" content="Inoffizielle Fan-Karte: Orte aus den Rabbit Holes des Podcasts too many tabs.">
 <link rel="stylesheet" href="vendor/leaflet.css">
 <link rel="stylesheet" href="vendor/MarkerCluster.css">
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
 <style>
   :root {
-    --sea: #dfe7ec;
-    --land: #fbfaf7;
-    --border: #c9c4b8;
-    --ink: #1e1e1e;
-    --muted: #6b6b6b;
-    --accent: #e4572e;
+    --orange: #ff6a2b;
+    --teal: #12c2b5;
+    --grad: linear-gradient(135deg, var(--orange), var(--teal));
+    --ink: #1d2327;
+    --muted: #66707a;
+    --chrome: #eef1f3;
+    --line: #e2e6e9;
     --panel: #ffffff;
-    --line: #e7e4dd;
+  }
+  /* Im OKLCH-Farbraum läuft der Verlauf über Gelbgrün statt durch ein trübes Braun. */
+  @supports (background: linear-gradient(in oklch, red, blue)) {
+    :root { --grad: linear-gradient(in oklch 135deg, var(--orange), var(--teal)); }
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
   body {
     font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     color: var(--ink);
-    background: var(--sea);
+    background: #e9eef0;
     display: flex;
   }
-  #map { flex: 1; height: 100%; background: var(--sea); }
+  #map { flex: 1; height: 100%; background: #e9eef0; }
+  a { color: inherit; }
 
+  /* ---------- Browser-Chrome (Seitenleiste und Popups teilen sich das) ---------- */
+  .titlebar {
+    background: var(--grad);
+    display: flex; align-items: flex-end; gap: 6px;
+    padding: 8px 10px 0;
+    min-height: 38px;
+  }
+  .lights { display: flex; gap: 6px; padding: 0 6px 11px 2px; flex: none; }
+  .lights i { width: 11px; height: 11px; border-radius: 50%; display: block; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); }
+  .lights i:nth-child(1) { background: #ff5f57; }
+  .lights i:nth-child(2) { background: #febc2e; }
+  .lights i:nth-child(3) { background: #28c840; }
+  .tab {
+    display: flex; align-items: center; gap: 6px;
+    min-width: 0; max-width: 190px;
+    padding: 6px 12px 7px;
+    border-radius: 9px 9px 0 0;
+    font-size: 12px; white-space: nowrap;
+  }
+  .tab span { overflow: hidden; text-overflow: ellipsis; }
+  .tab.active { background: var(--panel); color: var(--ink); font-weight: 600; }
+  .tab.ghost { color: rgba(255,255,255,.92); background: rgba(255,255,255,.18); }
+  .tab .fav { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--grad); }
+  .tab.ghost .fav { background: rgba(255,255,255,.75); }
+  .addressbar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 10px; background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { color: #9aa3ab; font-size: 13px; letter-spacing: 4px; flex: none; user-select: none; }
+  .url {
+    flex: 1; min-width: 0;
+    background: var(--chrome); border-radius: 999px;
+    padding: 5px 12px; font-size: 12px; color: var(--muted);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .url b { color: var(--ink); font-weight: 500; }
+
+  /* ---------- Seitenleiste ---------- */
   aside {
-    width: 340px; height: 100%;
+    width: 350px; height: 100%;
     display: flex; flex-direction: column;
     background: var(--panel);
-    border-right: 1px solid var(--line);
+    box-shadow: 2px 0 16px rgba(0,0,0,.08);
     z-index: 1000;
   }
-  header { padding: 16px 16px 10px; border-bottom: 1px solid var(--line); }
-  h1 { margin: 0; font-size: 22px; letter-spacing: -0.02em; }
-  h1 span { color: var(--accent); }
-  .sub { margin: 2px 0 10px; color: var(--muted); font-size: 13px; }
-  .controls { display: flex; gap: 8px; }
+  aside .titlebar .tab.active { max-width: none; }
+  .brand { padding: 14px 16px 4px; }
+  h1 { margin: 0; font-size: 24px; letter-spacing: -0.03em; }
+  h1 span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+  .controls { display: flex; gap: 8px; padding: 10px 16px 6px; }
   input[type=search] {
     flex: 1; min-width: 0;
-    font: inherit; padding: 7px 10px;
-    border: 1px solid var(--line); border-radius: 8px; background: #fafafa;
+    font: inherit; font-size: 14px; padding: 8px 14px;
+    border: 2px solid transparent; border-radius: 999px; background: var(--chrome);
+    outline: none;
   }
+  input[type=search]:focus { border-color: var(--teal); background: #fff; }
   button {
-    font: inherit; padding: 7px 10px; cursor: pointer;
-    border: 1px solid var(--line); border-radius: 8px; background: #fafafa; color: var(--ink);
+    font: inherit; font-size: 14px; padding: 8px 12px; cursor: pointer;
+    border: 0; border-radius: 999px; background: var(--grad); color: #fff; font-weight: 600;
     white-space: nowrap;
   }
-  button:hover { border-color: var(--accent); }
-  .count { margin-top: 8px; font-size: 12px; color: var(--muted); }
+  button:hover { filter: brightness(1.05); }
+  .count { padding: 0 16px 8px; font-size: 12px; color: var(--muted); }
 
-  #list { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
+  #list { list-style: none; margin: 0; padding: 4px 10px 10px; overflow-y: auto; flex: 1; }
   #list li {
-    padding: 10px 16px; border-bottom: 1px solid var(--line); cursor: pointer;
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 9px 10px; margin-bottom: 4px; border-radius: 10px; cursor: pointer;
+    border: 1px solid transparent;
   }
-  #list li:hover, #list li.active { background: #fdf3ef; }
+  #list li:hover { background: #f4f7f8; }
+  #list li.active { border-color: var(--teal); background: #effaf9; }
+  #list .fav { flex: none; width: 10px; height: 10px; margin-top: 6px; border-radius: 50%; background: var(--grad); }
+  #list .txt { min-width: 0; flex: 1; }
   #list .name { font-weight: 600; }
   #list .meta { font-size: 12px; color: var(--muted); }
-  #list .dist { float: right; font-size: 12px; color: var(--accent); }
+  #list .dist { flex: none; font-size: 12px; font-weight: 600; color: var(--orange); }
 
   footer { padding: 10px 16px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--line); }
-  footer a { color: inherit; }
 
-  /* Popup */
-  .leaflet-popup-content { margin: 14px 16px; font-size: 14px; line-height: 1.45; }
-  .pop h3 { margin: 0 0 2px; font-size: 16px; }
-  .pop .region { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
-  .pop .ep { background: #f6f4ef; border-radius: 6px; padding: 6px 8px; margin: 8px 0; font-size: 13px; }
-  .pop .ep a { color: var(--accent); font-weight: 600; text-decoration: none; }
-  .pop .visit { font-size: 13px; }
-  .pop .warn { font-size: 11px; color: var(--muted); margin-top: 6px; }
-
-  /* Cluster */
+  /* ---------- Marker & Cluster ---------- */
+  .dot {
+    background: var(--orange); border-radius: 50%;
+    border: 3px solid #fff; box-shadow: 0 0 0 3px var(--teal), 0 2px 8px rgba(0,0,0,.4);
+  }
   .cluster {
-    background: var(--accent); color: #fff; border-radius: 50%;
+    background: var(--teal); color: #fff; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-weight: 700; font-size: 13px;
-    border: 3px solid rgba(255,255,255,.85); box-shadow: 0 1px 4px rgba(0,0,0,.25);
-  }
-  .dot {
-    background: var(--accent); border-radius: 50%;
-    border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    border: 3px solid #fff; box-shadow: 0 0 0 3px var(--orange), 0 2px 8px rgba(0,0,0,.35);
   }
   .leaflet-container { font: inherit; }
+
+  /* ---------- Popup = kleines Browserfenster ---------- */
+  .win .leaflet-popup-content-wrapper {
+    padding: 0; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0,0,0,.28);
+  }
+  .win .leaflet-popup-content { margin: 0; width: 300px !important; font-size: 14px; line-height: 1.45; }
+  .win .leaflet-popup-tip { background: #fff; }
+  .win a.leaflet-popup-close-button {
+    top: 9px; right: 9px; width: 22px; height: 22px;
+    font: 18px/22px system-ui, sans-serif; color: #fff;
+    border-radius: 6px;
+  }
+  .win a.leaflet-popup-close-button:hover { background: rgba(255,255,255,.25); color: #fff; }
+  .win .titlebar { padding-right: 38px; }
+  .photo { position: relative; aspect-ratio: 16 / 9; background: var(--grad); overflow: hidden; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo .ph {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 42px; color: #fff;
+  }
+  .photo .credit {
+    position: absolute; right: 0; bottom: 0;
+    background: rgba(0,0,0,.5); color: #fff; font-size: 10px; padding: 2px 6px;
+    border-top-left-radius: 6px; text-decoration: none;
+  }
+  .page { padding: 12px 14px 14px; }
+  .page h3 { margin: 0; font-size: 17px; letter-spacing: -0.01em; }
+  .page .region { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+  .page .ep {
+    display: block; margin: 10px 0 8px; padding: 8px 10px; border-radius: 10px; text-decoration: none;
+    background: linear-gradient(135deg, rgba(255,106,43,.12), rgba(18,194,181,.14));
+    font-size: 13px;
+  }
+  .page .ep b { color: var(--ink); }
+  .page .ep small { display: block; color: var(--muted); }
+  .page .visit { font-size: 13px; }
+  .page .warn { font-size: 11px; color: var(--muted); margin-top: 6px; font-style: italic; }
+  .actions { display: flex; gap: 8px; margin-top: 12px; }
+  .actions a {
+    flex: 1; text-align: center; text-decoration: none; font-size: 13px; font-weight: 600;
+    padding: 7px 8px; border-radius: 999px;
+  }
+  .actions .primary { background: var(--grad); color: #fff; }
+  .actions .secondary { background: var(--chrome); color: var(--ink); }
 
   #toggle { display: none; }
 
   @media (max-width: 720px) {
     body { flex-direction: column-reverse; }
-    aside { width: 100%; height: auto; max-height: 45%; border-right: 0; border-top: 1px solid var(--line); }
+    aside { width: 100%; height: auto; max-height: 48%; box-shadow: 0 -2px 16px rgba(0,0,0,.1); }
+    aside > .titlebar, .sub { display: none; }
     aside.collapsed #list, aside.collapsed footer, aside.collapsed .count { display: none; }
-    header { padding: 10px 16px; }
-    h1 { font-size: 18px; display: inline; }
-    .sub { display: none; }
-    .controls { margin-top: 8px; }
-    #toggle { display: inline-block; float: right; padding: 2px 10px; }
+    .brand { padding: 10px 16px 0; display: flex; align-items: center; justify-content: space-between; }
+    h1 { font-size: 20px; }
+    #toggle { display: inline-block; padding: 4px 12px; font-size: 13px; background: var(--chrome); color: var(--ink); }
+    .win .leaflet-popup-content { width: 270px !important; }
   }
 </style>
 </head>
 <body>
 <aside id="panel">
-  <header>
-    <button id="toggle" aria-label="Liste ein-/ausklappen">Liste</button>
+  <div class="titlebar">
+    <div class="lights"><i></i><i></i><i></i></div>
+    <div class="tab active"><span class="fav"></span><span>too many maps</span></div>
+    <div class="tab ghost"><span class="fav"></span><span>noch ein Tab</span></div>
+  </div>
+  <div class="brand">
     <h1>too many <span>maps</span></h1>
-    <p class="sub">Orte aus den Rabbit Holes von <em>too many tabs</em>. Inoffizielle Fan-Karte.</p>
-    <div class="controls">
-      <input id="q" type="search" placeholder="Ort, Land oder Folge suchen …" autocomplete="off">
-      <button id="near" title="Orte nach Entfernung zu deinem Standort sortieren">📍 Nähe</button>
-    </div>
-    <div class="count" id="count"></div>
-  </header>
+    <button id="toggle" aria-label="Liste ein-/ausklappen">Liste</button>
+  </div>
+  <p class="sub" style="padding:0 16px">Orte aus den Rabbit Holes von <em>too many tabs</em>. Inoffizielle Fan-Karte.</p>
+  <div class="controls">
+    <input id="q" type="search" placeholder="🔍 Ort, Land oder Folge …" autocomplete="off">
+    <button id="near" title="Orte nach Entfernung zu deinem Standort sortieren">📍 Nähe</button>
+  </div>
+  <div class="count" id="count"></div>
   <ul id="list"></ul>
   <footer>
     Kein offizielles Angebot von NDR oder too many tabs. Die Ortszuordnung ist aus den Folgentiteln und -beschreibungen abgeleitet und kann danebenliegen.
-    Kartendaten: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.
+    Karte: OpenFreeMap / OpenStreetMap-Mitwirkende, Fotos: Wikipedia/Wikimedia Commons.
   </footer>
 </aside>
 <div id="map"></div>
 
 <script src="vendor/leaflet.js"></script>
 <script src="vendor/leaflet.markercluster.js"></script>
-<script src="vendor/topojson-client.min.js"></script>
+<script src="vendor/maplibre-gl.js"></script>
+<script src="vendor/leaflet-maplibre-gl.js"></script>
 <script>
 const map = L.map('map', {
   worldCopyJump: true,
   minZoom: 2,
-  maxZoom: 12,
+  maxZoom: 18,
   zoomSnap: 0.5,
   maxBounds: [[-85, -400], [85, 400]],
 }).setView([30, 10], 2);
 
-// Grundkarte: nur Länderflächen und -grenzen, keine Straßen.
-fetch('vendor/countries-50m.json')
-  .then(r => r.json())
-  .then(topo => {
-    const land = topojson.feature(topo, topo.objects.countries);
-    land.features.forEach(f => unwrapAntimeridian(f.geometry));
-    L.geoJSON(land, {
-      interactive: false,
-      style: { color: getCss('--border'), weight: 0.6, fillColor: getCss('--land'), fillOpacity: 1 },
-    }).addTo(map).bringToBack();
-  });
+// Grundkarte: OpenFreeMap (Vektorkacheln, kostenlos, ohne API-Key) – Städte ab mittlerem Zoom,
+// Straßen erst beim Reinzoomen.
+const base = L.maplibreGL({
+  style: 'https://tiles.openfreemap.org/styles/liberty',
+  attribution: '<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank">OpenMapTiles</a> Daten © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>-Mitwirkende',
+}).addTo(map);
 
-// Länder über die Datumsgrenze (Russland, Fidschi …) würden sonst als Streifen quer über die
-// Karte gezeichnet: Längengrade innerhalb eines Rings fortlaufend machen statt bei ±180 zu springen.
-function unwrapAntimeridian(geom) {
-  if (!geom) return;
-  const polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.type === 'MultiPolygon' ? geom.coordinates : [];
-  for (const poly of polys) for (const ring of poly) {
-    for (let i = 1; i < ring.length; i++) {
-      const d = ring[i][0] - ring[i - 1][0];
-      if (d > 180) ring[i][0] -= 360;
-      else if (d < -180) ring[i][0] += 360;
+// Beschriftungen auf Deutsch, falls OSM einen deutschen Namen kennt („Wien“ statt „Vienna“).
+base.getMaplibreMap().once('load', function () {
+  for (const layer of this.getStyle().layers) {
+    if (layer.type !== 'symbol') continue;
+    const field = JSON.stringify(this.getLayoutProperty(layer.id, 'text-field') || '');
+    if (field.includes('name')) {
+      this.setLayoutProperty(layer.id, 'text-field', ['coalesce', ['get', 'name:de'], ['get', 'name']]);
     }
   }
-}
-
-function getCss(name) {
-  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-}
+});
 
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmtDate = iso => new Date(iso + 'T12:00:00').toLocaleDateString('de-DE', { day: 'numeric', month: 'short', year: 'numeric' });
+const slug = s => s.toLowerCase()
+  .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
+  .normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+// Der zweite Tab der Folge (z. B. „lugner city / wiener zentralfriedhof“) wird als Hintergrund-Tab angedeutet.
+function otherTabs(p) {
+  return p.episode.title.replace(/\s+[–-]\s+mit .*$/i, '').split(' / ')
+    .map(t => t.trim()).filter(t => t && t.toLowerCase() !== p.topic.toLowerCase());
+}
+
+function photoHtml(p) {
+  const ph = '<div class="ph">🗺️</div>';
+  if (!p.image) return `<div class="photo">${ph}</div>`;
+  return `<div class="photo">${ph}
+    <img src="${esc(p.image.src)}" alt="${esc(p.name)}" loading="lazy" onerror="this.remove()">
+    <a class="credit" href="${esc(p.image.page)}" target="_blank" rel="noopener">Foto: Wikipedia</a>
+  </div>`;
+}
 
 function popupHtml(p) {
-  return `<div class="pop">
-    <h3>${esc(p.name)}</h3>
-    <div class="region">${esc(p.region)}</div>
-    <div>${esc(p.info)}</div>
-    <div class="ep">🎧 <a href="${esc(p.episode.url)}" target="_blank" rel="noopener">${esc(p.episode.title)}</a><br>
-      <span style="color:var(--muted)">${fmtDate(p.episode.date)} · Tab: ${esc(p.topic)}</span></div>
-    <div class="visit">🧭 ${esc(p.visit)}</div>
-    ${p.uncertain ? '<div class="warn">Zuordnung oder Lage ist nicht ganz sicher.</div>' : ''}
-  </div>`;
+  const gmaps = `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`;
+  const ghost = otherTabs(p).slice(0, 1).map(t =>
+    `<div class="tab ghost"><span class="fav"></span><span>${esc(t)}</span></div>`).join('');
+  return `
+    <div class="titlebar">
+      <div class="lights"><i></i><i></i><i></i></div>
+      <div class="tab active"><span class="fav"></span><span>${esc(p.topic)}</span></div>
+      ${ghost}
+    </div>
+    <div class="addressbar">
+      <span class="nav">←→⟳</span>
+      <span class="url">toomanytabs://<b>${esc(slug(p.name))}</b></span>
+    </div>
+    ${photoHtml(p)}
+    <div class="page">
+      <h3>${esc(p.name)}</h3>
+      <div class="region">${esc(p.region)}</div>
+      <div>${esc(p.info)}</div>
+      <a class="ep" href="${esc(p.episode.url)}" target="_blank" rel="noopener">
+        🎧 <b>${esc(p.episode.title)}</b>
+        <small>${fmtDate(p.episode.date)}</small>
+      </a>
+      <div class="visit">🧭 ${esc(p.visit)}</div>
+      ${p.uncertain ? '<div class="warn">Zuordnung oder Lage ist nicht ganz sicher.</div>' : ''}
+      <div class="actions">
+        <a class="primary" href="${gmaps}" target="_blank" rel="noopener">📍 Google Maps</a>
+        <a class="secondary" href="${esc(p.episode.url)}" target="_blank" rel="noopener">▶ Folge</a>
+      </div>
+    </div>`;
 }
 
 const cluster = L.markerClusterGroup({
@@ -183,14 +304,14 @@ const cluster = L.markerClusterGroup({
   maxClusterRadius: 40,
   iconCreateFunction: c => {
     const n = c.getChildCount();
-    const size = n < 5 ? 30 : n < 15 ? 36 : 42;
+    const size = n < 5 ? 32 : n < 15 ? 38 : 44;
     return L.divIcon({ html: n, className: 'cluster', iconSize: [size, size] });
   },
 });
 map.addLayer(cluster);
 
 // Echte Marker (statt CircleMarker), damit markercluster zoomToShowLayer funktioniert.
-const dotIcon = L.divIcon({ className: 'dot', iconSize: [16, 16] });
+const dotIcon = L.divIcon({ className: 'dot', iconSize: [22, 22] });
 
 let places = [];
 let userPos = null;
@@ -225,12 +346,15 @@ function render() {
 
   listEl.innerHTML = shown.map(p => `
     <li data-id="${p.id}">
+      <span class="fav"></span>
+      <div class="txt">
+        <div class="name">${esc(p.name)}</div>
+        <div class="meta">${esc(p.region)}</div>
+        <div class="meta">🎧 ${esc(p.episode.title)} · ${fmtDate(p.episode.date)}</div>
+      </div>
       ${userPos ? `<span class="dist">${Math.round(p.dist).toLocaleString('de-DE')} km</span>` : ''}
-      <div class="name">${esc(p.name)}</div>
-      <div class="meta">${esc(p.region)}</div>
-      <div class="meta">🎧 ${esc(p.episode.title)} · ${fmtDate(p.episode.date)}</div>
     </li>`).join('');
-  countEl.textContent = `${shown.length} von ${places.length} Orten`;
+  countEl.textContent = `${shown.length} von ${places.length} Orten · ${shown.length} offene Tabs`;
 }
 
 listEl.addEventListener('click', e => {
@@ -243,7 +367,7 @@ document.getElementById('near').addEventListener('click', () => {
   if (!navigator.geolocation) return alert('Dein Browser unterstützt keine Standortabfrage.');
   navigator.geolocation.getCurrentPosition(pos => {
     userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-    L.circleMarker(userPos, { radius: 6, color: '#fff', weight: 2, fillColor: '#2a6fdb', fillOpacity: 1 })
+    L.circleMarker(userPos, { radius: 7, color: '#fff', weight: 3, fillColor: '#2a6fdb', fillOpacity: 1 })
       .addTo(map).bindTooltip('Du bist hier');
     map.setView(userPos, 6);
     render();
@@ -260,7 +384,7 @@ fetch('data/places.json')
     places.forEach(p => {
       p.haystack = [p.name, p.region, p.topic, p.episode.title, p.info].join(' ').toLowerCase();
       p.marker = L.marker([p.lat, p.lng], { icon: dotIcon, title: p.name, alt: p.name })
-        .bindPopup(popupHtml(p), { maxWidth: 300 });
+        .bindPopup(() => popupHtml(p), { className: 'win', maxWidth: 300, minWidth: 260, autoPanPadding: [20, 20] });
     });
     render();
   })

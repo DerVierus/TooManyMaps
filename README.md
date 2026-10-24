@@ -6,10 +6,10 @@ Inoffizielle Fan-Karte mit Orten aus den Rabbit Holes des Podcasts **too many ta
 
 | Datei | Inhalt |
 |---|---|
-| `index.html` | die komplette Seite (Leaflet, keine Straßenkarte, nur Länderflächen) |
+| `index.html` | die komplette Seite (Leaflet + OpenFreeMap-Vektorkarte, Popups im Browserfenster-Look) |
 | `data/places.json` | alle Orte – hier werden neue Orte ergänzt |
 | `data/review.csv` | alle Folgen mit Entscheidung „auf der Karte ja/nein“ |
-| `vendor/` | Leaflet, Leaflet.markercluster, topojson-client und Natural-Earth-Länder (world-atlas), lokal eingebunden, damit keine externen Server geladen werden |
+| `vendor/` | Leaflet, Leaflet.markercluster, MapLibre GL und das MapLibre-Leaflet-Plugin, lokal eingebunden |
 
 ## Neuen Ort eintragen
 
@@ -26,11 +26,15 @@ In `data/places.json` einen Eintrag anhängen:
  "info": "Ein, zwei eigene Sätze, worum es geht.",
  "visit": "Kann man hin? Museum, frei zugänglich, nicht mehr existent …",
  "uncertain": false,
+ "wiki": "de:Artikelname",
+ "image": { "src": "https://upload.wikimedia.org/…/320px-….jpg", "page": "https://de.wikipedia.org/wiki/…", "article": "…" },
  "episode": { "title": "tab a / tab b", "date": "2026-10-21", "url": "https://www.ndr.de/podcast/…" }
 }
 ```
 
 Koordinaten bekommt man z. B. per Rechtsklick in Google Maps / OpenStreetMap. `uncertain: true` blendet im Popup einen Hinweis ein, dass Zuordnung oder Lage nicht ganz sicher ist.
+
+`image` ist optional: das Vorschaubild des Wikipedia-Artikels (`https://<sprache>.wikipedia.org/api/rest_v1/page/summary/<Artikel>` → `thumbnail.source`). Ohne Bild zeigt das Popup einen bunten Platzhalter.
 
 ## Online stellen (GitHub Pages)
 
@@ -47,4 +51,11 @@ python3 -m http.server
 
 ---
 
-Kein offizielles Angebot von NDR oder too many tabs. Kartendaten: [Natural Earth](https://www.naturalearthdata.com/) (gemeinfrei) über [world-atlas](https://github.com/topojson/world-atlas).
+## Externe Dienste
+
+- **Karte:** [OpenFreeMap](https://openfreemap.org) (kostenlos, ohne API-Key), Daten © [OpenStreetMap](https://www.openstreetmap.org/copyright)-Mitwirkende, [OpenMapTiles](https://www.openmaptiles.org/).
+- **Fotos:** werden direkt von Wikimedia (upload.wikimedia.org) geladen; jedes Bild verlinkt auf seinen Wikipedia-Artikel, wo Urheber:in und Lizenz stehen.
+
+Beim Öffnen der Seite lädt der Browser also Kacheln von OpenFreeMap und Bilder von Wikimedia.
+
+Kein offizielles Angebot von NDR oder too many tabs.
