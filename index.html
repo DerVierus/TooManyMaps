@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>too many maps</title>
+<meta name="description" content="Inoffizielle Fan-Karte: Orte aus den Rabbit Holes des Podcasts too many tabs.">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="vendor/MarkerCluster.css">
+<style>
+  :root {
+    --sea: #dfe7ec;
+    --land: #fbfaf7;
+    --border: #c9c4b8;
+    --ink: #1e1e1e;
+    --muted: #6b6b6b;
+    --accent: #e4572e;
+    --panel: #ffffff;
+    --line: #e7e4dd;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--sea);
+    display: flex;
+  }
+  #map { flex: 1; height: 100%; background: var(--sea); }
+
+  aside {
+    width: 340px; height: 100%;
+    display: flex; flex-direction: column;
+    background: var(--panel);
+    border-right: 1px solid var(--line);
+    z-index: 1000;
+  }
+  header { padding: 16px 16px 10px; border-bottom: 1px solid var(--line); }
+  h1 { margin: 0; font-size: 22px; letter-spacing: -0.02em; }
+  h1 span { color: var(--accent); }
+  .sub { margin: 2px 0 10px; color: var(--muted); font-size: 13px; }
+  .controls { display: flex; gap: 8px; }
+  input[type=search] {
+    flex: 1; min-width: 0;
+    font: inherit; padding: 7px 10px;
+    border: 1px solid var(--line); border-radius: 8px; background: #fafafa;
+  }
+  button {
+    font: inherit; padding: 7px 10px; cursor: pointer;
+    border: 1px solid var(--line); border-radius: 8px; background: #fafafa; color: var(--ink);
+    white-space: nowrap;
+  }
+  button:hover { border-color: var(--accent); }
+  .count { margin-top: 8px; font-size: 12px; color: var(--muted); }
+
+  #list { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
+  #list li {
+    padding: 10px 16px; border-bottom: 1px solid var(--line); cursor: pointer;
+  }
+  #list li:hover, #list li.active { background: #fdf3ef; }
+  #list .name { font-weight: 600; }
+  #list .meta { font-size: 12px; color: var(--muted); }
+  #list .dist { float: right; font-size: 12px; color: var(--accent); }
+
+  footer { padding: 10px 16px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--line); }
+  footer a { color: inherit; }
+
+  /* Popup */
+  .leaflet-popup-content { margin: 14px 16px; font-size: 14px; line-height: 1.45; }
+  .pop h3 { margin: 0 0 2px; font-size: 16px; }
+  .pop .region { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+  .pop .ep { background: #f6f4ef; border-radius: 6px; padding: 6px 8px; margin: 8px 0; font-size: 13px; }
+  .pop .ep a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .pop .visit { font-size: 13px; }
+  .pop .warn { font-size: 11px; color: var(--muted); margin-top: 6px; }
+
+  /* Cluster */
+  .cluster {
+    background: var(--accent); color: #fff; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px;
+    border: 3px solid rgba(255,255,255,.85); box-shadow: 0 1px 4px rgba(0,0,0,.25);
+  }
+  .dot {
+    background: var(--accent); border-radius: 50%;
+    border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  }
+  .leaflet-container { font: inherit; }
+
+  #toggle { display: none; }
+
+  @media (max-width: 720px) {
+    body { flex-direction: column-reverse; }
+    aside { width: 100%; height: auto; max-height: 45%; border-right: 0; border-top: 1px solid var(--line); }
+    aside.collapsed #list, aside.collapsed footer, aside.collapsed .count { display: none; }
+    header { padding: 10px 16px; }
+    h1 { font-size: 18px; display: inline; }
+    .sub { display: none; }
+    .controls { margin-top: 8px; }
+    #toggle { display: inline-block; float: right; padding: 2px 10px; }
+  }
+</style>
+</head>
+<body>
+<aside id="panel">
+  <header>
+    <button id="toggle" aria-label="Liste ein-/ausklappen">Liste</button>
+    <h1>too many <span>maps</span></h1>
+    <p class="sub">Orte aus den Rabbit Holes von <em>too many tabs</em>. Inoffizielle Fan-Karte.</p>
+    <div class="controls">
+      <input id="q" type="search" placeholder="Ort, Land oder Folge suchen …" autocomplete="off">
+      <button id="near" title="Orte nach Entfernung zu deinem Standort sortieren">📍 Nähe</button>
+    </div>
+    <div class="count" id="count"></div>
+  </header>
+  <ul id="list"></ul>
+  <footer>
+    Kein offizielles Angebot von NDR oder too many tabs. Die Ortszuordnung ist aus den Folgentiteln und -beschreibungen abgeleitet und kann danebenliegen.
+    Kartendaten: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.
+  </footer>
+</aside>
+<div id="map"></div>
+
+<script src="vendor/leaflet.js"></script>
+<script src="vendor/leaflet.markercluster.js"></script>
+<script src="vendor/topojson-client.min.js"></script>
+<script>
+const map = L.map('map', {
+  worldCopyJump: true,
+  minZoom: 2,
+  maxZoom: 12,
+  zoomSnap: 0.5,
+  maxBounds: [[-85, -400], [85, 400]],
+}).setView([30, 10], 2);
+
+// Grundkarte: nur Länderflächen und -grenzen, keine Straßen.
+fetch('vendor/countries-50m.json')
+  .then(r => r.json())
+  .then(topo => {
+    const land = topojson.feature(topo, topo.objects.countries);
+    land.features.forEach(f => unwrapAntimeridian(f.geometry));
+    L.geoJSON(land, {
+      interactive: false,
+      style: { color: getCss('--border'), weight: 0.6, fillColor: getCss('--land'), fillOpacity: 1 },
+    }).addTo(map).bringToBack();
+  });
+
+// Länder über die Datumsgrenze (Russland, Fidschi …) würden sonst als Streifen quer über die
+// Karte gezeichnet: Längengrade innerhalb eines Rings fortlaufend machen statt bei ±180 zu springen.
+function unwrapAntimeridian(geom) {
+  if (!geom) return;
+  const polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.type === 'MultiPolygon' ? geom.coordinates : [];
+  for (const poly of polys) for (const ring of poly) {
+    for (let i = 1; i < ring.length; i++) {
+      const d = ring[i][0] - ring[i - 1][0];
+      if (d > 180) ring[i][0] -= 360;
+      else if (d < -180) ring[i][0] += 360;
+    }
+  }
+}
+
+function getCss(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtDate = iso => new Date(iso + 'T12:00:00').toLocaleDateString('de-DE', { day: 'numeric', month: 'short', year: 'numeric' });
+
+function popupHtml(p) {
+  return `<div class="pop">
+    <h3>${esc(p.name)}</h3>
+    <div class="region">${esc(p.region)}</div>
+    <div>${esc(p.info)}</div>
+    <div class="ep">🎧 <a href="${esc(p.episode.url)}" target="_blank" rel="noopener">${esc(p.episode.title)}</a><br>
+      <span style="color:var(--muted)">${fmtDate(p.episode.date)} · Tab: ${esc(p.topic)}</span></div>
+    <div class="visit">🧭 ${esc(p.visit)}</div>
+    ${p.uncertain ? '<div class="warn">Zuordnung oder Lage ist nicht ganz sicher.</div>' : ''}
+  </div>`;
+}
+
+const cluster = L.markerClusterGroup({
+  showCoverageOnHover: false,
+  maxClusterRadius: 40,
+  iconCreateFunction: c => {
+    const n = c.getChildCount();
+    const size = n < 5 ? 30 : n < 15 ? 36 : 42;
+    return L.divIcon({ html: n, className: 'cluster', iconSize: [size, size] });
+  },
+});
+map.addLayer(cluster);
+
+// Echte Marker (statt CircleMarker), damit markercluster zoomToShowLayer funktioniert.
+const dotIcon = L.divIcon({ className: 'dot', iconSize: [16, 16] });
+
+let places = [];
+let userPos = null;
+const listEl = document.getElementById('list');
+const countEl = document.getElementById('count');
+const qEl = document.getElementById('q');
+
+function distKm(a, b) {
+  const R = 6371, rad = Math.PI / 180;
+  const dLat = (b.lat - a.lat) * rad, dLng = (b.lng - a.lng) * rad;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+function focus(p) {
+  cluster.zoomToShowLayer(p.marker, () => p.marker.openPopup());
+  document.querySelectorAll('#list li').forEach(li => li.classList.toggle('active', li.dataset.id == p.id));
+}
+
+function render() {
+  const q = qEl.value.trim().toLowerCase();
+  let shown = places.filter(p => !q || p.haystack.includes(q));
+  if (userPos) {
+    shown.forEach(p => p.dist = distKm(userPos, p));
+    shown.sort((a, b) => a.dist - b.dist);
+  } else {
+    shown.sort((a, b) => b.episode.date.localeCompare(a.episode.date) || a.name.localeCompare(b.name));
+  }
+
+  cluster.clearLayers();
+  cluster.addLayers(shown.map(p => p.marker));
+
+  listEl.innerHTML = shown.map(p => `
+    <li data-id="${p.id}">
+      ${userPos ? `<span class="dist">${Math.round(p.dist).toLocaleString('de-DE')} km</span>` : ''}
+      <div class="name">${esc(p.name)}</div>
+      <div class="meta">${esc(p.region)}</div>
+      <div class="meta">🎧 ${esc(p.episode.title)} · ${fmtDate(p.episode.date)}</div>
+    </li>`).join('');
+  countEl.textContent = `${shown.length} von ${places.length} Orten`;
+}
+
+listEl.addEventListener('click', e => {
+  const li = e.target.closest('li');
+  if (li) focus(places.find(p => p.id == li.dataset.id));
+});
+qEl.addEventListener('input', render);
+
+document.getElementById('near').addEventListener('click', () => {
+  if (!navigator.geolocation) return alert('Dein Browser unterstützt keine Standortabfrage.');
+  navigator.geolocation.getCurrentPosition(pos => {
+    userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+    L.circleMarker(userPos, { radius: 6, color: '#fff', weight: 2, fillColor: '#2a6fdb', fillOpacity: 1 })
+      .addTo(map).bindTooltip('Du bist hier');
+    map.setView(userPos, 6);
+    render();
+  }, () => alert('Standort konnte nicht ermittelt werden.'));
+});
+
+document.getElementById('toggle').addEventListener('click', () =>
+  document.getElementById('panel').classList.toggle('collapsed'));
+
+fetch('data/places.json')
+  .then(r => r.json())
+  .then(data => {
+    places = data;
+    places.forEach(p => {
+      p.haystack = [p.name, p.region, p.topic, p.episode.title, p.info].join(' ').toLowerCase();
+      p.marker = L.marker([p.lat, p.lng], { icon: dotIcon, title: p.name, alt: p.name })
+        .bindPopup(popupHtml(p), { maxWidth: 300 });
+    });
+    render();
+  })
+  .catch(() => {
+    countEl.textContent = 'Daten konnten nicht geladen werden. Seite über einen Webserver öffnen (nicht als Datei).';
+  });
+</script>
+</body>
+</html>

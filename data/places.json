@@ -1,0 +1,1410 @@
+[
+ {
+  "id": 1,
+  "name": "Norrmalmstorg",
+  "region": "Stockholm, Schweden",
+  "lat": 59.3326,
+  "lng": 18.0737,
+  "topic": "stockholm-syndrom",
+  "info": "Beim Banküberfall auf die Kreditbanken am Norrmalmstorg 1973 hielten Geiseln zu ihren Geiselnehmern – daher der Begriff Stockholm-Syndrom.",
+  "visit": "Platz mitten in der Stadt, frei zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "braco / stockholm-syndrom",
+   "date": "2026-10-14",
+   "url": "https://www.ndr.de/podcast/braco-stockholm-syndrom,audio-3534224.html"
+  }
+ },
+ {
+  "id": 2,
+  "name": "Straße von Gibraltar",
+  "region": "Spanien / Marokko",
+  "lat": 35.97,
+  "lng": -5.6,
+  "topic": "atlantropa",
+  "info": "Herman Sörgel plante ab 1928 einen Staudamm quer durch die Meerenge, um das Mittelmeer abzusenken und Europa und Afrika zu verbinden.",
+  "visit": "Nie gebaut – Blick über die Meerenge z. B. von Tarifa oder Gibraltar.",
+  "uncertain": false,
+  "episode": {
+   "title": "atlantropa / sr flohmarkt",
+   "date": "2026-10-07",
+   "url": "https://www.ndr.de/podcast/atlantropa-sr-flohmarkt,audio-3520020.html"
+  }
+ },
+ {
+  "id": 3,
+  "name": "Kloster Windberg / Apoig",
+  "region": "Bayerischer Wald, Deutschland",
+  "lat": 48.9425,
+  "lng": 12.746,
+  "topic": "mühlhiasl",
+  "info": "Der „Mühlhiasl“ war Müller an der Klostermühle Apoig bei Windberg; seine düsteren Prophezeiungen kursieren bis heute.",
+  "visit": "Kloster Windberg ist zu besichtigen, Wanderwege in der Umgebung.",
+  "uncertain": false,
+  "episode": {
+   "title": "showassistentinnen / mühlhiasl – mit @raverresi",
+   "date": "2026-09-30",
+   "url": "https://www.ndr.de/podcast/showassistentinnen-muehlhiasl-mit-raverresi,audio-3506324.html"
+  }
+ },
+ {
+  "id": 4,
+  "name": "Palais Idéal du Facteur Cheval",
+  "region": "Hauterives, Frankreich",
+  "lat": 45.2558,
+  "lng": 5.0281,
+  "topic": "palast des postboten",
+  "info": "Postbote Ferdinand Cheval baute 33 Jahre lang aus Steinen, die er auf seiner Tour sammelte, einen fantastischen Palast.",
+  "visit": "Museum, ganzjährig geöffnet (Eintritt).",
+  "uncertain": false,
+  "episode": {
+   "title": "älteste boxbude / palast des postboten",
+   "date": "2026-09-22",
+   "url": "https://www.ndr.de/podcast/aelteste-boxbude-palast-des-postboten,audio-3492486.html"
+  }
+ },
+ {
+  "id": 5,
+  "name": "Dollywood",
+  "region": "Pigeon Forge, Tennessee, USA",
+  "lat": 35.7955,
+  "lng": -83.5307,
+  "topic": "dollywood",
+  "info": "Der Freizeitpark von Country-Legende Dolly Parton in den Smoky Mountains.",
+  "visit": "Freizeitpark, saisonal geöffnet.",
+  "uncertain": false,
+  "episode": {
+   "title": "sonnenfinsternis 1999 / dollywood",
+   "date": "2026-09-01",
+   "url": "https://www.ndr.de/podcast/sonnenfinsternis-1999-dollywood,audio-3451486.html"
+  }
+ },
+ {
+  "id": 6,
+  "name": "Paris (Paris-Syndrom)",
+  "region": "Paris, Frankreich",
+  "lat": 48.8566,
+  "lng": 2.3522,
+  "topic": "städte-syndrome",
+  "info": "Das Paris-Syndrom: Reisende, vor allem aus Japan, erleiden einen Schock, weil Paris nicht dem Postkartenbild entspricht.",
+  "visit": "Welches Syndrom genau besprochen wurde, steht nicht in der Folgenbeschreibung.",
+  "uncertain": true,
+  "episode": {
+   "title": "camp david / städte-syndrome",
+   "date": "2026-07-22",
+   "url": "https://www.ndr.de/podcast/camp-david-staedte-syndrome,audio-3364950.html"
+  }
+ },
+ {
+  "id": 7,
+  "name": "Jerusalem (Jerusalem-Syndrom)",
+  "region": "Jerusalem",
+  "lat": 31.7767,
+  "lng": 35.2345,
+  "topic": "städte-syndrome",
+  "info": "Beim Jerusalem-Syndrom halten sich Besucher plötzlich für biblische Figuren.",
+  "visit": "Welches Syndrom genau besprochen wurde, steht nicht in der Folgenbeschreibung.",
+  "uncertain": true,
+  "episode": {
+   "title": "camp david / städte-syndrome",
+   "date": "2026-07-22",
+   "url": "https://www.ndr.de/podcast/camp-david-staedte-syndrome,audio-3364950.html"
+  }
+ },
+ {
+  "id": 8,
+  "name": "Florenz (Stendhal-Syndrom)",
+  "region": "Florenz, Italien",
+  "lat": 43.7686,
+  "lng": 11.2623,
+  "topic": "städte-syndrome",
+  "info": "Stendhal wurde 1817 in Santa Croce von der Kunst überwältigt – Schwindel und Herzrasen vor Kunstwerken heißen seitdem Stendhal-Syndrom.",
+  "visit": "Welches Syndrom genau besprochen wurde, steht nicht in der Folgenbeschreibung.",
+  "uncertain": true,
+  "episode": {
+   "title": "camp david / städte-syndrome",
+   "date": "2026-07-22",
+   "url": "https://www.ndr.de/podcast/camp-david-staedte-syndrome,audio-3364950.html"
+  }
+ },
+ {
+  "id": 9,
+  "name": "World Trade Center",
+  "region": "New York, USA",
+  "lat": 40.7115,
+  "lng": -74.0134,
+  "topic": "drahtseilmann",
+  "info": "Philippe Petit balancierte 1974 ohne Sicherung auf einem Drahtseil zwischen den Twin Towers.",
+  "visit": "Heute steht dort das 9/11 Memorial & Museum.",
+  "uncertain": false,
+  "episode": {
+   "title": "drahtseilmann / newtopia",
+   "date": "2026-07-15",
+   "url": "https://www.ndr.de/podcast/drahtseilmann-newtopia,audio-3357806.html"
+  }
+ },
+ {
+  "id": 10,
+  "name": "Newtopia-Gelände",
+  "region": "Königs Wusterhausen, Brandenburg",
+  "lat": 52.3,
+  "lng": 13.63,
+  "topic": "newtopia",
+  "info": "Sat.1 baute 2015 im Kiefernwald ein abgeschottetes Gelände für das „größte TV-Experiment aller Zeiten“ – nach wenigen Monaten wurde es abgesetzt.",
+  "visit": "Ehemaliger Drehort, nicht als Ausflugsziel erschlossen (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "drahtseilmann / newtopia",
+   "date": "2026-07-15",
+   "url": "https://www.ndr.de/podcast/drahtseilmann-newtopia,audio-3357806.html"
+  }
+ },
+ {
+  "id": 11,
+  "name": "Disney's America (geplant)",
+  "region": "Haymarket, Virginia, USA",
+  "lat": 38.8126,
+  "lng": -77.6366,
+  "topic": "disney's america",
+  "info": "Disney plante hier in den 90ern einen Freizeitpark zur US-Geschichte – nach heftigen Protesten wurde er nie gebaut.",
+  "visit": "Nie gebaut – nur die Gegend lässt sich besuchen.",
+  "uncertain": false,
+  "episode": {
+   "title": "disney‘s america / modelland",
+   "date": "2026-07-01",
+   "url": "https://www.ndr.de/podcast/disneys-america-modelland,audio-3330602.html"
+  }
+ },
+ {
+  "id": 12,
+  "name": "Konnersreuth",
+  "region": "Oberpfalz, Deutschland",
+  "lat": 49.987,
+  "lng": 12.2,
+  "topic": "resl von konnersreuth",
+  "info": "Therese Neumann („Resl“) soll Stigmata getragen und jahrzehntelang ohne Nahrung gelebt haben.",
+  "visit": "Grab und Gedenkstätten im Ort.",
+  "uncertain": false,
+  "episode": {
+   "title": "unfreiwilliger aquanaut / resl von konnersreuth",
+   "date": "2026-06-10",
+   "url": "https://www.ndr.de/podcast/unfreiwilliger-aquanaut-resl-von-konnersreuth,audio-3289730.html"
+  }
+ },
+ {
+  "id": 13,
+  "name": "Sea Life Oberhausen",
+  "region": "Oberhausen, Deutschland",
+  "lat": 51.493,
+  "lng": 6.8823,
+  "topic": "krake paul",
+  "info": "Hier lebte Krake Paul, der bei der WM 2010 alle Spiele der deutschen Elf richtig „tippte“.",
+  "visit": "Aquarium, geöffnet; Paul hat dort ein Denkmal.",
+  "uncertain": false,
+  "episode": {
+   "title": "krake paul / explodierende tiere – mit @ninachuba und @hitzemannn",
+   "date": "2026-05-27",
+   "url": "https://www.ndr.de/podcast/krake-paul-explodierende-tiere-mit-ninachuba-und-hitzemannn,audio-3266712.html"
+  }
+ },
+ {
+  "id": 14,
+  "name": "Exploding Whale Memorial Park",
+  "region": "Florence, Oregon, USA",
+  "lat": 43.9826,
+  "lng": -124.1101,
+  "topic": "explodierende tiere",
+  "info": "1970 sprengte man hier einen gestrandeten Pottwal – die Walstücke regneten auf die Zuschauer.",
+  "visit": "Kleiner Park, frei zugänglich. Ob genau dieser Wal vorkommt, verrät die Beschreibung nicht.",
+  "uncertain": true,
+  "episode": {
+   "title": "krake paul / explodierende tiere – mit @ninachuba und @hitzemannn",
+   "date": "2026-05-27",
+   "url": "https://www.ndr.de/podcast/krake-paul-explodierende-tiere-mit-ninachuba-und-hitzemannn,audio-3266712.html"
+  }
+ },
+ {
+  "id": 15,
+  "name": "Lugner City",
+  "region": "Wien, Österreich",
+  "lat": 48.2009,
+  "lng": 16.3383,
+  "topic": "lugner city",
+  "info": "Das Einkaufszentrum des verstorbenen Baumeisters und Society-Löwen Richard „Mörtel“ Lugner.",
+  "visit": "Einkaufszentrum, normal geöffnet.",
+  "uncertain": false,
+  "episode": {
+   "title": "lugner city / wiener zentralfriedhof",
+   "date": "2026-05-20",
+   "url": "https://www.ndr.de/podcast/lugner-city-wiener-zentralfriedhof,audio-3259802.html"
+  }
+ },
+ {
+  "id": 16,
+  "name": "Wiener Zentralfriedhof",
+  "region": "Wien, Österreich",
+  "lat": 48.1517,
+  "lng": 16.4406,
+  "topic": "wiener zentralfriedhof",
+  "info": "Einer der größten Friedhöfe Europas, mit Ehrengräbern von Beethoven, Schubert, Falco und vielen mehr.",
+  "visit": "Frei zugänglich, Folge wurde live in Wien aufgenommen.",
+  "uncertain": false,
+  "episode": {
+   "title": "lugner city / wiener zentralfriedhof",
+   "date": "2026-05-20",
+   "url": "https://www.ndr.de/podcast/lugner-city-wiener-zentralfriedhof,audio-3259802.html"
+  }
+ },
+ {
+  "id": 17,
+  "name": "Wismarbucht (Buckelwal)",
+  "region": "Mecklenburg-Vorpommern, Deutschland",
+  "lat": 53.935,
+  "lng": 11.43,
+  "topic": "der wal",
+  "info": "Im Frühjahr 2026 strandete ein Buckelwal erst vor Niendorf und dann in der Wismarbucht vor Poel – ein wochenlanges Rettungsdrama.",
+  "visit": "Ostseeküste, frei zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "der wal / michael press tour",
+   "date": "2026-04-29",
+   "url": "https://www.ndr.de/podcast/der-wal-michael-press-tour,audio-3240374.html"
+  }
+ },
+ {
+  "id": 18,
+  "name": "Ngogo, Kibale-Nationalpark",
+  "region": "Uganda",
+  "lat": 0.5,
+  "lng": 30.4,
+  "topic": "schimpansenkrieg",
+  "info": "Die riesige Ngogo-Schimpansengruppe hat sich gespalten und führt seit Jahren einen tödlichen „Bürgerkrieg“.",
+  "visit": "Nationalpark, Schimpansen-Trekking möglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "jenseitskontakte / schimpansenkrieg – mit @jochenschropp",
+   "date": "2026-04-22",
+   "url": "https://www.ndr.de/podcast/jenseitskontakte-schimpansenkrieg-mit-jochenschropp,audio-3233172.html"
+  }
+ },
+ {
+  "id": 19,
+  "name": "Unschlittplatz",
+  "region": "Nürnberg, Deutschland",
+  "lat": 49.4527,
+  "lng": 11.0718,
+  "topic": "kaspar hauser",
+  "info": "Hier tauchte 1828 der rätselhafte Findling Kaspar Hauser auf.",
+  "visit": "Platz in der Altstadt, Gedenktafel.",
+  "uncertain": false,
+  "episode": {
+   "title": "balloon boy / kaspar hauser",
+   "date": "2026-04-15",
+   "url": "https://www.ndr.de/podcast/balloon-boy-kaspar-hauser,audio-3225994.html"
+  }
+ },
+ {
+  "id": 20,
+  "name": "Hofgarten Ansbach",
+  "region": "Ansbach, Deutschland",
+  "lat": 49.303,
+  "lng": 10.574,
+  "topic": "kaspar hauser",
+  "info": "Im Ansbacher Hofgarten wurde Kaspar Hauser 1833 tödlich niedergestochen; Grab auf dem Stadtfriedhof.",
+  "visit": "Gedenkstein im Hofgarten, Ausstellung im Markgrafenmuseum.",
+  "uncertain": false,
+  "episode": {
+   "title": "balloon boy / kaspar hauser",
+   "date": "2026-04-15",
+   "url": "https://www.ndr.de/podcast/balloon-boy-kaspar-hauser,audio-3225994.html"
+  }
+ },
+ {
+  "id": 21,
+  "name": "St. Kilda (Hirta)",
+  "region": "Äußere Hebriden, Schottland",
+  "lat": 57.8137,
+  "lng": -8.5703,
+  "topic": "st. kilda",
+  "info": "Die einsamste Insel Großbritanniens – 1930 ließen sich die letzten Bewohner evakuieren.",
+  "visit": "Per Bootstour im Sommer erreichbar (wetterabhängig).",
+  "uncertain": false,
+  "episode": {
+   "title": "st. kilda / teppichmänner",
+   "date": "2026-02-18",
+   "url": "https://www.ndr.de/podcast/st-kilda-teppichmanner,audio-419266.html"
+  }
+ },
+ {
+  "id": 22,
+  "name": "Rösrath",
+  "region": "Nordrhein-Westfalen, Deutschland",
+  "lat": 50.895,
+  "lng": 7.183,
+  "topic": "rösrath",
+  "info": "Caros Heimatstadt bei Köln – mit allem, was man darüber wissen muss.",
+  "visit": "Kleinstadt im Bergischen Land.",
+  "uncertain": false,
+  "episode": {
+   "title": "rösrath / aschaffenburg",
+   "date": "2025-11-12",
+   "url": "https://www.ndr.de/podcast/roesrath-aschaffenburg,audio-327148.html"
+  }
+ },
+ {
+  "id": 23,
+  "name": "Aschaffenburg",
+  "region": "Bayern, Deutschland",
+  "lat": 49.974,
+  "lng": 9.149,
+  "topic": "aschaffenburg",
+  "info": "Miguels Heimatstadt am Main, inklusive Schloss Johannisburg und Pompejanum.",
+  "visit": "Stadt mit Schloss, gut per Bahn erreichbar.",
+  "uncertain": false,
+  "episode": {
+   "title": "rösrath / aschaffenburg",
+   "date": "2025-11-12",
+   "url": "https://www.ndr.de/podcast/roesrath-aschaffenburg,audio-327148.html"
+  }
+ },
+ {
+  "id": 24,
+  "name": "Action Park",
+  "region": "Vernon, New Jersey, USA",
+  "lat": 41.1897,
+  "lng": -74.515,
+  "topic": "action park",
+  "info": "Der „gefährlichste Freizeitpark der Welt“ – berüchtigt für Loopingrutschen und viele Verletzte.",
+  "visit": "Heute Mountain Creek Waterpark.",
+  "uncertain": false,
+  "episode": {
+   "title": "celebrity number 6 / action park",
+   "date": "2025-11-05",
+   "url": "https://www.ndr.de/podcast/celebrity-number-6-action-park,audio-320894.html"
+  }
+ },
+ {
+  "id": 25,
+  "name": "Uitenhage (Kariega)",
+  "region": "Südafrika",
+  "lat": -33.758,
+  "lng": 25.397,
+  "topic": "jack der pavian",
+  "info": "Pavian Jack arbeitete hier im 19. Jahrhundert jahrelang als Assistent eines beinamputierten Bahnwärters – und stellte die Signale.",
+  "visit": "Stadt bei Gqeberha; Jacks Schädel liegt im Albany Museum, Makhanda.",
+  "uncertain": false,
+  "episode": {
+   "title": "jack der pavian / paralympics betrug – mit @kummer_official",
+   "date": "2025-10-22",
+   "url": "https://www.ndr.de/podcast/jack-der-pavian-paralympics-betrug-mit-kummerofficial,audio-310816.html"
+  }
+ },
+ {
+  "id": 26,
+  "name": "Jagdschloss Grunewald",
+  "region": "Berlin, Deutschland",
+  "lat": 52.4691,
+  "lng": 13.2582,
+  "topic": "kotze-affäre",
+  "info": "Nach einer Sexparty der Hofgesellschaft im Jagdschloss 1891 kursierten anonyme, obszöne Briefe – Skandal im Kaiserreich.",
+  "visit": "Museum (Schloss am Grunewaldsee), saisonal geöffnet.",
+  "uncertain": false,
+  "episode": {
+   "title": "nasubi / kotze-affäre",
+   "date": "2025-10-08",
+   "url": "https://www.ndr.de/podcast/nasubi-kotze-affaere,audio-300946.html"
+  }
+ },
+ {
+  "id": 27,
+  "name": "Latumer See",
+  "region": "Meerbusch, Deutschland",
+  "lat": 51.296,
+  "lng": 6.672,
+  "topic": "kaiman sammy",
+  "info": "1994 büxte Brillenkaiman Sammy hier aus – wochenlange Suche, das Sommerloch-Tier schlechthin.",
+  "visit": "Baggersee, Ufer zugänglich (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "sommer wetten dass / kaiman sammy",
+   "date": "2025-07-16",
+   "url": "https://www.ndr.de/podcast/sommer-wetten-dass-kaiman-sammy,audio-239468.html"
+  }
+ },
+ {
+  "id": 28,
+  "name": "Großer Brombachsee",
+  "region": "Fränkisches Seenland, Deutschland",
+  "lat": 49.13,
+  "lng": 10.92,
+  "topic": "wels",
+  "info": "Ein aggressiver Wels attackierte hier 2023 Badegäste und wurde schließlich von der Polizei erschossen.",
+  "visit": "Badesee mit Stränden.",
+  "uncertain": false,
+  "episode": {
+   "title": "wels / bridalplasty – mit @arnjarrr",
+   "date": "2025-07-02",
+   "url": "https://www.ndr.de/podcast/wels-bridalplasty-mit-arnjarrr,audio-229910.html"
+  }
+ },
+ {
+  "id": 29,
+  "name": "Disneyland",
+  "region": "Anaheim, Kalifornien, USA",
+  "lat": 33.8145,
+  "lng": -117.9187,
+  "topic": "it's a small world",
+  "info": "Miguels Lieblingsfahrt „It’s a Small World“ – mit Ohrwurmgarantie seit der Weltausstellung 1964.",
+  "visit": "Freizeitpark (Eintritt).",
+  "uncertain": false,
+  "episode": {
+   "title": "simlisch / it's a small world",
+   "date": "2025-06-25",
+   "url": "https://www.ndr.de/podcast/simlisch-its-a-small-world,audio-224572.html"
+  }
+ },
+ {
+  "id": 30,
+  "name": "Eastland County Courthouse",
+  "region": "Eastland, Texas, USA",
+  "lat": 32.4015,
+  "lng": -98.8176,
+  "topic": "eingemauerte echse",
+  "info": "Hornechse „Old Rip“ soll 31 Jahre eingemauert im Grundstein des Gerichtsgebäudes überlebt haben.",
+  "visit": "Old Rip liegt im Glassarg im Courthouse.",
+  "uncertain": false,
+  "episode": {
+   "title": "eingemauerte echse / pee-wee",
+   "date": "2025-06-11",
+   "url": "https://www.ndr.de/podcast/eingemauerte-echse-pee-wee,audio1890258.html"
+  }
+ },
+ {
+  "id": 31,
+  "name": "Moholoholo Wildlife Rehab Centre",
+  "region": "Limpopo, Südafrika",
+  "lat": -24.517,
+  "lng": 30.903,
+  "topic": "honigdachs",
+  "info": "Heimat des legendären Honigdachses Stoffel, der aus jedem Gehege ausbricht.",
+  "visit": "Auffangstation mit Führungen.",
+  "uncertain": false,
+  "episode": {
+   "title": "honigdachs / wundertreppe",
+   "date": "2025-05-07",
+   "url": "https://www.ndr.de/podcast/honigdachs-wundertreppe,audio1866734.html"
+  }
+ },
+ {
+  "id": 32,
+  "name": "Loretto Chapel",
+  "region": "Santa Fe, New Mexico, USA",
+  "lat": 35.6852,
+  "lng": -105.9374,
+  "topic": "wundertreppe",
+  "info": "Die „Wundertreppe“: eine Wendeltreppe ohne Mittelstütze, gebaut von einem unbekannten Zimmermann.",
+  "visit": "Kapelle, gegen Eintritt zu besichtigen.",
+  "uncertain": false,
+  "episode": {
+   "title": "honigdachs / wundertreppe",
+   "date": "2025-05-07",
+   "url": "https://www.ndr.de/podcast/honigdachs-wundertreppe,audio1866734.html"
+  }
+ },
+ {
+  "id": 33,
+  "name": "Serpuchow-15",
+  "region": "Region Moskau, Russland",
+  "lat": 55.0683,
+  "lng": 37.0414,
+  "topic": "otl petrow",
+  "info": "Im Bunker meldete das Frühwarnsystem 1983 einen US-Raketenangriff – Stanislaw Petrow hielt es für einen Fehlalarm und verhinderte so womöglich einen Atomkrieg.",
+  "visit": "Militärgelände, nicht zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "katy im all / otl petrow",
+   "date": "2025-04-23",
+   "url": "https://www.ndr.de/podcast/katy-im-all-otl-petrow,audio1858300.html"
+  }
+ },
+ {
+  "id": 34,
+  "name": "Godalming",
+  "region": "Surrey, England",
+  "lat": 51.1858,
+  "lng": -0.6148,
+  "topic": "kaninchengeburt",
+  "info": "Mary Toft behauptete 1726, hier Kaninchen geboren zu haben – und täuschte damit sogar Ärzte des Königs.",
+  "visit": "Kleinstadt, Godalming Museum.",
+  "uncertain": false,
+  "episode": {
+   "title": "unheilig / kaninchengeburt",
+   "date": "2025-03-19",
+   "url": "https://www.ndr.de/podcast/unheilig-kaninchengeburt,audio1835072.html"
+  }
+ },
+ {
+  "id": 35,
+  "name": "Küste bei Plouarzel",
+  "region": "Bretagne, Frankreich",
+  "lat": 48.437,
+  "lng": -4.797,
+  "topic": "garfield phones",
+  "info": "Jahrzehntelang wurden hier Garfield-Telefone angespült – die Quelle war ein verlorener Container in einer Felshöhle.",
+  "visit": "Küstenwanderweg (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "maria callas / garfield phones",
+   "date": "2025-03-12",
+   "url": "https://www.ndr.de/podcast/maria-callas-garfield-phones,audio1831118.html"
+  }
+ },
+ {
+  "id": 36,
+  "name": "Zoo Zajac",
+  "region": "Duisburg, Deutschland",
+  "lat": 51.506,
+  "lng": 6.791,
+  "topic": "zoo zajac",
+  "info": "Laut Guinness-Buch das größte Zoofachgeschäft der Welt.",
+  "visit": "Geschäft, normal geöffnet.",
+  "uncertain": false,
+  "episode": {
+   "title": "zoo zajac / pokémon go",
+   "date": "2025-02-26",
+   "url": "https://www.ndr.de/podcast/zoo-zajac-pokemon-go,audio1821606.html"
+  }
+ },
+ {
+  "id": 37,
+  "name": "Gouffre de Scarasson",
+  "region": "Seealpen, Frankreich/Italien",
+  "lat": 44.155,
+  "lng": 7.7,
+  "topic": "höhlensilvester",
+  "info": "Höhlenforscher Michel Siffre lebte 1962 zwei Monate ohne Uhr in dieser Höhle – und verlor jedes Zeitgefühl.",
+  "visit": "Höhle im Marguareis-Massiv, nur für erfahrene Speläolog:innen (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "bräuche / höhlensilvester",
+   "date": "2024-12-25",
+   "url": "https://www.ndr.de/podcast/braeuche-hoehlensilvester,audio1781458.html"
+  }
+ },
+ {
+  "id": 38,
+  "name": "Borkum",
+  "region": "Ostfriesische Inseln, Deutschland",
+  "lat": 53.5895,
+  "lng": 6.665,
+  "topic": "klaasohm",
+  "info": "Beim Klaasohm-Brauch am 5. Dezember jagen verkleidete Männer über die Insel – und schlugen Frauen lange mit Kuhhörnern.",
+  "visit": "Nordseeinsel, per Fähre erreichbar.",
+  "uncertain": false,
+  "episode": {
+   "title": "klaasohm / schnupfvereine",
+   "date": "2024-12-11",
+   "url": "https://www.ndr.de/podcast/klaasohm-schnupfvereine,audio1772408.html"
+  }
+ },
+ {
+  "id": 39,
+  "name": "Shambala Preserve",
+  "region": "Acton, Kalifornien, USA",
+  "lat": 34.47,
+  "lng": -118.24,
+  "topic": "roar",
+  "info": "Auf diesem Gelände drehte Tippi Hedren mit echten Löwen „Roar“ – den wohl gefährlichsten Film aller Zeiten.",
+  "visit": "Großkatzen-Schutzgebiet, nur bei Führungen (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "roar / anatomy of lies",
+   "date": "2024-11-27",
+   "url": "https://www.ndr.de/media/roar-anatomy-of-lies,audio1762058.html"
+  }
+ },
+ {
+  "id": 40,
+  "name": "Grover's Mill",
+  "region": "West Windsor, New Jersey, USA",
+  "lat": 40.3126,
+  "lng": -74.606,
+  "topic": "war of the worlds hörspiel",
+  "info": "Hier „landeten“ 1938 die Marsianer in Orson Welles’ Radio-Hörspiel.",
+  "visit": "Denkmal im Van Nest Park.",
+  "uncertain": false,
+  "episode": {
+   "title": "war of the worlds hörspiel / gef, die sprechende manguste",
+   "date": "2024-10-30",
+   "url": "https://www.ndr.de/media/war-of-the-worlds-hoerspiel-gef-die-sprechende-manguste,audio1744352.html"
+  }
+ },
+ {
+  "id": 41,
+  "name": "Doarlish Cashen",
+  "region": "Isle of Man",
+  "lat": 54.177,
+  "lng": -4.723,
+  "topic": "gef, die sprechende manguste",
+  "info": "Auf diesem einsamen Hof soll in den 1930ern Gef gelebt haben, eine sprechende Manguste.",
+  "visit": "Hof steht nicht mehr, die Landschaft schon (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "war of the worlds hörspiel / gef, die sprechende manguste",
+   "date": "2024-10-30",
+   "url": "https://www.ndr.de/media/war-of-the-worlds-hoerspiel-gef-die-sprechende-manguste,audio1744352.html"
+  }
+ },
+ {
+  "id": 42,
+  "name": "Floreana",
+  "region": "Galápagos, Ecuador",
+  "lat": -1.2833,
+  "lng": -90.4333,
+  "topic": "galapagos affäre",
+  "info": "Deutsche Aussteiger und eine selbsternannte „Baronin“ – auf Floreana verschwanden 1934 mehrere Menschen spurlos.",
+  "visit": "Bewohnte Insel, per Boot ab Santa Cruz.",
+  "uncertain": false,
+  "episode": {
+   "title": "galapagos affäre / lotte reiniger",
+   "date": "2024-10-23",
+   "url": "https://www.ndr.de/media/galapagos-affaere-lotte-reiniger,audio1739440.html"
+  }
+ },
+ {
+  "id": 43,
+  "name": "Summit View Cemetery",
+  "region": "Guthrie, Oklahoma, USA",
+  "lat": 35.8846,
+  "lng": -97.411,
+  "topic": "elmer mccurdy",
+  "info": "Zugräuber Elmer McCurdy tourte jahrzehntelang als Mumie durch Jahrmärkte, bevor er 1977 hier begraben wurde.",
+  "visit": "Friedhof, frei zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "elmer mccurdy / mr. blobby",
+   "date": "2024-10-02",
+   "url": "https://www.ndr.de/media/tmt-elmer-mccurdy-mr-blobby,audio1725578.html"
+  }
+ },
+ {
+  "id": 44,
+  "name": "Bernd-das-Brot-Skulptur",
+  "region": "Erfurt, Deutschland",
+  "lat": 50.9783,
+  "lng": 11.029,
+  "topic": "bernd das brot entführung",
+  "info": "2009 wurde die Bernd-Skulptur vor dem Rathaus „entführt“ und erst nach elf Tagen bei Weimar wiedergefunden.",
+  "visit": "Skulptur am Fischmarkt, frei zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "national bible bee / bernd das brot entführung",
+   "date": "2024-09-18",
+   "url": "https://www.ndr.de/media/national-bible-bee-bernd-das-brot-entfuehrung,audio1716676.html"
+  }
+ },
+ {
+  "id": 45,
+  "name": "Panguana",
+  "region": "Peru",
+  "lat": -9.6136,
+  "lng": -74.9356,
+  "topic": "lansa flug 508",
+  "info": "Juliane Koepcke überlebte 1971 als Einzige den Absturz und schlug sich elf Tage durch den Regenwald; heute leitet sie die Forschungsstation.",
+  "visit": "Forschungsstation im Regenwald, nicht touristisch.",
+  "uncertain": false,
+  "episode": {
+   "title": "lansa flug 508 / mumien-auswickel-partys",
+   "date": "2024-08-28",
+   "url": "https://www.ndr.de/media/lansa-flug-508-mumien-auswickel-partys,audio1702562.html"
+  }
+ },
+ {
+  "id": 46,
+  "name": "Sydney Town Hall",
+  "region": "Sydney, Australien",
+  "lat": -33.8732,
+  "lng": 151.2061,
+  "topic": "olympic flame hoax 1956",
+  "info": "Studenten übergaben 1956 eine falsche Olympische Fackel (Unterhose in einer Plumpuddingdose) an den Bürgermeister.",
+  "visit": "Rathaus, frei zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "olympic flame hoax 1956 / dschungelcamp staffel 5",
+   "date": "2024-08-14",
+   "url": "https://www.ndr.de/media/olympic-flame-hoax-1956-dschungelcamp-staffel-5,audio1694336.html"
+  }
+ },
+ {
+  "id": 47,
+  "name": "Tompkins Square Park",
+  "region": "New York, USA",
+  "lat": 40.7265,
+  "lng": -73.9817,
+  "topic": "little germany",
+  "info": "Kleindeutschland in der Lower East Side verschwand nach der General-Slocum-Katastrophe von 1904.",
+  "visit": "Gedenkbrunnen im Park.",
+  "uncertain": false,
+  "episode": {
+   "title": "vergessene wm / little germany",
+   "date": "2024-07-03",
+   "url": "https://www.ndr.de/media/vergessene-wm-little-germany,audio1666870.html"
+  }
+ },
+ {
+  "id": 48,
+  "name": "Estadio Azteca",
+  "region": "Mexiko-Stadt, Mexiko",
+  "lat": 19.3029,
+  "lng": -99.1505,
+  "topic": "vergessene wm",
+  "info": "Die inoffizielle Frauen-WM 1971 – das Finale vor rund 110.000 Zuschauern geriet fast in Vergessenheit.",
+  "visit": "Stadion, Führungen möglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "vergessene wm / little germany",
+   "date": "2024-07-03",
+   "url": "https://www.ndr.de/media/vergessene-wm-little-germany,audio1666870.html"
+  }
+ },
+ {
+  "id": 49,
+  "name": "Funkturm Berlin",
+  "region": "Berlin, Deutschland",
+  "lat": 52.505,
+  "lng": 13.2783,
+  "topic": "fernsehsender paul nipkow",
+  "info": "Ab 1935 sendete hier der Fernsehsender „Paul Nipkow“ – das erste regelmäßige Fernsehprogramm der Welt, NS-Propaganda inklusive.",
+  "visit": "Funkturm mit Aussichtsplattform.",
+  "uncertain": false,
+  "episode": {
+   "title": "erster lockdown / fernsehsender paul nipkow",
+   "date": "2024-06-19",
+   "url": "https://www.ndr.de/media/erster-lockdown-fernsehsender-paul-nipkow,audio1658362.html"
+  }
+ },
+ {
+  "id": 50,
+  "name": "Aschgabat",
+  "region": "Turkmenistan",
+  "lat": 37.9601,
+  "lng": 58.3261,
+  "topic": "turkmenische weltrekorde",
+  "info": "Die weiße Marmorstadt sammelt Guinness-Rekorde: die meisten Marmorgebäude, das größte Riesenrad in einem Gebäude und mehr.",
+  "visit": "Einreise nur mit Visum.",
+  "uncertain": false,
+  "episode": {
+   "title": "turkmenische weltrekorde / nine-month world cruise",
+   "date": "2024-05-29",
+   "url": "https://www.ndr.de/media/turkmenische-weltrekorde-nine-month-cruise,audio1642806.html"
+  }
+ },
+ {
+  "id": 51,
+  "name": "Hollywood",
+  "region": "Los Angeles, Kalifornien, USA",
+  "lat": 34.1341,
+  "lng": -118.3215,
+  "topic": "hollywood",
+  "info": "Filmemacher flohen vor Thomas Edisons Patentansprüchen nach Westen – so entstand Hollywood.",
+  "visit": "Hollywood Sign mit Aussichtspunkten.",
+  "uncertain": false,
+  "episode": {
+   "title": "hollywood / zur party – mit @lukas.alexander.vh",
+   "date": "2024-05-22",
+   "url": "https://www.ndr.de/media/hollywood-zur-party-mit-lukasalexandervh,audio1638772.html"
+  }
+ },
+ {
+  "id": 52,
+  "name": "Beinecke Rare Book Library",
+  "region": "Yale, New Haven, USA",
+  "lat": 41.3114,
+  "lng": -72.9273,
+  "topic": "voynich-manuskript",
+  "info": "Hier liegt das Voynich-Manuskript, das bis heute niemand lesen kann.",
+  "visit": "Bibliothek mit Ausstellungsraum, frei zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "gammler / voynich-manuskript",
+   "date": "2024-05-15",
+   "url": "https://www.ndr.de/media/gammler-voynich-manuskript,audio1633700.html"
+  }
+ },
+ {
+  "id": 53,
+  "name": "Key West",
+  "region": "Florida, USA",
+  "lat": 24.5465,
+  "lng": -81.7867,
+  "topic": "nyad",
+  "info": "Diana Nyad schwamm 2013 mit 64 Jahren ohne Hai-Käfig von Havanna bis hierher.",
+  "visit": "Insel am Ende der Overseas Highway.",
+  "uncertain": false,
+  "episode": {
+   "title": "nyad / stärkste frau deutschlands – mit @ilona_hartmann",
+   "date": "2024-03-13",
+   "url": "https://www.ndr.de/media/nyad-staerkste-frau-deutschlands-mit-ilonahartmann,audio1592050.html"
+  }
+ },
+ {
+  "id": 54,
+  "name": "Coral Castle",
+  "region": "Homestead, Florida, USA",
+  "lat": 25.5003,
+  "lng": -80.4442,
+  "topic": "coral castle",
+  "info": "Edward Leedskalnin baute allein und heimlich eine Anlage aus tonnenschweren Korallenblöcken.",
+  "visit": "Museum, geöffnet (Eintritt).",
+  "uncertain": false,
+  "episode": {
+   "title": "angry german kid / coral castle",
+   "date": "2024-03-06",
+   "url": "https://www.ndr.de/media/angry-german-kid-coral-castle,audio1586980.html"
+  }
+ },
+ {
+  "id": 55,
+  "name": "Denkmal Ubre Blanca",
+  "region": "Nueva Gerona, Isla de la Juventud, Kuba",
+  "lat": 21.885,
+  "lng": -82.805,
+  "topic": "weißer euter von kuba",
+  "info": "Fidel Castros Rekordkuh Ubre Blanca gab über 100 Liter Milch am Tag und bekam eine Marmorstatue.",
+  "visit": "Statue frei zugänglich (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "weißer euter von kuba / mothman",
+   "date": "2024-02-21",
+   "url": "https://www.ndr.de/media/weisse-euter-mothman,audio1576850.html"
+  }
+ },
+ {
+  "id": 56,
+  "name": "Point Pleasant",
+  "region": "West Virginia, USA",
+  "lat": 38.8445,
+  "lng": -82.1371,
+  "topic": "mothman",
+  "info": "Hier wurde 1966/67 der Mothman gesichtet – ein geflügeltes Wesen mit roten Augen.",
+  "visit": "Mothman-Statue, Museum und jährliches Festival.",
+  "uncertain": false,
+  "episode": {
+   "title": "weißer euter von kuba / mothman",
+   "date": "2024-02-21",
+   "url": "https://www.ndr.de/media/weisse-euter-mothman,audio1576850.html"
+  }
+ },
+ {
+  "id": 57,
+  "name": "IKEA Burbank",
+  "region": "Burbank, Kalifornien, USA",
+  "lat": 34.1838,
+  "lng": -118.3118,
+  "topic": "ikea heights",
+  "info": "Die Webserie „IKEA Heights“ wurde heimlich während der Öffnungszeiten in dieser Filiale gedreht.",
+  "visit": "Normales Möbelhaus.",
+  "uncertain": false,
+  "episode": {
+   "title": "ikea heights / rolf die hand",
+   "date": "2024-01-24",
+   "url": "https://www.ndr.de/media/ikea-heights-rolf-die-hand,audio1556754.html"
+  }
+ },
+ {
+  "id": 58,
+  "name": "Mina San José",
+  "region": "bei Copiapó, Chile",
+  "lat": -27.1594,
+  "lng": -70.4978,
+  "topic": "wunder von chile",
+  "info": "2010 waren hier 33 Bergleute 69 Tage verschüttet – und wurden alle gerettet.",
+  "visit": "Gedenkstätte am Minengelände.",
+  "uncertain": false,
+  "episode": {
+   "title": "wunder von chile / überraschung",
+   "date": "2024-01-17",
+   "url": "https://www.ndr.de/media/wunder-von-chile-ueberraschung,audio1551972.html"
+  }
+ },
+ {
+  "id": 59,
+  "name": "Whitechapel",
+  "region": "London, England",
+  "lat": 51.5195,
+  "lng": -0.06,
+  "topic": "fettberge",
+  "info": "2017 fand man in der Kanalisation unter Whitechapel einen 130 Tonnen schweren Fettberg.",
+  "visit": "Ein Stück stellte das Museum of London aus.",
+  "uncertain": false,
+  "episode": {
+   "title": "fettberge / niagara daredevils",
+   "date": "2023-12-13",
+   "url": "https://www.ndr.de/media/fettberge-niagara-devils,audio1528926.html"
+  }
+ },
+ {
+  "id": 60,
+  "name": "Niagarafälle (Horseshoe Falls)",
+  "region": "Kanada / USA",
+  "lat": 43.0779,
+  "lng": -79.0753,
+  "topic": "niagara daredevils",
+  "info": "Seit Annie Edson Taylor 1901 stürzen sich Waghalsige in Fässern die Fälle hinab.",
+  "visit": "Aussichtspunkte und Bootstouren.",
+  "uncertain": false,
+  "episode": {
+   "title": "fettberge / niagara daredevils",
+   "date": "2023-12-13",
+   "url": "https://www.ndr.de/media/fettberge-niagara-devils,audio1528926.html"
+  }
+ },
+ {
+  "id": 61,
+  "name": "King Richard III Visitor Centre",
+  "region": "Leicester, England",
+  "lat": 52.6343,
+  "lng": -1.136,
+  "topic": "parkplatzkönig",
+  "info": "Die Gebeine von Richard III. wurden 2012 unter einem Parkplatz gefunden.",
+  "visit": "Besucherzentrum über der Fundstelle, Grab in der Kathedrale.",
+  "uncertain": false,
+  "episode": {
+   "title": "rossmann-romane / parkplatzkönig",
+   "date": "2023-11-29",
+   "url": "https://www.ndr.de/media/rossmann-romane-parkplatzkoenig,audio1518962.html"
+  }
+ },
+ {
+  "id": 62,
+  "name": "Niederroßla",
+  "region": "bei Apolda, Thüringen",
+  "lat": 51.039,
+  "lng": 11.48,
+  "topic": "miss baba",
+  "info": "Elefantenkuh Miss Baba starb hier 1857 – seitdem feiert das Dorf alle 25 Jahre ein Elefantenfest.",
+  "visit": "Elefantendenkmal im Ort (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "wunderhenne / miss baba",
+   "date": "2023-11-08",
+   "url": "https://www.ndr.de/media/wunderhenne-miss-baba-,audio1503596.html"
+  }
+ },
+ {
+  "id": 63,
+  "name": "Atari-Deponie",
+  "region": "Alamogordo, New Mexico, USA",
+  "lat": 32.879,
+  "lng": -105.961,
+  "topic": "atarifriedhof",
+  "info": "Atari vergrub hier 1983 Tausende unverkaufte „E.T.“-Spiele; 2014 wurden sie ausgegraben.",
+  "visit": "Deponie, nicht zugänglich (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "atarifriedhof / magnus hirschfeld",
+   "date": "2023-10-18",
+   "url": "https://www.ndr.de/media/atarifriedhof-magnus-hirschfeld,audio1489024.html"
+  }
+ },
+ {
+  "id": 64,
+  "name": "Institut für Sexualwissenschaft (ehem.)",
+  "region": "Berlin-Tiergarten",
+  "lat": 52.5187,
+  "lng": 13.366,
+  "topic": "magnus hirschfeld",
+  "info": "Magnus Hirschfelds Institut war weltweit Vorreiter, bis die Nazis es 1933 plünderten.",
+  "visit": "Gedenkstele am Magnus-Hirschfeld-Ufer.",
+  "uncertain": false,
+  "episode": {
+   "title": "atarifriedhof / magnus hirschfeld",
+   "date": "2023-10-18",
+   "url": "https://www.ndr.de/media/atarifriedhof-magnus-hirschfeld,audio1489024.html"
+  }
+ },
+ {
+  "id": 65,
+  "name": "Maison de Monsieur Sax",
+  "region": "Dinant, Belgien",
+  "lat": 50.2599,
+  "lng": 4.9119,
+  "topic": "adolphe sax",
+  "info": "Geburtsort von Adolphe Sax, dem Erfinder des Saxophons, der viele Unfälle überlebte.",
+  "visit": "Kleines Museum, freier Eintritt.",
+  "uncertain": false,
+  "episode": {
+   "title": "tessas geburtstag / adolphe sax mit musik von @lyschkomusik",
+   "date": "2023-09-27",
+   "url": "https://www.ndr.de/media/tessas-geburtstag-adolphe-sax-mit-musik-von-lyschkomusik,audio1474328.html"
+  }
+ },
+ {
+  "id": 66,
+  "name": "Gedenkstätte Berliner Mauer",
+  "region": "Berlin, Deutschland",
+  "lat": 52.5352,
+  "lng": 13.3903,
+  "topic": "berlinmuren",
+  "info": "Objektophilie: Eija-Riitta Berliner-Mauer „heiratete“ 1979 die Berliner Mauer.",
+  "visit": "Gedenkstätte Bernauer Straße, frei zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "berlinmuren / batdance",
+   "date": "2023-09-20",
+   "url": "https://www.ndr.de/media/berlinmuren-batdance,audio1469296.html"
+  }
+ },
+ {
+  "id": 67,
+  "name": "Royal London Hospital Museum",
+  "region": "London, England",
+  "lat": 51.518,
+  "lng": -0.059,
+  "topic": "joseph merrick",
+  "info": "Joseph Merrick, der „Elefantenmensch“, verbrachte seine letzten Jahre im Royal London Hospital.",
+  "visit": "Museum in der ehemaligen Krankenhauskirche (ungefähre Lage).",
+  "uncertain": false,
+  "episode": {
+   "title": "furries / joseph merrick – mit @aminatabelli",
+   "date": "2023-09-13",
+   "url": "https://www.ndr.de/media/furries-joseph-merrick-mit-aminatabelli,audio1464316.html"
+  }
+ },
+ {
+  "id": 68,
+  "name": "Bahlsen",
+  "region": "Hannover, Deutschland",
+  "lat": 52.388,
+  "lng": 9.759,
+  "topic": "tet-stadt",
+  "info": "Die Keks-Dynastie Bahlsen plante eine eigene Idealstadt, die „TET-Stadt“.",
+  "visit": "Nie gebaut – Bahlsen sitzt bis heute in Hannover (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "tet-stadt / pfeilstorch",
+   "date": "2023-08-30",
+   "url": "https://www.ndr.de/media/tet-stadt-pfeilstorch,audio1454654.html"
+  }
+ },
+ {
+  "id": 69,
+  "name": "Zoologische Sammlung Rostock",
+  "region": "Rostock, Deutschland",
+  "lat": 54.088,
+  "lng": 12.134,
+  "topic": "pfeilstorch",
+  "info": "Der Rostocker Pfeilstorch kam 1822 mit einem afrikanischen Pfeil im Hals an – und belegte so den Vogelzug.",
+  "visit": "Ausgestellt in der Zoologischen Sammlung der Uni Rostock.",
+  "uncertain": false,
+  "episode": {
+   "title": "tet-stadt / pfeilstorch",
+   "date": "2023-08-30",
+   "url": "https://www.ndr.de/media/tet-stadt-pfeilstorch,audio1454654.html"
+  }
+ },
+ {
+  "id": 70,
+  "name": "Hafnarfjörður",
+  "region": "Island",
+  "lat": 64.068,
+  "lng": -21.958,
+  "topic": "elfenbeauftragte",
+  "info": "Island nimmt Elfen ernst: Straßenbau wird auch mal um Elfensteine herum geplant.",
+  "visit": "Elfenführungen und Park Hellisgerði.",
+  "uncertain": false,
+  "episode": {
+   "title": "who let the dogs out / elfenbeauftragte",
+   "date": "2023-06-14",
+   "url": "https://www.ndr.de/media/who-let-the-dogs-out-elfenbeauftragte,audio1401470.html"
+  }
+ },
+ {
+  "id": 71,
+  "name": "Public Square",
+  "region": "Cleveland, Ohio, USA",
+  "lat": 41.4995,
+  "lng": -81.6936,
+  "topic": "ballonfest 1986",
+  "info": "Bei „Balloonfest ’86“ stiegen 1,5 Millionen Ballons auf – und lösten ein Chaos aus.",
+  "visit": "Zentraler Platz, frei zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "sirianer / ballonfest 1986",
+   "date": "2023-05-31",
+   "url": "https://www.ndr.de/media/sirianer-ballonfest-1986,audio1391622.html"
+  }
+ },
+ {
+  "id": 72,
+  "name": "Moskauer Zoo",
+  "region": "Moskau, Russland",
+  "lat": 55.7614,
+  "lng": 37.578,
+  "topic": "alligator saturn",
+  "info": "Alligator Saturn überlebte die Bombardierung Berlins und lebte bis 2020 im Moskauer Zoo – angeblich einst Hitlers Haustier.",
+  "visit": "Zoo; Saturn ist heute im Darwin-Museum ausgestopft zu sehen.",
+  "uncertain": false,
+  "episode": {
+   "title": "bundesjugendspiele / alligator saturn",
+   "date": "2023-05-24",
+   "url": "https://www.ndr.de/media/bundesjugendspiele-alligator-saturn-,audio1387150.html"
+  }
+ },
+ {
+  "id": 73,
+  "name": "Júzcar",
+  "region": "Andalusien, Spanien",
+  "lat": 36.6247,
+  "lng": -5.1734,
+  "topic": "schlumpfdorf",
+  "info": "Für den Schlumpf-Film wurde das ganze Dorf 2011 blau gestrichen – und blieb blau.",
+  "visit": "Bergdorf in der Serranía de Ronda.",
+  "uncertain": false,
+  "episode": {
+   "title": "i wanna marry \"harry\" / schlumpfdorf",
+   "date": "2023-05-03",
+   "url": "https://www.ndr.de/media/i-wanna-marry-harry-schlumpfdorf,audio1372432.html"
+  }
+ },
+ {
+  "id": 74,
+  "name": "Calcata",
+  "region": "Latium, Italien",
+  "lat": 42.2194,
+  "lng": 12.4262,
+  "topic": "heilige vorhaut",
+  "info": "Hier wurde die angebliche Vorhaut Jesu als Reliquie verehrt, bis sie 1983 verschwand.",
+  "visit": "Malerisches Bergdorf nördlich von Rom.",
+  "uncertain": false,
+  "episode": {
+   "title": "heilige vorhaut / judasziege",
+   "date": "2023-04-26",
+   "url": "https://www.ndr.de/media/heilige-vorhaut-judasziege,audio1368020.html"
+  }
+ },
+ {
+  "id": 75,
+  "name": "Isla Santiago",
+  "region": "Galápagos, Ecuador",
+  "lat": -0.24,
+  "lng": -90.72,
+  "topic": "judasziege",
+  "info": "Mit Sender versehene „Judasziegen“ führten Jäger zu ihren Artgenossen – so wurden verwilderte Ziegen ausgerottet.",
+  "visit": "Besuch nur mit Naturführer.",
+  "uncertain": false,
+  "episode": {
+   "title": "heilige vorhaut / judasziege",
+   "date": "2023-04-26",
+   "url": "https://www.ndr.de/media/heilige-vorhaut-judasziege,audio1368020.html"
+  }
+ },
+ {
+  "id": 76,
+  "name": "Cayo Ernesto Thaelmann",
+  "region": "Kuba",
+  "lat": 22.033,
+  "lng": -81.4,
+  "topic": "ernst-thälmann-insel",
+  "info": "Fidel Castro „schenkte“ der DDR 1972 symbolisch eine Insel – angeblich gehört sie bis heute irgendwie zu Deutschland.",
+  "visit": "Unbewohnt, nur per Boot.",
+  "uncertain": false,
+  "episode": {
+   "title": "ernst-thälmann-insel / jurten - mit @elhotzo",
+   "date": "2023-04-12",
+   "url": "https://www.ndr.de/media/ernst-thaelmann-insel-jurten-mit-elhotzo-,audio1358122.html"
+  }
+ },
+ {
+  "id": 77,
+  "name": "Landtag Schleswig-Holstein",
+  "region": "Kiel, Deutschland",
+  "lat": 54.3301,
+  "lng": 10.1497,
+  "topic": "heide-mörder",
+  "info": "2005 fiel Heide Simonis hier in vier Wahlgängen durch – ein Abweichler aus den eigenen Reihen blieb anonym.",
+  "visit": "Landtag mit Besucherdienst.",
+  "uncertain": false,
+  "episode": {
+   "title": "selena vs. hailey / heide-mörder",
+   "date": "2023-04-05",
+   "url": "https://www.ndr.de/media/selena-vs-hailey-heide-moerder-,audio1354026.html"
+  }
+ },
+ {
+  "id": 78,
+  "name": "Campion",
+  "region": "Westaustralien",
+  "lat": -31.05,
+  "lng": 118.45,
+  "topic": "emukrieg",
+  "info": "1932 rückte das australische Militär mit Maschinengewehren gegen Emus aus – und verlor.",
+  "visit": "Weizengürtel im Outback (ungefähre Lage).",
+  "uncertain": true,
+  "episode": {
+   "title": "emukrieg / snapewives",
+   "date": "2023-03-22",
+   "url": "https://www.ndr.de/media/emukrieg-snapewives,audio1344016.html"
+  }
+ },
+ {
+  "id": 79,
+  "name": "Francis Olympic Field",
+  "region": "St. Louis, USA",
+  "lat": 38.648,
+  "lng": -90.313,
+  "topic": "marathon 1904",
+  "info": "Der chaotischste Olympia-Marathon: Autofahrt, Strychnin-Cocktails und ein Läufer, der ein Nickerchen machte.",
+  "visit": "Stadion der Washington University, noch in Betrieb.",
+  "uncertain": false,
+  "episode": {
+   "title": "leon löwentraut / marathon 1904 - mit @tarkanbagci",
+   "date": "2023-03-01",
+   "url": "https://www.ndr.de/media/leon-loewentraut-marathon-mit-tarkanbagci,audio1329052.html"
+  }
+ },
+ {
+  "id": 80,
+  "name": "Dolphin House",
+  "region": "St. Thomas, Amerikanische Jungferninseln",
+  "lat": 18.36,
+  "lng": -64.98,
+  "topic": "sexdelfin",
+  "info": "In einem NASA-finanzierten Experiment lebte Margaret Lovatt 1965 mit Delfin Peter zusammen.",
+  "visit": "Ehemaliges Labor, ungefähre Lage.",
+  "uncertain": true,
+  "episode": {
+   "title": "sexdelfin / glitzerverschwörung",
+   "date": "2023-02-08",
+   "url": "https://www.ndr.de/media/sexdelfin-glitzerverschwoerung,audio1313844.html"
+  }
+ },
+ {
+  "id": 81,
+  "name": "Neutraubling",
+  "region": "Oberpfalz, Deutschland",
+  "lat": 48.989,
+  "lng": 12.196,
+  "topic": "toilettengeist",
+  "info": "In einer Zahnarztpraxis pöbelte 1982 ein Geist namens „Chopper“ aus der Toilette.",
+  "visit": "Kleinstadt bei Regensburg.",
+  "uncertain": false,
+  "episode": {
+   "title": "toilettengeist / wachs-hitler",
+   "date": "2023-02-01",
+   "url": "https://www.ndr.de/media/toilettengeist-wachs-hitler,audio1308770.html"
+  }
+ },
+ {
+  "id": 82,
+  "name": "Madame Tussauds Berlin",
+  "region": "Berlin, Deutschland",
+  "lat": 52.5168,
+  "lng": 13.38,
+  "topic": "wachs-hitler",
+  "info": "Wenige Minuten nach der Eröffnung 2008 köpfte ein Besucher die Hitler-Wachsfigur.",
+  "visit": "Wachsfigurenkabinett Unter den Linden.",
+  "uncertain": false,
+  "episode": {
+   "title": "toilettengeist / wachs-hitler",
+   "date": "2023-02-01",
+   "url": "https://www.ndr.de/media/toilettengeist-wachs-hitler,audio1308770.html"
+  }
+ },
+ {
+  "id": 83,
+  "name": "Tangkoko-Naturreservat",
+  "region": "Sulawesi, Indonesien",
+  "lat": 1.556,
+  "lng": 125.165,
+  "topic": "affenselfie",
+  "info": "Ein Schopfmakak drückte hier auf den Auslöser – der folgende Urheberrechtsstreit ruinierte den Fotografen.",
+  "visit": "Naturreservat mit Guides.",
+  "uncertain": false,
+  "episode": {
+   "title": "the kardashians / affenselfie",
+   "date": "2023-01-04",
+   "url": "https://www.ndr.de/media/the-kardashians-affenselfie,audio1285874.html"
+  }
+ },
+ {
+  "id": 84,
+  "name": "Flügger Strand",
+  "region": "Fehmarn, Deutschland",
+  "lat": 54.447,
+  "lng": 11.013,
+  "topic": "love-and-peace festival",
+  "info": "Das „deutsche Woodstock“ 1970: Sturm, Rocker und Jimi Hendrix’ letztes Konzert.",
+  "visit": "Gedenkstein für Hendrix am Strand.",
+  "uncertain": false,
+  "episode": {
+   "title": "love-and-peace festival / kriegsbär wojtek",
+   "date": "2022-11-01",
+   "url": "https://www.ndr.de/media/love-and-peace-festival-kriegsbaer-wojtek,audio1244096.html"
+  }
+ },
+ {
+  "id": 85,
+  "name": "Wojtek-Statue",
+  "region": "Edinburgh, Schottland",
+  "lat": 55.9504,
+  "lng": -3.204,
+  "topic": "kriegsbär wojtek",
+  "info": "Braunbär Wojtek schleppte im Zweiten Weltkrieg Munition für polnische Soldaten; er starb im Edinburgher Zoo.",
+  "visit": "Bronzestatue in den Princes Street Gardens.",
+  "uncertain": false,
+  "episode": {
+   "title": "love-and-peace festival / kriegsbär wojtek",
+   "date": "2022-11-01",
+   "url": "https://www.ndr.de/media/love-and-peace-festival-kriegsbaer-wojtek,audio1244096.html"
+  }
+ },
+ {
+  "id": 86,
+  "name": "Brauerei Riegele",
+  "region": "Augsburg, Deutschland",
+  "lat": 48.365,
+  "lng": 10.885,
+  "topic": "spezi-krieg",
+  "info": "Die Augsburger Brauerei hält die Marke Spezi – und lieferte sich jahrelang einen Rechtsstreit mit Paulaner.",
+  "visit": "Brauerei mit Wirtshaus.",
+  "uncertain": false,
+  "episode": {
+   "title": "spezi-krieg / armie hammer",
+   "date": "2022-10-18",
+   "url": "https://www.ndr.de/media/spezi-krieg-armie-hammer,audio1234868.html"
+  }
+ },
+ {
+  "id": 87,
+  "name": "Schloss Sanssouci",
+  "region": "Potsdam, Deutschland",
+  "lat": 52.4044,
+  "lng": 13.0386,
+  "topic": "friedrich der große",
+  "info": "Das Sommerschloss Friedrichs II. – er liegt auf der Terrasse begraben, mit Kartoffeln auf dem Grab.",
+  "visit": "Schloss und Park, Grab frei zugänglich.",
+  "uncertain": false,
+  "episode": {
+   "title": "friedrich der große / spinnen - mit @magnuswho",
+   "date": "2022-10-04",
+   "url": "https://www.ndr.de/media/friedrich-der-grosse-spinnen-mit-magnuswho,audio1225774.html"
+  }
+ },
+ {
+  "id": 88,
+  "name": "Klingenberg am Main",
+  "region": "Unterfranken, Deutschland",
+  "lat": 49.783,
+  "lng": 9.18,
+  "topic": "exorzismus in unterfranken",
+  "info": "Anneliese Michel starb 1976 nach monatelangen Exorzismen – Vorlage für „Der Exorzismus von Emily Rose“.",
+  "visit": "Grab auf dem Friedhof Klingenberg.",
+  "uncertain": false,
+  "episode": {
+   "title": "keshas geister / exorzismus in unterfranken",
+   "date": "2022-09-14",
+   "url": "https://www.ndr.de/media/keshas-geister-exorzismus-in-unterfranken-,audio1211246.html"
+  }
+ }
+]
