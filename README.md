@@ -27,13 +27,15 @@ In `data/places.json` einen Eintrag anhängen:
  "info": "Ein, zwei eigene Sätze, worum es geht.",
  "visit": "Kann man hin? Museum, frei zugänglich, nicht mehr existent …",
  "uncertain": false,
+ "area": "de",
+ "visitable": true,
  "wiki": "de:Artikelname",
  "image": { "src": "https://upload.wikimedia.org/…/320px-….jpg", "page": "https://de.wikipedia.org/wiki/…", "article": "…" },
  "episode": { "title": "tab a / tab b", "date": "2026-10-21", "url": "https://www.ndr.de/podcast/…" }
 }
 ```
 
-Koordinaten bekommt man z. B. per Rechtsklick in Google Maps / OpenStreetMap. `uncertain: true` blendet im Popup einen Hinweis ein, dass Zuordnung oder Lage nicht ganz sicher ist.
+Koordinaten bekommt man z. B. per Rechtsklick in Google Maps / OpenStreetMap. `area` ist `de`, `eu` oder `world` (für die Filter-Chips), `visitable` sagt, ob man real hinkann (Chip „Kann man hin“). `uncertain: true` blendet im Popup einen Hinweis ein, dass Zuordnung oder Lage nicht ganz sicher ist.
 
 `image` ist optional: das Vorschaubild des Wikipedia-Artikels (`https://<sprache>.wikipedia.org/api/rest_v1/page/summary/<Artikel>` → `thumbnail.source`). Ohne Bild zeigt das Popup einen bunten Platzhalter.
 
@@ -48,6 +50,10 @@ Neuer Atlantis-Tab in `data/atlantis.json`:
 ```
 
 Bekommt ein Atlantis-Thema später doch einen echten Ort, den Eintrag aus `atlantis.json` löschen und in `places.json` anlegen.
+
+## Teilen & Verlauf
+
+Jedes Fenster hat eine eigene Adresse (z. B. `…/#lugner-city`, `…/#atlantis/braco`); ein Klick auf die Adresszeile im Fenster kopiert den Link. Angesehene Tabs werden lila markiert und gezählt (👀), der 🎲-Zufall öffnet nur noch Ungesehenes. `og.png` ist das Vorschaubild beim Teilen des Links.
 
 ## Easter Eggs
 

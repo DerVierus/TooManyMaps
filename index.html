@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>too many maps</title>
 <meta name="description" content="Inoffizielle Fan-Karte: Orte aus den Rabbit Holes des Podcasts too many tabs.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff6a2b'/%3E%3Cstop offset='1' stop-color='%2312c2b5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='13' fill='url(%23g)' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="too many maps">
+<meta property="og:description" content="Inoffizielle Fan-Karte: 88 Orte und 300 Tabs aus den Rabbit Holes des Podcasts too many tabs.">
+<meta property="og:image" content="https://dervierus.github.io/TooManyMaps/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="vendor/leaflet.css">
 <link rel="stylesheet" href="vendor/MarkerCluster.css">
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
@@ -250,8 +256,43 @@
 
   #toggle { display: none; }
 
+  /* Handy: Kartenquellen als kleines ⓘ, Tap klappt auf */
+  @media (max-width: 720px) {
+    .leaflet-control-attribution:not(.open) { font-size: 0 !important; padding: 0; cursor: pointer; }
+    .leaflet-control-attribution:not(.open) a, .leaflet-control-attribution:not(.open) svg { display: none; }
+    .leaflet-control-attribution:not(.open)::before { content: 'ⓘ'; font-size: 15px; padding: 2px 7px; display: inline-block; }
+  }
+
   /* ---------- Easter Eggs ---------- */
   .count-row { display: flex; align-items: center; justify-content: space-between; padding-right: 16px; }
+  .badges { display: flex; gap: 6px; }
+
+  /* Filter-Chips */
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 8px; }
+  .chip {
+    padding: 4px 10px; font-size: 12px; font-weight: 500;
+    background: var(--chrome); color: var(--ink); border: 0; border-radius: 999px;
+  }
+  .chip.active { background: var(--grad); color: #fff; font-weight: 600; }
+
+  /* Angesehene Tabs: lila wie besuchte Links */
+  .dot.seen { box-shadow: 0 0 0 3px #a855f7, 0 2px 8px rgba(0,0,0,.4); }
+  #list li.seen .name { color: #7e3fbf; }
+  #list li.seen .name::after { content: ' ✓'; color: #a855f7; font-weight: 700; }
+  .atl-item.seen b { color: #7e3fbf; }
+  .atl-item.seen b::after { content: ' ✓'; color: #a855f7; }
+  #list li.empty { cursor: default; color: var(--muted); font-size: 13px; }
+  #list li.empty:hover { background: none; }
+  #list li:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+  button.tab.random:disabled { cursor: default; opacity: .75; }
+  .progress { height: 8px; border-radius: 999px; background: var(--chrome); overflow: hidden; margin: 6px 0 10px; }
+  .progress i { display: block; height: 100%; background: var(--grad); }
+  .history-stats { font-size: 13px; }
+  .history-stats b { font-size: 15px; }
+
+  /* Adresszeile = Link kopieren */
+  button.url { border: 0; font: inherit; font-size: 12px; text-align: left; cursor: copy; }
+  button.url:hover { filter: none; background: #e3e8eb; }
   .count-row .count { padding-bottom: 8px; }
   .egg-badge {
     padding: 2px 9px; margin-bottom: 8px; font-size: 12px; font-weight: 600;
@@ -300,7 +341,9 @@
     aside { width: 100%; height: auto; max-height: 40%; box-shadow: 0 -2px 16px rgba(0,0,0,.1); }
     .sub { display: none; }
     aside > .titlebar { min-height: 32px; padding-top: 6px; }
-    aside.collapsed #list, aside.collapsed footer, aside.collapsed .count { display: none; }
+    aside.collapsed #list, aside.collapsed footer, aside.collapsed .count-row,
+    aside.collapsed .controls, aside.collapsed .chips { display: none; }
+    aside.collapsed .brand { padding-bottom: 8px; }
     .brand { padding: 10px 16px 0; display: flex; align-items: center; justify-content: space-between; }
     h1 { font-size: 20px; }
     #toggle { display: inline-block; padding: 4px 12px; font-size: 13px; background: var(--chrome); color: var(--ink); }
@@ -327,7 +370,14 @@
     <input id="q" type="search" placeholder="🔍 Ort, Land oder Folge …" autocomplete="off">
     <button id="near" title="Orte nach Entfernung zu deinem Standort sortieren">📍 Nähe</button>
   </div>
-  <div class="count-row"><div class="count" id="count"></div><button id="eggs" class="egg-badge" type="button">🥚</button></div>
+  <div class="chips" id="chips">
+    <button class="chip active" type="button" data-area="all">Alle</button>
+    <button class="chip" type="button" data-area="de">🇩🇪 Deutschland</button>
+    <button class="chip" type="button" data-area="eu">🇪🇺 Europa</button>
+    <button class="chip" type="button" data-area="world">🌍 Welt</button>
+    <button class="chip toggle" type="button" data-visit aria-pressed="false">🧭 Kann man hin</button>
+  </div>
+  <div class="count-row"><div class="count" id="count"></div><div class="badges"><button id="seen" class="egg-badge" type="button" title="Angesehene Tabs – Verlauf anzeigen">👀</button><button id="eggs" class="egg-badge" type="button">🥚</button></div></div>
   <ul id="list"></ul>
   <footer id="note">
     <button id="hide-note" type="button" aria-label="Hinweis ausblenden" title="Hinweis ausblenden">×</button>
@@ -452,7 +502,7 @@ function chromeHtml(activeLabel, urlPath, other) {
     </div>
     <div class="addressbar">
       <span class="nav">←→⟳</span>
-      <span class="url">toomanytabs://<b>${esc(urlPath)}</b></span>
+      <button class="url" type="button" title="Link zu diesem Tab kopieren">toomanytabs://<b>${esc(urlPath)}</b></button>
     </div>`;
 }
 
@@ -476,6 +526,7 @@ function popupHtml(p) {
   if (p.kind === 'index') return atlantisIndexHtml();
   if (p.kind === 'egg') return eggHtml(p);
   if (p.kind === 'hints') return eggHintsHtml();
+  if (p.kind === 'history') return historyHtml();
   if (p.kind === 'atlantis') return atlantisTabHtml(p);
   const gmaps = `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`;
   return `${chromeHtml(p.topic, slug(p.name), otherTabHtml(p))}
@@ -512,7 +563,7 @@ function atlantisListHtml(filter) {
   const f = norm(filter || '');
   const items = tabs.filter(t => !f || t.haystack.includes(f));
   if (!items.length) return '<div class="atl-empty">Nichts gefunden.</div>';
-  return items.map(t => `<button class="atl-item" type="button" data-id="${t.id}">
+  return items.map(t => `<button class="atl-item${isSeen(t) ? ' seen' : ''}" type="button" data-id="${t.id}">
       <b>${esc(t.topic)}</b><small>${fmtDate(t.episode.date)}</small></button>`).join('');
 }
 
@@ -540,6 +591,7 @@ map.addLayer(cluster);
 
 // Echte Marker (statt CircleMarker), damit markercluster zoomToShowLayer funktioniert.
 const dotIcon = L.divIcon({ className: 'dot', iconSize: [22, 22] });
+const dotIconSeen = L.divIcon({ className: 'dot seen', iconSize: [22, 22] });
 
 // Atlantis bekommt einen eigenen, größeren Marker außerhalb der Cluster.
 L.marker([ATLANTIS.lat, ATLANTIS.lng], {
@@ -555,6 +607,15 @@ let shownPlaces = [];
 let shownTabs = [];
 let openId = null;      // Ort/Tab, dessen Fenster gerade offen ist
 let nextRandom = null;  // Ziel des Zufalls-Tabs, wird vorab angezeigt
+let area = 'all';       // Filter: all | de | eu | world
+let onlyVisitable = false;
+let routing = false;    // true, während ein Fenster aus der URL heraus geöffnet wird
+let switching = false;  // true, während ein Fenster durch ein anderes ersetzt wird
+
+// Angesehene Tabs (wie besuchte Links) – merkt sich der Browser.
+const visited = new Set();
+try { JSON.parse(localStorage.getItem('tmm-visited') || '[]').forEach(id => visited.add(String(id))); } catch (e) {}
+const isSeen = p => visited.has(String(p.id));
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
 const qEl = document.getElementById('q');
@@ -575,10 +636,46 @@ const popup = L.popup({
 });
 
 function openPlace(p) {
+  switching = true;
   map.closePopup(popup);
+  switching = false;
   openId = String(p.id);
+  if (p.kind === 'place' || p.kind === 'atlantis') markVisited(p);
   popup.setLatLng([p.lat, p.lng]).setContent(popupHtml(p)).openOn(map);
+  const h = hashOf(p);
+  if (!routing) {
+    if (h && decodeURIComponent(location.hash.slice(1)) !== h) history.pushState(null, '', '#' + h);
+    else if (!h && location.hash) history.pushState(null, '', location.pathname + location.search);
+  }
 }
+
+// ---------- Teilbare Links ----------
+// Jedes Fenster hat eine eigene Adresse (#lugner-city, #atlantis/braco, #egg/nessie …).
+const byHash = new Map();
+function hashOf(p) {
+  if (p.kind === 'index') return 'atlantis';
+  if (p.kind === 'egg') return 'egg/' + p.id;
+  return p.hash || '';
+}
+function buildHashes() {
+  const add = (p, h) => { if (byHash.has(h)) h += '-' + p.id; p.hash = h; byHash.set(h, p); };
+  places.forEach(p => add(p, slug(p.name)));
+  tabs.forEach(t => add(t, 'atlantis/' + slug(t.topic)));
+}
+function route() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  routing = true;
+  if (!h) {
+    map.closePopup(popup);
+  } else {
+    const item = h === 'atlantis' ? ATLANTIS
+      : h.startsWith('egg/') ? eggs.find(e => e.id === h.slice(4))
+      : byHash.get(h);
+    if (item && String(item.id) !== openId) focus(item);
+  }
+  routing = false;
+}
+window.addEventListener('hashchange', route);
 
 function focus(p) {
   document.querySelectorAll('#list li').forEach(li => li.classList.toggle('active', li.dataset.id === String(p.id)));
@@ -587,11 +684,12 @@ function focus(p) {
     openPlace(p);
     return;
   }
-  // Ort ist durch die Suche ausgeblendet (z. B. über den „anderen Tab“ angesteuert): Suche leeren.
-  if (!shownPlaces.includes(p)) { qEl.value = ''; render(); }
+  // Ort ist durch Suche oder Filter ausgeblendet (z. B. über den „anderen Tab“ angesteuert): zurücksetzen.
+  if (!shownPlaces.includes(p)) { qEl.value = ''; area = 'all'; onlyVisitable = false; updateChips(); render(); }
   // Erst nah genug ranzoomen, damit das Popup auch bei Orten weit im Norden Platz hat.
   if (map.getZoom() < 5) map.setView([p.lat, p.lng], 5, { animate: false });
-  cluster.zoomToShowLayer(p.marker, () => openPlace(p));
+  const fromHash = routing;
+  cluster.zoomToShowLayer(p.marker, () => { routing = fromHash; openPlace(p); routing = false; });
 }
 
 // Das andere Thema derselben Folge (z. B. „wiener zentralfriedhof“ zu „lugner city“) – entweder ein
@@ -618,26 +716,30 @@ function randomTabHtml() {
 
 const labelOf = p => p.kind === 'atlantis' ? p.topic : p.name;
 
-// Halb echte Orte, halb Atlantis – sonst landet man wegen der vielen Atlantis-Tabs fast nur dort.
+// Nur noch nicht angesehene Tabs, im aktuellen Filter. Halb echte Orte, halb Atlantis –
+// sonst landet man wegen der vielen Atlantis-Tabs fast nur dort.
 function pickRandom(excludeId) {
-  const without = list => list.filter(p => String(p.id) !== String(excludeId));
-  let a = without(shownPlaces), t = without(shownTabs);
-  if (a.length + t.length < 1) { a = without(places); t = without(tabs); }
+  const fresh = list => list.filter(p => String(p.id) !== String(excludeId) && !isSeen(p));
+  const a = fresh(shownPlaces), t = fresh(shownTabs);
   const from = !t.length || (a.length && Math.random() < 0.5) ? a : t;
   return from.length ? from[Math.floor(Math.random() * from.length)] : null;
 }
 
 function updateRandomLabels() {
   document.querySelectorAll('.tab.random').forEach(b => {
-    const name = nextRandom ? labelOf(nextRandom) : 'Zufälliger Tab';
+    const name = nextRandom ? labelOf(nextRandom) : '✓ alles gesehen';
     b.querySelector('.label').textContent = name;
-    b.title = 'Zufälliger Tab: ' + name;
+    b.title = nextRandom ? 'Zufälliger neuer Tab: ' + name : 'Hier hast du schon alles gesehen';
+    b.disabled = !nextRandom;
   });
 }
 
 function goRandom() {
   const target = nextRandom || pickRandom(openId);
-  if (!target) return;
+  if (!target) {
+    toast('✓ Hier hast du schon alles gesehen – ändere den Filter oder lösche den Verlauf (👀).');
+    return;
+  }
   nextRandom = pickRandom(target.id);
   updateRandomLabels();
   focus(target);
@@ -656,6 +758,10 @@ document.addEventListener('click', e => {
     focus(ATLANTIS);
   } else if (hit('.light-close')) {
     map.closePopup(popup);
+  } else if (hit('button.url')) {
+    copyLink();
+  } else if (hit('.clear-history')) {
+    clearHistory();
   } else {
     return;
   }
@@ -669,7 +775,9 @@ document.addEventListener('input', e => {
 
 function render() {
   const q = norm(qEl.value);
-  const shown = places.filter(p => !q || p.haystack.includes(q));
+  const inArea = p => area === 'all' || (area === 'eu' ? p.area !== 'world' : p.area === area);
+  const filtered = area !== 'all' || onlyVisitable;
+  const shown = places.filter(p => inArea(p) && (!onlyVisitable || p.visitable) && (!q || p.haystack.includes(q)));
   if (userPos) {
     shown.forEach(p => p.dist = distKm(userPos, p));
     shown.sort((a, b) => a.dist - b.dist);
@@ -677,13 +785,14 @@ function render() {
     shown.sort((a, b) => b.episode.date.localeCompare(a.episode.date) || a.name.localeCompare(b.name));
   }
   // Atlantis-Tabs erscheinen in der Liste nur bei einer Suche; ohne Suche gibt es einen Sammeleintrag.
-  const shownT = q ? tabs.filter(t => t.haystack.includes(q)) : [];
+  // Nach Atlantis kann man nicht hinfahren – bei „Kann man hin“ bleibt es draußen.
+  const shownT = q && !onlyVisitable ? tabs.filter(t => t.haystack.includes(q)) : [];
 
   cluster.clearLayers();
   cluster.addLayers(shown.map(p => p.marker));
 
-  const atlEntry = q ? '' : `
-    <li data-id="atlantis" class="atl-entry">
+  const atlEntry = q || onlyVisitable ? '' : `
+    <li data-id="atlantis" class="atl-entry" tabindex="0" role="button">
       <span class="fav atl"></span>
       <div class="txt">
         <div class="name">🔱 Atlantis</div>
@@ -691,7 +800,7 @@ function render() {
       </div>
     </li>`;
   listEl.innerHTML = atlEntry + shown.map(p => `
-    <li data-id="${p.id}">
+    <li data-id="${p.id}" tabindex="0" role="button" class="${isSeen(p) ? 'seen' : ''}">
       <span class="fav"></span>
       <div class="txt">
         <div class="name">${esc(p.name)}</div>
@@ -700,7 +809,7 @@ function render() {
       </div>
       ${userPos ? `<span class="dist">${Math.round(p.dist).toLocaleString('de-DE')} km</span>` : ''}
     </li>`).join('') + shownT.map(t => `
-    <li data-id="${t.id}">
+    <li data-id="${t.id}" tabindex="0" role="button" class="${isSeen(t) ? 'seen' : ''}">
       <span class="fav atl"></span>
       <div class="txt">
         <div class="name">${esc(t.topic)}</div>
@@ -708,22 +817,110 @@ function render() {
         <div class="meta">🎧 ${esc(t.episode.title)} · ${fmtDate(t.episode.date)}</div>
       </div>
     </li>`).join('');
+  if (!shown.length && !shownT.length && !atlEntry) {
+    listEl.innerHTML = `<li class="empty">Keine Treffer. ${q ? 'Vielleicht klappt’s mit einem anderen Wort – oder mit 🎲.' : 'Probier einen anderen Filter.'}</li>`;
+  }
   countEl.textContent = q
     ? `${shown.length} Orte · ${shownT.length} Tabs in Atlantis gefunden`
-    : `${places.length} Orte · ${tabs.length} Tabs in Atlantis`;
+    : filtered
+      ? `${shown.length} von ${places.length} Orten${onlyVisitable ? '' : ` · ${tabs.length} Tabs in Atlantis`}`
+      : `${places.length} Orte · ${tabs.length} Tabs in Atlantis`;
 
   shownPlaces = shown;
-  shownTabs = q ? shownT : tabs;
+  shownTabs = q || onlyVisitable ? shownT : tabs;
   const pool = shownPlaces.concat(shownTabs);
-  if (!nextRandom || String(nextRandom.id) === openId || (pool.length >= 2 && !pool.includes(nextRandom))) {
+  if (!nextRandom || String(nextRandom.id) === openId || isSeen(nextRandom) || !pool.includes(nextRandom)) {
     nextRandom = pickRandom(openId);
   }
   updateRandomLabels();
 }
 
 listEl.addEventListener('click', e => {
-  const li = e.target.closest('li');
+  const li = e.target.closest('li[data-id]');
   if (li) focus(li.dataset.id === 'atlantis' ? ATLANTIS : byId.get(li.dataset.id));
+});
+listEl.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('li[data-id]')) { e.preventDefault(); e.target.click(); }
+});
+
+// ---------- Filter-Chips ----------
+const AREA_VIEW = { de: [[47.2, 5.8], [55.1, 15.1]], eu: [[35, -11], [63, 33]] };
+function updateChips() {
+  document.querySelectorAll('.chip[data-area]').forEach(c => c.classList.toggle('active', c.dataset.area === area));
+  const v = document.querySelector('.chip[data-visit]');
+  v.classList.toggle('active', onlyVisitable);
+  v.setAttribute('aria-pressed', onlyVisitable);
+}
+document.getElementById('chips').addEventListener('click', e => {
+  const c = e.target.closest('.chip');
+  if (!c) return;
+  if (c.dataset.area) {
+    area = c.dataset.area;
+    if (AREA_VIEW[area]) map.fitBounds(AREA_VIEW[area]); else map.setView([30, 10], 2);
+  } else {
+    onlyVisitable = !onlyVisitable;
+  }
+  updateChips();
+  render();
+});
+
+// ---------- Verlauf: angesehene Tabs ----------
+const seenBadge = document.getElementById('seen');
+function updateSeenBadge() {
+  const n = places.filter(isSeen).length + tabs.filter(isSeen).length;
+  seenBadge.textContent = `👀 ${n}/${places.length + tabs.length}`;
+}
+function saveVisited() {
+  try { localStorage.setItem('tmm-visited', JSON.stringify([...visited])); } catch (e) {}
+}
+function markVisited(p) {
+  if (isSeen(p)) return;
+  visited.add(String(p.id));
+  saveVisited();
+  if (p.marker) p.marker.setIcon(dotIconSeen);
+  const li = listEl.querySelector(`li[data-id="${p.id}"]`);
+  if (li) li.classList.add('seen');
+  updateSeenBadge();
+  if (nextRandom && isSeen(nextRandom)) { nextRandom = pickRandom(p.id); updateRandomLabels(); }
+  const n = places.filter(isSeen).length + tabs.filter(isSeen).length;
+  if (n === places.length + tabs.length) toast('🏆 <b>Alle Tabs angesehen!</b> Jetzt bist du offiziell zu tief im Netz.');
+}
+function historyHtml() {
+  const a = places.filter(isSeen).length, t = tabs.filter(isSeen).length;
+  const pct = Math.round(100 * (a + t) / (places.length + tabs.length));
+  return `${chromeHtml('Verlauf', 'verlauf', '')}
+    <div class="wave">👀 <span>Angesehene Tabs</span></div>
+    <div class="page history-stats">
+      <b>${a + t} von ${places.length + tabs.length}</b> Tabs angesehen (${pct} %)
+      <div class="progress"><i style="width:${pct}%"></i></div>
+      📍 ${a} von ${places.length} Orten<br>🔱 ${t} von ${tabs.length} Tabs in Atlantis
+      <div class="actions"><button class="secondary clear-history" type="button">🗑️ Verlauf löschen</button></div>
+    </div>`;
+}
+function clearHistory() {
+  visited.clear();
+  saveVisited();
+  places.forEach(p => p.marker.setIcon(dotIcon));
+  updateSeenBadge();
+  render();
+  openPlace({ id: 'history', kind: 'history', lat: popup.getLatLng().lat, lng: popup.getLatLng().lng });
+  toast('🗑️ Verlauf gelöscht – alle Tabs sind wieder neu.');
+}
+seenBadge.addEventListener('click', () => {
+  const c = map.getCenter();
+  openPlace({ id: 'history', kind: 'history', lat: c.lat, lng: c.lng });
+});
+
+function copyLink() {
+  const url = location.href;
+  const done = () => toast('🔗 Link kopiert – teilen erlaubt.');
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(done, () => prompt('Link kopieren:', url));
+  else prompt('Link kopieren:', url);
+}
+
+// Esc schließt das Fenster
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && openId) map.closePopup(popup);
 });
 qEl.addEventListener('input', render);
 
@@ -751,7 +948,11 @@ document.getElementById('toggle').addEventListener('click', () => {
   map.invalidateSize();
 });
 
-map.on('popupclose', () => { openId = null; });
+map.on('popupclose', () => {
+  openId = null;
+  // Fenster zu → Adresse ohne #… (aber nicht, wenn es nur durch ein anderes ersetzt wird)
+  if (!switching && !routing && location.hash) history.pushState(null, '', location.pathname + location.search);
+});
 
 map.on('popupopen', e => {
   // Der Zufalls-Tab darf nie auf den gerade offenen Ort zeigen.
@@ -966,13 +1167,28 @@ document.addEventListener('click', e => {
 updateEggBadge();
 updateEggVisibility();
 
+// Handy: Kartenquellen per Tap auf- und zuklappen
+map.attributionControl.getContainer().addEventListener('click', e => {
+  const c = e.currentTarget;
+  if (!c.classList.contains('open') || !e.target.closest('a')) c.classList.toggle('open');
+});
+
+// Einmaliger Tipp beim ersten Besuch
+function firstVisitTip() {
+  try { if (localStorage.getItem('tmm-seen-tip')) return; localStorage.setItem('tmm-seen-tip', '1'); } catch (e) { return; }
+  if (location.hash) return;
+  const phone = matchMedia('(max-width: 720px)').matches;
+  setTimeout(() => toast(phone ? '👋 Tippe auf einen Punkt – oder auf 🎲 für einen zufälligen Tab.'
+                               : '👋 Klick auf einen Punkt – oder probier 🎲 oben links für einen zufälligen Tab.'), 1500);
+}
+
 Promise.all([fetch('data/places.json'), fetch('data/atlantis.json')].map(f => f.then(r => r.json())))
   .then(([placeData, tabData]) => {
     places = placeData;
     places.forEach(p => {
       p.kind = 'place';
       p.haystack = norm([p.name, p.region, p.topic, p.episode.title, p.info].join(' '));
-      p.marker = L.marker([p.lat, p.lng], { icon: dotIcon, title: p.name, alt: p.name })
+      p.marker = L.marker([p.lat, p.lng], { icon: isSeen(p) ? dotIconSeen : dotIcon, title: p.name, alt: p.name })
         .on('click', () => openPlace(p));
       byId.set(String(p.id), p);
     });
@@ -983,7 +1199,11 @@ Promise.all([fetch('data/places.json'), fetch('data/atlantis.json')].map(f => f.
       byId.set(t.id, t);
     });
     byId.set('atlantis', ATLANTIS);
+    buildHashes();
     render();
+    updateSeenBadge();
+    route();
+    firstVisitTip();
   })
   .catch(() => {
     countEl.textContent = 'Daten konnten nicht geladen werden. Seite über einen Webserver öffnen (nicht als Datei).';

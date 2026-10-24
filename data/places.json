@@ -19,7 +19,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Norrmalmstorg_22072006.jpg/330px-Norrmalmstorg_22072006.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Norrmalmstorg",
    "article": "Norrmalmstorg"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 2,
@@ -41,7 +43,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Map_of_the_Atlantrop_Projekt.png/330px-Map_of_the_Atlantrop_Projekt.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Atlantropa",
    "article": "Atlantropa"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 3,
@@ -63,7 +67,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Kloster_Windberg_-_Blasiusbrunnen_2.jpg/330px-Kloster_Windberg_-_Blasiusbrunnen_2.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Kloster_Windberg",
    "article": "Kloster Windberg"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 4,
@@ -85,7 +91,9 @@
    "src": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Ferdinand_Cheval.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/Ferdinand_Cheval",
    "article": "Ferdinand Cheval"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 5,
@@ -107,7 +115,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Pigeon_Forge%2C_TN_2016.03.27_%2824%29.jpg/330px-Pigeon_Forge%2C_TN_2016.03.27_%2824%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Pigeon_Forge%2C_Tennessee",
    "article": "Pigeon Forge, Tennessee"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 6,
@@ -129,7 +139,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/330px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Paris",
    "article": "Paris"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 7,
@@ -151,7 +163,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Dome_of_the_Rock_seen_from_the_Mount_of_Olives_%2812395649153%29_%28cropped%29.jpg/330px-Dome_of_the_Rock_seen_from_the_Mount_of_Olives_%2812395649153%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Jerusalem",
    "article": "Jerusalem"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 8,
@@ -173,7 +187,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Bas%C3%ADlica_de_la_Santa_Cruz%2C_Florencia%2C_Italia%2C_2022-09-18%2C_DD_95.jpg/330px-Bas%C3%ADlica_de_la_Santa_Cruz%2C_Florencia%2C_Italia%2C_2022-09-18%2C_DD_95.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Santa_Croce%2C_Florence",
    "article": "Santa Croce, Florence"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 9,
@@ -195,7 +211,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/PhilippePetitAAFeb09.jpg/330px-PhilippePetitAAFeb09.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Philippe_Petit",
    "article": "Philippe Petit"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 10,
@@ -217,7 +235,9 @@
    "src": "https://upload.wikimedia.org/wikipedia/commons/5/5a/K%C3%B6nigs_Wusterhausen_in_LDS.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/K%C3%B6nigs_Wusterhausen",
    "article": "Königs Wusterhausen"
-  }
+  },
+  "area": "de",
+  "visitable": false
  },
  {
   "id": 11,
@@ -239,7 +259,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Prince_William_County_Virginia_incorporated_and_unincorporated_areas_Haymarket_highlighted.svg/330px-Prince_William_County_Virginia_incorporated_and_unincorporated_areas_Haymarket_highlighted.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Haymarket%2C_Virginia",
    "article": "Haymarket, Virginia"
-  }
+  },
+  "area": "world",
+  "visitable": false
  },
  {
   "id": 12,
@@ -261,7 +283,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Bundesarchiv_Bild_102-00241%2C_Therese_Neumann.jpg/330px-Bundesarchiv_Bild_102-00241%2C_Therese_Neumann.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Therese_Neumann",
    "article": "Therese Neumann"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 13,
@@ -283,7 +307,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Oktopus-Orakel_Paul_mit_Schuh.JPG/330px-Oktopus-Orakel_Paul_mit_Schuh.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Paul_the_Octopus",
    "article": "Paul the Octopus"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 14,
@@ -305,7 +331,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/en/thumb/0/05/Exploding_whale_%28screengrab%29.jpg/330px-Exploding_whale_%28screengrab%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Exploding_whale",
    "article": "Exploding whale"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 15,
@@ -327,7 +355,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Richard_Lugner_-_FP%C3%96-Neujahrstreffen_2019.JPG/330px-Richard_Lugner_-_FP%C3%96-Neujahrstreffen_2019.JPG?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Richard_Lugner",
    "article": "Richard Lugner"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 16,
@@ -349,7 +379,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Simmering_%28Wien%29_-_Luegerkirche_%281%29.JPG/330px-Simmering_%28Wien%29_-_Luegerkirche_%281%29.JPG?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Wiener_Zentralfriedhof",
    "article": "Wiener Zentralfriedhof"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 17,
@@ -371,7 +403,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/DEU_Wismar_COA.svg/langde-330px-DEU_Wismar_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Wismar",
    "article": "Wismar"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 18,
@@ -393,7 +427,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Red_colobus_kibale.JPG/330px-Red_colobus_kibale.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Kibale_National_Park",
    "article": "Kibale National Park"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 19,
@@ -415,7 +451,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Unschlittplatz_mit_Dudelsackpfeifer-Brunnen_20170505_145041a.jpg/330px-Unschlittplatz_mit_Dudelsackpfeifer-Brunnen_20170505_145041a.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Unschlittplatz",
    "article": "Unschlittplatz"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 20,
@@ -432,7 +470,9 @@
    "date": "2026-04-15",
    "url": "https://www.ndr.de/podcast/balloon-boy-kaspar-hauser,audio-3225994.html"
   },
-  "wiki": "de:Hofgarten_Ansbach"
+  "wiki": "de:Hofgarten_Ansbach",
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 21,
@@ -454,7 +494,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg/330px-Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/St_Kilda%2C_Scotland",
    "article": "St Kilda, Scotland"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 22,
@@ -476,7 +518,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Panorama_R%C3%B6srath_bis_K%C3%B6ln_%28cropped%29.jpg/330px-Panorama_R%C3%B6srath_bis_K%C3%B6ln_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/R%C3%B6srath",
    "article": "Rösrath"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 23,
@@ -498,7 +542,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/DEU_Aschaffenburg_COA.svg/langde-330px-DEU_Aschaffenburg_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Aschaffenburg",
    "article": "Aschaffenburg"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 24,
@@ -515,7 +561,9 @@
    "date": "2025-11-05",
    "url": "https://www.ndr.de/podcast/celebrity-number-6-action-park,audio-320894.html"
   },
-  "wiki": "en:Action_Park"
+  "wiki": "en:Action_Park",
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 25,
@@ -537,7 +585,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Jack.signalman.jpg/330px-Jack.signalman.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Jack_(baboon)",
    "article": "Jack (baboon)"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 26,
@@ -559,7 +609,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Jagdschloss_Grunewald_HDR.jpg/330px-Jagdschloss_Grunewald_HDR.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Jagdschloss_Grunewald",
    "article": "Jagdschloss Grunewald"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 27,
@@ -581,7 +633,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Straberg-Nievenheimer_See_-_Wakebeach_area-2565.jpg/330px-Straberg-Nievenheimer_See_-_Wakebeach_area-2565.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Straberg-Nievenheimer_See",
    "article": "Straberg-Nievenheimer See"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 28,
@@ -603,7 +657,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Aerial_image_of_Gro%C3%9Fer_Brombachsee_%28view_from_the_southeast%29.jpg/330px-Aerial_image_of_Gro%C3%9Fer_Brombachsee_%28view_from_the_southeast%29.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Gro%C3%9Fer_Brombachsee",
    "article": "Großer Brombachsee"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 29,
@@ -625,7 +681,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/It%27s_a_Small_World_logo.svg/330px-It%27s_a_Small_World_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/It's_a_Small_World",
    "article": "It's a Small World"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 30,
@@ -647,7 +705,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Old_Rip_in_his_Coffin.jpg/330px-Old_Rip_in_his_Coffin.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Ol'_Rip_the_Horned_Toad",
    "article": "Ol' Rip the Horned Toad"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 31,
@@ -669,7 +729,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Honey_Badger.jpg/330px-Honey_Badger.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Honey_badger",
    "article": "Honey badger"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 32,
@@ -691,7 +753,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Loretto_Chapel_Ext.jpg/330px-Loretto_Chapel_Ext.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Loretto_Chapel",
    "article": "Loretto Chapel"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 33,
@@ -713,7 +777,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Stanislaw-jewgrafowitsch-petrow-2016.jpg/330px-Stanislaw-jewgrafowitsch-petrow-2016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Stanislav_Petrov",
    "article": "Stanislav Petrov"
-  }
+  },
+  "area": "eu",
+  "visitable": false
  },
  {
   "id": 34,
@@ -735,7 +801,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Mary_toft_1726_%28cropped%29.jpg/330px-Mary_toft_1726_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Mary_Toft",
    "article": "Mary Toft"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 35,
@@ -757,7 +825,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/PLOUARZEL_Village.JPG/330px-PLOUARZEL_Village.JPG?utm_source=fr.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://fr.wikipedia.org/wiki/Plouarzel",
    "article": "Plouarzel"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 36,
@@ -779,7 +849,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Zoo_Zajac.JPG/330px-Zoo_Zajac.JPG?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Zoo_Zajac",
    "article": "Zoo Zajac"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 37,
@@ -801,7 +873,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Michel_SiffreP1010680mod.jpg/330px-Michel_SiffreP1010680mod.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Michel_Siffre",
    "article": "Michel Siffre"
-  }
+  },
+  "area": "eu",
+  "visitable": false
  },
  {
   "id": 38,
@@ -823,7 +897,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/DEU_Borkum_COA.svg/langde-330px-DEU_Borkum_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Borkum",
    "article": "Borkum"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 39,
@@ -845,7 +921,9 @@
    "src": "https://upload.wikimedia.org/wikipedia/en/f/f1/RoarMoviePoster1981.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "page": "https://en.wikipedia.org/wiki/Roar_(film)",
    "article": "Roar (film)"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 40,
@@ -867,7 +945,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/The_Mill_at_Grovers_Mill_-_164_Cranbury_Road_-_March_23%2C_2019_-_Photographed_by_Paul_Ligeti.jpg/330px-The_Mill_at_Grovers_Mill_-_164_Cranbury_Road_-_March_23%2C_2019_-_Photographed_by_Paul_Ligeti.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Grovers_Mill%2C_New_Jersey",
    "article": "Grovers Mill, New Jersey"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 41,
@@ -889,7 +969,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Gef_the_talking_mongoose.png/330px-Gef_the_talking_mongoose.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Gef",
    "article": "Gef"
-  }
+  },
+  "area": "eu",
+  "visitable": false
  },
  {
   "id": 42,
@@ -911,7 +993,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Floreana_topographic_map-en.png/330px-Floreana_topographic_map-en.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Floreana_Island",
    "article": "Floreana Island"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 43,
@@ -933,7 +1017,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Downtown-guthrie-oklahoma.jpg/330px-Downtown-guthrie-oklahoma.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Guthrie%2C_Oklahoma",
    "article": "Guthrie, Oklahoma"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 44,
@@ -955,7 +1041,9 @@
    "src": "https://upload.wikimedia.org/wikipedia/commons/5/59/Berndivent.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "page": "https://de.wikipedia.org/wiki/Bernd_das_Brot",
    "article": "Bernd das Brot"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 45,
@@ -977,7 +1065,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Panguana-Lupuna-2008-2.jpg/330px-Panguana-Lupuna-2008-2.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Panguana",
    "article": "Panguana"
-  }
+  },
+  "area": "world",
+  "visitable": false
  },
  {
   "id": 46,
@@ -999,7 +1089,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Sydney_Town_Hall%2C_2022%2C_06.jpg/330px-Sydney_Town_Hall%2C_2022%2C_06.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Sydney_Town_Hall",
    "article": "Sydney Town Hall"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 47,
@@ -1021,7 +1113,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Tompkins_Square_Park.JPG/330px-Tompkins_Square_Park.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Tompkins_Square_Park",
    "article": "Tompkins Square Park"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 48,
@@ -1043,7 +1137,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Vista_a%C3%A9rea_del_Estadio_Azteca_-_2026_-_02.jpg/330px-Vista_a%C3%A9rea_del_Estadio_Azteca_-_2026_-_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Estadio_Azteca",
    "article": "Estadio Azteca"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 49,
@@ -1065,7 +1161,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Berlin_-_Funkturm2.jpg/330px-Berlin_-_Funkturm2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Berlin_Radio_Tower",
    "article": "Berlin Radio Tower"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 50,
@@ -1087,7 +1185,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/View_of_Ashgabat_%2842376779291%29.jpg/330px-View_of_Ashgabat_%2842376779291%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Ashgabat",
    "article": "Ashgabat"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 51,
@@ -1109,7 +1209,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Hollywood_sign_%288485145044%29.jpg/330px-Hollywood_sign_%288485145044%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Hollywood_Sign",
    "article": "Hollywood Sign"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 52,
@@ -1131,7 +1233,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Voynich_Manuscript_%2832%29.jpg/330px-Voynich_Manuscript_%2832%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Voynich_manuscript",
    "article": "Voynich manuscript"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 53,
@@ -1153,7 +1257,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Southernmost_point_buoy%2C_NE_view.jpg/330px-Southernmost_point_buoy%2C_NE_view.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Key_West",
    "article": "Key West"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 54,
@@ -1175,7 +1281,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Coral_Castle_1.jpg/330px-Coral_Castle_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Coral_Castle",
    "article": "Coral Castle"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 55,
@@ -1197,7 +1305,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Isla_de_la_Juventud.jpg/330px-Isla_de_la_Juventud.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Isla_de_la_Juventud",
    "article": "Isla de la Juventud"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 56,
@@ -1219,7 +1329,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Mothman_Artist%27s_Impression.png/330px-Mothman_Artist%27s_Impression.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Mothman",
    "article": "Mothman"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 57,
@@ -1241,7 +1353,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Burbank_media_district_from_Griffith_Park_2015-11-07.jpg/330px-Burbank_media_district_from_Griffith_Park_2015-11-07.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Burbank%2C_California",
    "article": "Burbank, California"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 58,
@@ -1263,7 +1377,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Mina_San_Jos%C3%A9_de_Copiap%C3%B3_en_2010.jpg/330px-Mina_San_Jos%C3%A9_de_Copiap%C3%B3_en_2010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/2010_Copiap%C3%B3_mining_accident",
    "article": "2010 Copiapó mining accident"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 59,
@@ -1285,7 +1401,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Fatberg_at_Museum_of_London.jpg/330px-Fatberg_at_Museum_of_London.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Fatberg",
    "article": "Fatberg"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 60,
@@ -1307,7 +1425,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Aerial_view_of_the_Canadian_Falls_%28Horseshoe_Falls%29_and_the_Hornblower_Niagara_Cruises_boat%3B_Niagara_Falls.JPG/330px-Aerial_view_of_the_Canadian_Falls_%28Horseshoe_Falls%29_and_the_Hornblower_Niagara_Cruises_boat%3B_Niagara_Falls.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Horseshoe_Falls",
    "article": "Horseshoe Falls"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 61,
@@ -1329,7 +1449,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/The_King_In_The_Car_Park_-_Page_15_-_Figure_12.png/330px-The_King_In_The_Car_Park_-_Page_15_-_Figure_12.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Exhumation_and_reburial_of_Richard_III_of_England",
    "article": "Exhumation and reburial of Richard III of England"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 62,
@@ -1351,7 +1473,9 @@
    "src": "https://upload.wikimedia.org/wikipedia/commons/0/05/Wappen_Niederrossla.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
    "page": "https://de.wikipedia.org/wiki/Niederro%C3%9Fla",
    "article": "Niederroßla"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 63,
@@ -1373,7 +1497,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Atari_E.T._Dig-_Alamogordo%2C_New_Mexico_%2814036097792%29.jpg/330px-Atari_E.T._Dig-_Alamogordo%2C_New_Mexico_%2814036097792%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Atari_video_game_burial",
    "article": "Atari video game burial"
-  }
+  },
+  "area": "world",
+  "visitable": false
  },
  {
   "id": 64,
@@ -1395,7 +1521,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Bucherverbrennung-book-burning-Nazi-1933-Institute.jpg/330px-Bucherverbrennung-book-burning-Nazi-1933-Institute.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Institut_f%C3%BCr_Sexualwissenschaft",
    "article": "Institut für Sexualwissenschaft"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 65,
@@ -1417,7 +1545,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Adolphe_Sax_4a.jpg/330px-Adolphe_Sax_4a.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Adolphe_Sax",
    "article": "Adolphe Sax"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 66,
@@ -1439,7 +1569,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Berlin%2C_Bernauer_Stra%C3%9Fe%2C_%C3%9Cberblick_2014-07.jpg/330px-Berlin%2C_Bernauer_Stra%C3%9Fe%2C_%C3%9Cberblick_2014-07.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Gedenkst%C3%A4tte_Berliner_Mauer",
    "article": "Gedenkstätte Berliner Mauer"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 67,
@@ -1461,7 +1593,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Joseph_Merrick_carte_de_visite_photo%2C_c._1889.jpg/330px-Joseph_Merrick_carte_de_visite_photo%2C_c._1889.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Joseph_Merrick",
    "article": "Joseph Merrick"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 68,
@@ -1483,7 +1617,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/de/thumb/2/23/Bahlsen_alte_Produkte.jpg/330px-Bahlsen_alte_Produkte.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Bahlsen",
    "article": "Bahlsen"
-  }
+  },
+  "area": "de",
+  "visitable": false
  },
  {
   "id": 69,
@@ -1505,7 +1641,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Rostocker_Pfeilstorch.jpg/330px-Rostocker_Pfeilstorch.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Pfeilstorch",
    "article": "Pfeilstorch"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 70,
@@ -1527,7 +1665,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Hafnarfj%C3%B6r%C3%B0ur%2C_Iceland_2017.jpg/330px-Hafnarfj%C3%B6r%C3%B0ur%2C_Iceland_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Hafnarfj%C3%B6r%C3%B0ur",
    "article": "Hafnarfjörður"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 71,
@@ -1549,7 +1689,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Public_Square_Cleveland_2022.png/330px-Public_Square_Cleveland_2022.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Public_Square%2C_Cleveland",
    "article": "Public Square, Cleveland"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 72,
@@ -1571,7 +1713,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Alligator_mississippiensis.jpg/330px-Alligator_mississippiensis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Saturn_(alligator)",
    "article": "Saturn (alligator)"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 73,
@@ -1593,7 +1737,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/J%C3%BAzcar_M%C3%A1laga_Andalusia_Spain_smurf_town.jpg/330px-J%C3%BAzcar_M%C3%A1laga_Andalusia_Spain_smurf_town.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/J%C3%BAzcar",
    "article": "Júzcar"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 74,
@@ -1615,7 +1761,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Borgo_Calcata.jpg/330px-Borgo_Calcata.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Calcata",
    "article": "Calcata"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 75,
@@ -1637,7 +1785,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Santiago_Island_from_space.jpg/330px-Santiago_Island_from_space.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Santiago_Island_(Gal%C3%A1pagos)",
    "article": "Santiago Island (Galápagos)"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 76,
@@ -1653,7 +1803,9 @@
    "title": "ernst-thälmann-insel / jurten - mit @elhotzo",
    "date": "2023-04-12",
    "url": "https://www.ndr.de/media/ernst-thaelmann-insel-jurten-mit-elhotzo-,audio1358122.html"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 77,
@@ -1675,7 +1827,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Landtag_SH_Logo.svg/langde-330px-Landtag_SH_Logo.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Schleswig-Holsteinischer_Landtag",
    "article": "Schleswig-Holsteinischer Landtag"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 78,
@@ -1697,7 +1851,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Emu_1_-_Tidbinbilla.jpg/330px-Emu_1_-_Tidbinbilla.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Emu",
    "article": "Emu"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 79,
@@ -1719,7 +1875,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Gates_to_Francis_Field_-_Danforth_Campus_of_Washington_University_in_St._Louis.jpg/330px-Gates_to_Francis_Field_-_Danforth_Campus_of_Washington_University_in_St._Louis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Francis_Olympic_Field",
    "article": "Francis Olympic Field"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 80,
@@ -1741,7 +1899,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/View_of_St._Thomas.jpg/330px-View_of_St._Thomas.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Saint_Thomas%2C_U.S._Virgin_Islands",
    "article": "Saint Thomas, U.S. Virgin Islands"
-  }
+  },
+  "area": "world",
+  "visitable": false
  },
  {
   "id": 81,
@@ -1763,7 +1923,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/DEU_Neutraubling_COA.svg/langde-330px-DEU_Neutraubling_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Neutraubling",
    "article": "Neutraubling"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 82,
@@ -1785,7 +1947,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/WaxMuseumMadameTussaudsLondon.JPG/330px-WaxMuseumMadameTussaudsLondon.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Madame_Tussauds",
    "article": "Madame Tussauds"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 83,
@@ -1807,7 +1971,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Macaca_nigra_self-portrait_large.jpg/330px-Macaca_nigra_self-portrait_large.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Monkey_selfie_copyright_dispute",
    "article": "Monkey selfie copyright dispute"
-  }
+  },
+  "area": "world",
+  "visitable": true
  },
  {
   "id": 84,
@@ -1829,7 +1995,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Jimi_Hendrix_memorial_P7230128.JPG/330px-Jimi_Hendrix_memorial_P7230128.JPG?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Love-and-Peace-Festival",
    "article": "Love-and-Peace-Festival"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 85,
@@ -1851,7 +2019,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Wojtek_the_bear.jpg/330px-Wojtek_the_bear.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Wojtek",
    "article": "Wojtek"
-  }
+  },
+  "area": "eu",
+  "visitable": true
  },
  {
   "id": 86,
@@ -1873,7 +2043,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/DEU_Augsburg_COA_1811.svg/langde-330px-DEU_Augsburg_COA_1811.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Augsburg",
    "article": "Augsburg"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 87,
@@ -1895,7 +2067,9 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Schloss_Sanssouci_2014.jpg/330px-Schloss_Sanssouci_2014.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://en.wikipedia.org/wiki/Sanssouci",
    "article": "Sanssouci"
-  }
+  },
+  "area": "de",
+  "visitable": true
  },
  {
   "id": 88,
@@ -1917,6 +2091,8 @@
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/DEU_Klingenberg_COA.svg/langde-330px-DEU_Klingenberg_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
    "page": "https://de.wikipedia.org/wiki/Klingenberg_am_Main",
    "article": "Klingenberg am Main"
-  }
+  },
+  "area": "de",
+  "visitable": true
  }
 ]
