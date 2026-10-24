@@ -58,6 +58,25 @@
   .tab.ghost { color: rgba(255,255,255,.92); background: rgba(255,255,255,.18); }
   .tab .fav { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--grad); }
   .tab.ghost .fav { background: rgba(255,255,255,.75); }
+  /* Zufalls-Tab: zeigt schon den nächsten zufälligen Ort und springt beim Klick dorthin. */
+  button.tab.random {
+    font: inherit; font-size: 12px; font-weight: 400; border: 0; border-radius: 9px 9px 0 0;
+    cursor: pointer; color: rgba(255,255,255,.95); background: rgba(255,255,255,.18);
+  }
+  button.tab.random:hover { background: rgba(255,255,255,.34); filter: none; }
+  .tab.random .dice { flex: none; font-size: 11px; }
+  /* Der aktive Tab hat Vorrang, der Zufalls-Tab schrumpft zuerst. */
+  .tab.active { flex: 0 1 auto; min-width: 96px; }
+  aside .tab.active { flex: none; }
+  .tab.random { flex: 0 3 auto; min-width: 76px; max-width: 150px; }
+  .win .tab.active { max-width: 150px; }
+  /* Roter Fensterpunkt im Popup = Schließen. */
+  .lights .light-close {
+    width: 11px; height: 11px; padding: 0; border: 0; border-radius: 50%; cursor: pointer;
+    background: #ff5f57; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
+    color: rgba(0,0,0,.65); font: 700 10px/11px system-ui, sans-serif; text-align: center;
+  }
+  .lights .light-close:hover { filter: brightness(.92); color: #000; }
   .addressbar {
     display: flex; align-items: center; gap: 8px;
     padding: 7px 10px; background: var(--panel);
@@ -137,13 +156,6 @@
   }
   .win .leaflet-popup-content { margin: 0; width: 300px !important; font-size: 14px; line-height: 1.45; }
   .win .leaflet-popup-tip { background: #fff; }
-  .win a.leaflet-popup-close-button {
-    top: 9px; right: 9px; width: 22px; height: 22px;
-    font: 18px/22px system-ui, sans-serif; color: #fff;
-    border-radius: 6px;
-  }
-  .win a.leaflet-popup-close-button:hover { background: rgba(255,255,255,.25); color: #fff; }
-  .win .titlebar { padding-right: 38px; }
   .photo { position: relative; aspect-ratio: 16 / 9; background: var(--grad); overflow: hidden; }
   .photo img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
   .photo .ph {
@@ -180,7 +192,8 @@
   @media (max-width: 720px) {
     body { flex-direction: column-reverse; }
     aside { width: 100%; height: auto; max-height: 40%; box-shadow: 0 -2px 16px rgba(0,0,0,.1); }
-    aside > .titlebar, .sub { display: none; }
+    .sub { display: none; }
+    aside > .titlebar { min-height: 32px; padding-top: 6px; }
     aside.collapsed #list, aside.collapsed footer, aside.collapsed .count { display: none; }
     .brand { padding: 10px 16px 0; display: flex; align-items: center; justify-content: space-between; }
     h1 { font-size: 20px; }
@@ -197,7 +210,7 @@
   <div class="titlebar">
     <div class="lights"><i></i><i></i><i></i></div>
     <div class="tab active"><span class="fav"></span><span>too many maps</span></div>
-    <div class="tab ghost"><span class="fav"></span><span>noch ein Tab</span></div>
+    <button class="tab random" type="button"><span class="dice">🎲</span><span class="label">Zufälliger Tab</span></button>
   </div>
   <div class="brand">
     <h1>too many <span>maps</span></h1>
@@ -255,12 +268,6 @@ const slug = s => s.toLowerCase()
   .normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-// Der zweite Tab der Folge (z. B. „lugner city / wiener zentralfriedhof“) wird als Hintergrund-Tab angedeutet.
-function otherTabs(p) {
-  return p.episode.title.replace(/\s+[–-]\s+mit .*$/i, '').split(' / ')
-    .map(t => t.trim()).filter(t => t && t.toLowerCase() !== p.topic.toLowerCase());
-}
-
 function photoHtml(p) {
   const ph = '<div class="ph">🗺️</div>';
   if (!p.image) return `<div class="photo">${ph}</div>`;
@@ -272,13 +279,11 @@ function photoHtml(p) {
 
 function popupHtml(p) {
   const gmaps = `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`;
-  const ghost = otherTabs(p).slice(0, 1).map(t =>
-    `<div class="tab ghost"><span class="fav"></span><span>${esc(t)}</span></div>`).join('');
   return `
     <div class="titlebar">
-      <div class="lights"><i></i><i></i><i></i></div>
+      <div class="lights"><button class="light-close" type="button" aria-label="Schließen" title="Schließen">×</button><i></i><i></i></div>
       <div class="tab active"><span class="fav"></span><span>${esc(p.topic)}</span></div>
-      ${ghost}
+      ${randomTabHtml()}
     </div>
     <div class="addressbar">
       <span class="nav">←→⟳</span>
@@ -318,6 +323,9 @@ const dotIcon = L.divIcon({ className: 'dot', iconSize: [22, 22] });
 
 let places = [];
 let userPos = null;
+let shownPlaces = [];
+let openId = null;      // Ort, dessen Popup gerade offen ist
+let nextRandom = null;  // Ziel des Zufalls-Tabs, wird vorab angezeigt
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
 const qEl = document.getElementById('q');
@@ -335,6 +343,43 @@ function focus(p) {
   cluster.zoomToShowLayer(p.marker, () => p.marker.openPopup());
   document.querySelectorAll('#list li').forEach(li => li.classList.toggle('active', li.dataset.id == p.id));
 }
+
+function randomTabHtml() {
+  const name = nextRandom ? nextRandom.name : 'Zufälliger Tab';
+  return `<button class="tab random" type="button" title="Zufälliger Tab: ${esc(name)}">` +
+    `<span class="dice">🎲</span><span class="label">${esc(name)}</span></button>`;
+}
+
+function pickRandom(excludeId) {
+  const pool = (shownPlaces.length >= 2 ? shownPlaces : places).filter(p => p.id !== excludeId);
+  return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
+}
+
+function updateRandomLabels() {
+  document.querySelectorAll('.tab.random').forEach(b => {
+    const name = nextRandom ? nextRandom.name : 'Zufälliger Tab';
+    b.querySelector('.label').textContent = name;
+    b.title = 'Zufälliger Tab: ' + name;
+  });
+}
+
+function goRandom() {
+  const target = nextRandom || pickRandom(openId);
+  if (!target) return;
+  nextRandom = pickRandom(target.id);
+  updateRandomLabels();
+  focus(target);
+}
+
+document.addEventListener('click', e => {
+  if (e.target.closest('.tab.random')) {
+    e.preventDefault(); e.stopPropagation();
+    goRandom();
+  } else if (e.target.closest('.light-close')) {
+    e.preventDefault(); e.stopPropagation();
+    map.closePopup();
+  }
+});
 
 function render() {
   const q = qEl.value.trim().toLowerCase();
@@ -360,6 +405,12 @@ function render() {
       ${userPos ? `<span class="dist">${Math.round(p.dist).toLocaleString('de-DE')} km</span>` : ''}
     </li>`).join('');
   countEl.textContent = `${shown.length} von ${places.length} Orten · ${shown.length} offene Tabs`;
+
+  shownPlaces = shown;
+  if (!nextRandom || nextRandom.id === openId || (shown.length >= 2 && !shown.includes(nextRandom))) {
+    nextRandom = pickRandom(openId);
+  }
+  updateRandomLabels();
 }
 
 listEl.addEventListener('click', e => {
@@ -386,7 +437,16 @@ document.getElementById('toggle').addEventListener('click', () => {
 });
 
 // Auf dem Handy ist die Karte sonst zu niedrig fürs Popup: Liste beim Öffnen einklappen.
+map.on('popupclose', () => { openId = null; });
+
 map.on('popupopen', e => {
+  // Leaflet feuert popupopen erst auf der Karte, dann am Marker – daher die ID hier direkt setzen.
+  if (e.popup._source && e.popup._source.placeId) openId = e.popup._source.placeId;
+  // Der Zufalls-Tab darf nie auf den gerade offenen Ort zeigen.
+  if (nextRandom && nextRandom.id === openId) {
+    nextRandom = pickRandom(openId);
+    updateRandomLabels();
+  }
   if (!matchMedia('(max-width: 720px)').matches || panel.classList.contains('collapsed')) return;
   panel.classList.add('collapsed');
   map.invalidateSize();
@@ -401,7 +461,8 @@ fetch('data/places.json')
     places.forEach(p => {
       p.haystack = [p.name, p.region, p.topic, p.episode.title, p.info].join(' ').toLowerCase();
       p.marker = L.marker([p.lat, p.lng], { icon: dotIcon, title: p.name, alt: p.name })
-        .bindPopup(() => popupHtml(p), { className: 'win', maxWidth: 300, minWidth: 260, autoPanPadding: [20, 20] });
+        .bindPopup(() => popupHtml(p), { className: 'win', closeButton: false, maxWidth: 300, minWidth: 260, autoPanPadding: [20, 20] });
+      p.marker.placeId = p.id;
     });
     render();
   })
