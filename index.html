@@ -145,7 +145,7 @@
   .win a.leaflet-popup-close-button:hover { background: rgba(255,255,255,.25); color: #fff; }
   .win .titlebar { padding-right: 38px; }
   .photo { position: relative; aspect-ratio: 16 / 9; background: var(--grad); overflow: hidden; }
-  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
   .photo .ph {
     position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
     font-size: 42px; color: #fff;
@@ -153,7 +153,7 @@
   .photo .credit {
     position: absolute; right: 0; bottom: 0;
     background: rgba(0,0,0,.5); color: #fff; font-size: 10px; padding: 2px 6px;
-    border-top-left-radius: 6px; text-decoration: none;
+    border-top-left-radius: 6px; text-decoration: none; z-index: 2;
   }
   .page { padding: 12px 14px 14px; }
   .page h3 { margin: 0; font-size: 17px; letter-spacing: -0.01em; }
@@ -179,13 +179,16 @@
 
   @media (max-width: 720px) {
     body { flex-direction: column-reverse; }
-    aside { width: 100%; height: auto; max-height: 48%; box-shadow: 0 -2px 16px rgba(0,0,0,.1); }
+    aside { width: 100%; height: auto; max-height: 40%; box-shadow: 0 -2px 16px rgba(0,0,0,.1); }
     aside > .titlebar, .sub { display: none; }
     aside.collapsed #list, aside.collapsed footer, aside.collapsed .count { display: none; }
     .brand { padding: 10px 16px 0; display: flex; align-items: center; justify-content: space-between; }
     h1 { font-size: 20px; }
     #toggle { display: inline-block; padding: 4px 12px; font-size: 13px; background: var(--chrome); color: var(--ink); }
     .win .leaflet-popup-content { width: 270px !important; }
+    .photo { aspect-ratio: 21 / 9; }
+    .page { padding: 10px 12px 12px; }
+    .page .ep { margin: 8px 0 6px; }
   }
 </style>
 </head>
@@ -327,6 +330,8 @@ function distKm(a, b) {
 }
 
 function focus(p) {
+  // Erst nah genug ranzoomen, damit das Popup auch bei Orten weit im Norden Platz hat.
+  if (map.getZoom() < 5) map.setView([p.lat, p.lng], 5, { animate: false });
   cluster.zoomToShowLayer(p.marker, () => p.marker.openPopup());
   document.querySelectorAll('#list li').forEach(li => li.classList.toggle('active', li.dataset.id == p.id));
 }
@@ -374,8 +379,20 @@ document.getElementById('near').addEventListener('click', () => {
   }, () => alert('Standort konnte nicht ermittelt werden.'));
 });
 
-document.getElementById('toggle').addEventListener('click', () =>
-  document.getElementById('panel').classList.toggle('collapsed'));
+const panel = document.getElementById('panel');
+document.getElementById('toggle').addEventListener('click', () => {
+  panel.classList.toggle('collapsed');
+  map.invalidateSize();
+});
+
+// Auf dem Handy ist die Karte sonst zu niedrig fürs Popup: Liste beim Öffnen einklappen.
+map.on('popupopen', e => {
+  if (!matchMedia('(max-width: 720px)').matches || panel.classList.contains('collapsed')) return;
+  panel.classList.add('collapsed');
+  map.invalidateSize();
+  e.popup.update();
+  map.panInside(e.popup.getLatLng(), { paddingTopLeft: [20, 520] });
+});
 
 fetch('data/places.json')
   .then(r => r.json())

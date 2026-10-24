@@ -13,6 +13,12 @@
    "title": "braco / stockholm-syndrom",
    "date": "2026-10-14",
    "url": "https://www.ndr.de/podcast/braco-stockholm-syndrom,audio-3534224.html"
+  },
+  "wiki": "en:Norrmalmstorg",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Norrmalmstorg_22072006.jpg/330px-Norrmalmstorg_22072006.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Norrmalmstorg",
+   "article": "Norrmalmstorg"
   }
  },
  {
@@ -29,6 +35,12 @@
    "title": "atlantropa / sr flohmarkt",
    "date": "2026-10-07",
    "url": "https://www.ndr.de/podcast/atlantropa-sr-flohmarkt,audio-3520020.html"
+  },
+  "wiki": "de:Atlantropa",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Map_of_the_Atlantrop_Projekt.png/330px-Map_of_the_Atlantrop_Projekt.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Atlantropa",
+   "article": "Atlantropa"
   }
  },
  {
@@ -45,6 +57,12 @@
    "title": "showassistentinnen / mühlhiasl – mit @raverresi",
    "date": "2026-09-30",
    "url": "https://www.ndr.de/podcast/showassistentinnen-muehlhiasl-mit-raverresi,audio-3506324.html"
+  },
+  "wiki": "de:Kloster_Windberg",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Kloster_Windberg_-_Blasiusbrunnen_2.jpg/330px-Kloster_Windberg_-_Blasiusbrunnen_2.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Kloster_Windberg",
+   "article": "Kloster Windberg"
   }
  },
  {
@@ -61,6 +79,12 @@
    "title": "älteste boxbude / palast des postboten",
    "date": "2026-09-22",
    "url": "https://www.ndr.de/podcast/aelteste-boxbude-palast-des-postboten,audio-3492486.html"
+  },
+  "wiki": "en:Palais_idéal",
+  "image": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Ferdinand_Cheval.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Ferdinand_Cheval",
+   "article": "Ferdinand Cheval"
   }
  },
  {
@@ -77,7 +101,8 @@
    "title": "sonnenfinsternis 1999 / dollywood",
    "date": "2026-09-01",
    "url": "https://www.ndr.de/podcast/sonnenfinsternis-1999-dollywood,audio-3451486.html"
-  }
+  },
+  "wiki": "en:Dollywood"
  },
  {
   "id": 6,
@@ -93,6 +118,12 @@
    "title": "camp david / städte-syndrome",
    "date": "2026-07-22",
    "url": "https://www.ndr.de/podcast/camp-david-staedte-syndrome,audio-3364950.html"
+  },
+  "wiki": "en:Paris",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/330px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Paris",
+   "article": "Paris"
   }
  },
  {
@@ -109,6 +140,12 @@
    "title": "camp david / städte-syndrome",
    "date": "2026-07-22",
    "url": "https://www.ndr.de/podcast/camp-david-staedte-syndrome,audio-3364950.html"
+  },
+  "wiki": "en:Jerusalem",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Dome_of_the_Rock_seen_from_the_Mount_of_Olives_%2812395649153%29_%28cropped%29.jpg/330px-Dome_of_the_Rock_seen_from_the_Mount_of_Olives_%2812395649153%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Jerusalem",
+   "article": "Jerusalem"
   }
  },
  {
@@ -125,6 +162,12 @@
    "title": "camp david / städte-syndrome",
    "date": "2026-07-22",
    "url": "https://www.ndr.de/podcast/camp-david-staedte-syndrome,audio-3364950.html"
+  },
+  "wiki": "en:Basilica_of_Santa_Croce,_Florence",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Bas%C3%ADlica_de_la_Santa_Cruz%2C_Florencia%2C_Italia%2C_2022-09-18%2C_DD_95.jpg/330px-Bas%C3%ADlica_de_la_Santa_Cruz%2C_Florencia%2C_Italia%2C_2022-09-18%2C_DD_95.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Santa_Croce%2C_Florence",
+   "article": "Santa Croce, Florence"
   }
  },
  {
@@ -141,6 +184,12 @@
    "title": "drahtseilmann / newtopia",
    "date": "2026-07-15",
    "url": "https://www.ndr.de/podcast/drahtseilmann-newtopia,audio-3357806.html"
+  },
+  "wiki": "en:Philippe_Petit",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/PhilippePetitAAFeb09.jpg/330px-PhilippePetitAAFeb09.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Philippe_Petit",
+   "article": "Philippe Petit"
   }
  },
  {
@@ -173,6 +222,12 @@
    "title": "disney‘s america / modelland",
    "date": "2026-07-01",
    "url": "https://www.ndr.de/podcast/disneys-america-modelland,audio-3330602.html"
+  },
+  "wiki": "en:Haymarket,_Virginia",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Prince_William_County_Virginia_incorporated_and_unincorporated_areas_Haymarket_highlighted.svg/330px-Prince_William_County_Virginia_incorporated_and_unincorporated_areas_Haymarket_highlighted.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Haymarket%2C_Virginia",
+   "article": "Haymarket, Virginia"
   }
  },
  {
@@ -189,6 +244,12 @@
    "title": "unfreiwilliger aquanaut / resl von konnersreuth",
    "date": "2026-06-10",
    "url": "https://www.ndr.de/podcast/unfreiwilliger-aquanaut-resl-von-konnersreuth,audio-3289730.html"
+  },
+  "wiki": "de:Therese_Neumann",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Bundesarchiv_Bild_102-00241%2C_Therese_Neumann.jpg/330px-Bundesarchiv_Bild_102-00241%2C_Therese_Neumann.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Therese_Neumann",
+   "article": "Therese Neumann"
   }
  },
  {
@@ -205,6 +266,12 @@
    "title": "krake paul / explodierende tiere – mit @ninachuba und @hitzemannn",
    "date": "2026-05-27",
    "url": "https://www.ndr.de/podcast/krake-paul-explodierende-tiere-mit-ninachuba-und-hitzemannn,audio-3266712.html"
+  },
+  "wiki": "en:Paul_the_Octopus",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Oktopus-Orakel_Paul_mit_Schuh.JPG/330px-Oktopus-Orakel_Paul_mit_Schuh.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Paul_the_Octopus",
+   "article": "Paul the Octopus"
   }
  },
  {
@@ -221,6 +288,12 @@
    "title": "krake paul / explodierende tiere – mit @ninachuba und @hitzemannn",
    "date": "2026-05-27",
    "url": "https://www.ndr.de/podcast/krake-paul-explodierende-tiere-mit-ninachuba-und-hitzemannn,audio-3266712.html"
+  },
+  "wiki": "en:Exploding_whale",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/en/thumb/0/05/Exploding_whale_%28screengrab%29.jpg/330px-Exploding_whale_%28screengrab%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Exploding_whale",
+   "article": "Exploding whale"
   }
  },
  {
@@ -237,6 +310,12 @@
    "title": "lugner city / wiener zentralfriedhof",
    "date": "2026-05-20",
    "url": "https://www.ndr.de/podcast/lugner-city-wiener-zentralfriedhof,audio-3259802.html"
+  },
+  "wiki": "de:Lugner_City",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Richard_Lugner_-_FP%C3%96-Neujahrstreffen_2019.JPG/330px-Richard_Lugner_-_FP%C3%96-Neujahrstreffen_2019.JPG?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Richard_Lugner",
+   "article": "Richard Lugner"
   }
  },
  {
@@ -253,6 +332,12 @@
    "title": "lugner city / wiener zentralfriedhof",
    "date": "2026-05-20",
    "url": "https://www.ndr.de/podcast/lugner-city-wiener-zentralfriedhof,audio-3259802.html"
+  },
+  "wiki": "de:Wiener_Zentralfriedhof",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Simmering_%28Wien%29_-_Luegerkirche_%281%29.JPG/330px-Simmering_%28Wien%29_-_Luegerkirche_%281%29.JPG?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Wiener_Zentralfriedhof",
+   "article": "Wiener Zentralfriedhof"
   }
  },
  {
@@ -285,6 +370,12 @@
    "title": "jenseitskontakte / schimpansenkrieg – mit @jochenschropp",
    "date": "2026-04-22",
    "url": "https://www.ndr.de/podcast/jenseitskontakte-schimpansenkrieg-mit-jochenschropp,audio-3233172.html"
+  },
+  "wiki": "en:Kibale_National_Park",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Red_colobus_kibale.JPG/330px-Red_colobus_kibale.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Kibale_National_Park",
+   "article": "Kibale National Park"
   }
  },
  {
@@ -301,6 +392,12 @@
    "title": "balloon boy / kaspar hauser",
    "date": "2026-04-15",
    "url": "https://www.ndr.de/podcast/balloon-boy-kaspar-hauser,audio-3225994.html"
+  },
+  "wiki": "de:Unschlittplatz",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Unschlittplatz_mit_Dudelsackpfeifer-Brunnen_20170505_145041a.jpg/330px-Unschlittplatz_mit_Dudelsackpfeifer-Brunnen_20170505_145041a.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Unschlittplatz",
+   "article": "Unschlittplatz"
   }
  },
  {
@@ -317,7 +414,8 @@
    "title": "balloon boy / kaspar hauser",
    "date": "2026-04-15",
    "url": "https://www.ndr.de/podcast/balloon-boy-kaspar-hauser,audio-3225994.html"
-  }
+  },
+  "wiki": "de:Hofgarten_Ansbach"
  },
  {
   "id": 21,
@@ -333,6 +431,12 @@
    "title": "st. kilda / teppichmänner",
    "date": "2026-02-18",
    "url": "https://www.ndr.de/podcast/st-kilda-teppichmanner,audio-419266.html"
+  },
+  "wiki": "en:St_Kilda,_Scotland",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg/330px-Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/St_Kilda%2C_Scotland",
+   "article": "St Kilda, Scotland"
   }
  },
  {
@@ -365,6 +469,12 @@
    "title": "rösrath / aschaffenburg",
    "date": "2025-11-12",
    "url": "https://www.ndr.de/podcast/roesrath-aschaffenburg,audio-327148.html"
+  },
+  "wiki": "de:Aschaffenburg",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/DEU_Aschaffenburg_COA.svg/langde-330px-DEU_Aschaffenburg_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Aschaffenburg",
+   "article": "Aschaffenburg"
   }
  },
  {
@@ -381,7 +491,8 @@
    "title": "celebrity number 6 / action park",
    "date": "2025-11-05",
    "url": "https://www.ndr.de/podcast/celebrity-number-6-action-park,audio-320894.html"
-  }
+  },
+  "wiki": "en:Action_Park"
  },
  {
   "id": 25,
@@ -397,6 +508,12 @@
    "title": "jack der pavian / paralympics betrug – mit @kummer_official",
    "date": "2025-10-22",
    "url": "https://www.ndr.de/podcast/jack-der-pavian-paralympics-betrug-mit-kummerofficial,audio-310816.html"
+  },
+  "wiki": "en:Jack_(baboon)",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Jack.signalman.jpg/330px-Jack.signalman.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Jack_(baboon)",
+   "article": "Jack (baboon)"
   }
  },
  {
@@ -413,6 +530,12 @@
    "title": "nasubi / kotze-affäre",
    "date": "2025-10-08",
    "url": "https://www.ndr.de/podcast/nasubi-kotze-affaere,audio-300946.html"
+  },
+  "wiki": "de:Jagdschloss_Grunewald",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Jagdschloss_Grunewald_HDR.jpg/330px-Jagdschloss_Grunewald_HDR.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Jagdschloss_Grunewald",
+   "article": "Jagdschloss Grunewald"
   }
  },
  {
@@ -429,6 +552,12 @@
    "title": "sommer wetten dass / kaiman sammy",
    "date": "2025-07-16",
    "url": "https://www.ndr.de/podcast/sommer-wetten-dass-kaiman-sammy,audio-239468.html"
+  },
+  "wiki": "de:Kaiman_Sammy",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Straberg-Nievenheimer_See_-_Wakebeach_area-2565.jpg/330px-Straberg-Nievenheimer_See_-_Wakebeach_area-2565.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Straberg-Nievenheimer_See",
+   "article": "Straberg-Nievenheimer See"
   }
  },
  {
@@ -445,6 +574,12 @@
    "title": "wels / bridalplasty – mit @arnjarrr",
    "date": "2025-07-02",
    "url": "https://www.ndr.de/podcast/wels-bridalplasty-mit-arnjarrr,audio-229910.html"
+  },
+  "wiki": "de:Großer_Brombachsee",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Aerial_image_of_Gro%C3%9Fer_Brombachsee_%28view_from_the_southeast%29.jpg/330px-Aerial_image_of_Gro%C3%9Fer_Brombachsee_%28view_from_the_southeast%29.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Gro%C3%9Fer_Brombachsee",
+   "article": "Großer Brombachsee"
   }
  },
  {
@@ -461,6 +596,12 @@
    "title": "simlisch / it's a small world",
    "date": "2025-06-25",
    "url": "https://www.ndr.de/podcast/simlisch-its-a-small-world,audio-224572.html"
+  },
+  "wiki": "en:It's_a_Small_World",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/It%27s_a_Small_World_logo.svg/330px-It%27s_a_Small_World_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/It's_a_Small_World",
+   "article": "It's a Small World"
   }
  },
  {
@@ -477,6 +618,12 @@
    "title": "eingemauerte echse / pee-wee",
    "date": "2025-06-11",
    "url": "https://www.ndr.de/podcast/eingemauerte-echse-pee-wee,audio1890258.html"
+  },
+  "wiki": "en:Old_Rip",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Old_Rip_in_his_Coffin.jpg/330px-Old_Rip_in_his_Coffin.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Ol'_Rip_the_Horned_Toad",
+   "article": "Ol' Rip the Horned Toad"
   }
  },
  {
@@ -493,6 +640,12 @@
    "title": "honigdachs / wundertreppe",
    "date": "2025-05-07",
    "url": "https://www.ndr.de/podcast/honigdachs-wundertreppe,audio1866734.html"
+  },
+  "wiki": "en:Honey_badger",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Honey_Badger.jpg/330px-Honey_Badger.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Honey_badger",
+   "article": "Honey badger"
   }
  },
  {
@@ -509,6 +662,12 @@
    "title": "honigdachs / wundertreppe",
    "date": "2025-05-07",
    "url": "https://www.ndr.de/podcast/honigdachs-wundertreppe,audio1866734.html"
+  },
+  "wiki": "en:Loretto_Chapel",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Loretto_Chapel_Ext.jpg/330px-Loretto_Chapel_Ext.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Loretto_Chapel",
+   "article": "Loretto Chapel"
   }
  },
  {
@@ -525,6 +684,12 @@
    "title": "katy im all / otl petrow",
    "date": "2025-04-23",
    "url": "https://www.ndr.de/podcast/katy-im-all-otl-petrow,audio1858300.html"
+  },
+  "wiki": "en:Stanislav_Petrov",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Stanislaw-jewgrafowitsch-petrow-2016.jpg/330px-Stanislaw-jewgrafowitsch-petrow-2016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Stanislav_Petrov",
+   "article": "Stanislav Petrov"
   }
  },
  {
@@ -541,6 +706,12 @@
    "title": "unheilig / kaninchengeburt",
    "date": "2025-03-19",
    "url": "https://www.ndr.de/podcast/unheilig-kaninchengeburt,audio1835072.html"
+  },
+  "wiki": "en:Mary_Toft",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Mary_toft_1726_%28cropped%29.jpg/330px-Mary_toft_1726_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Mary_Toft",
+   "article": "Mary Toft"
   }
  },
  {
@@ -557,6 +728,12 @@
    "title": "maria callas / garfield phones",
    "date": "2025-03-12",
    "url": "https://www.ndr.de/podcast/maria-callas-garfield-phones,audio1831118.html"
+  },
+  "wiki": "fr:Plouarzel",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/PLOUARZEL_Village.JPG/330px-PLOUARZEL_Village.JPG?utm_source=fr.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://fr.wikipedia.org/wiki/Plouarzel",
+   "article": "Plouarzel"
   }
  },
  {
@@ -573,6 +750,12 @@
    "title": "zoo zajac / pokémon go",
    "date": "2025-02-26",
    "url": "https://www.ndr.de/podcast/zoo-zajac-pokemon-go,audio1821606.html"
+  },
+  "wiki": "de:Zoo_Zajac",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Zoo_Zajac.JPG/330px-Zoo_Zajac.JPG?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Zoo_Zajac",
+   "article": "Zoo Zajac"
   }
  },
  {
@@ -605,6 +788,12 @@
    "title": "klaasohm / schnupfvereine",
    "date": "2024-12-11",
    "url": "https://www.ndr.de/podcast/klaasohm-schnupfvereine,audio1772408.html"
+  },
+  "wiki": "de:Borkum",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/DEU_Borkum_COA.svg/langde-330px-DEU_Borkum_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Borkum",
+   "article": "Borkum"
   }
  },
  {
@@ -621,6 +810,12 @@
    "title": "roar / anatomy of lies",
    "date": "2024-11-27",
    "url": "https://www.ndr.de/media/roar-anatomy-of-lies,audio1762058.html"
+  },
+  "wiki": "en:Roar_(1981_film)",
+  "image": {
+   "src": "https://upload.wikimedia.org/wikipedia/en/f/f1/RoarMoviePoster1981.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Roar_(film)",
+   "article": "Roar (film)"
   }
  },
  {
@@ -637,6 +832,12 @@
    "title": "war of the worlds hörspiel / gef, die sprechende manguste",
    "date": "2024-10-30",
    "url": "https://www.ndr.de/media/war-of-the-worlds-hoerspiel-gef-die-sprechende-manguste,audio1744352.html"
+  },
+  "wiki": "en:Grover's_Mill,_New_Jersey",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/The_Mill_at_Grovers_Mill_-_164_Cranbury_Road_-_March_23%2C_2019_-_Photographed_by_Paul_Ligeti.jpg/330px-The_Mill_at_Grovers_Mill_-_164_Cranbury_Road_-_March_23%2C_2019_-_Photographed_by_Paul_Ligeti.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Grovers_Mill%2C_New_Jersey",
+   "article": "Grovers Mill, New Jersey"
   }
  },
  {
@@ -653,6 +854,12 @@
    "title": "war of the worlds hörspiel / gef, die sprechende manguste",
    "date": "2024-10-30",
    "url": "https://www.ndr.de/media/war-of-the-worlds-hoerspiel-gef-die-sprechende-manguste,audio1744352.html"
+  },
+  "wiki": "en:Gef",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Gef_the_talking_mongoose.png/330px-Gef_the_talking_mongoose.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Gef",
+   "article": "Gef"
   }
  },
  {
@@ -669,6 +876,12 @@
    "title": "galapagos affäre / lotte reiniger",
    "date": "2024-10-23",
    "url": "https://www.ndr.de/media/galapagos-affaere-lotte-reiniger,audio1739440.html"
+  },
+  "wiki": "en:Floreana_Island",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Floreana_topographic_map-en.png/330px-Floreana_topographic_map-en.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Floreana_Island",
+   "article": "Floreana Island"
   }
  },
  {
@@ -701,6 +914,12 @@
    "title": "national bible bee / bernd das brot entführung",
    "date": "2024-09-18",
    "url": "https://www.ndr.de/media/national-bible-bee-bernd-das-brot-entfuehrung,audio1716676.html"
+  },
+  "wiki": "de:Bernd_das_Brot",
+  "image": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/5/59/Berndivent.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://de.wikipedia.org/wiki/Bernd_das_Brot",
+   "article": "Bernd das Brot"
   }
  },
  {
@@ -717,6 +936,12 @@
    "title": "lansa flug 508 / mumien-auswickel-partys",
    "date": "2024-08-28",
    "url": "https://www.ndr.de/media/lansa-flug-508-mumien-auswickel-partys,audio1702562.html"
+  },
+  "wiki": "de:Panguana",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Panguana-Lupuna-2008-2.jpg/330px-Panguana-Lupuna-2008-2.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Panguana",
+   "article": "Panguana"
   }
  },
  {
@@ -733,6 +958,12 @@
    "title": "olympic flame hoax 1956 / dschungelcamp staffel 5",
    "date": "2024-08-14",
    "url": "https://www.ndr.de/media/olympic-flame-hoax-1956-dschungelcamp-staffel-5,audio1694336.html"
+  },
+  "wiki": "en:Sydney_Town_Hall",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Sydney_Town_Hall%2C_2022%2C_06.jpg/330px-Sydney_Town_Hall%2C_2022%2C_06.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Sydney_Town_Hall",
+   "article": "Sydney Town Hall"
   }
  },
  {
@@ -749,6 +980,12 @@
    "title": "vergessene wm / little germany",
    "date": "2024-07-03",
    "url": "https://www.ndr.de/media/vergessene-wm-little-germany,audio1666870.html"
+  },
+  "wiki": "en:Tompkins_Square_Park",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Tompkins_Square_Park.JPG/330px-Tompkins_Square_Park.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Tompkins_Square_Park",
+   "article": "Tompkins Square Park"
   }
  },
  {
@@ -765,6 +1002,12 @@
    "title": "vergessene wm / little germany",
    "date": "2024-07-03",
    "url": "https://www.ndr.de/media/vergessene-wm-little-germany,audio1666870.html"
+  },
+  "wiki": "en:Estadio_Azteca",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Vista_a%C3%A9rea_del_Estadio_Azteca_-_2026_-_02.jpg/330px-Vista_a%C3%A9rea_del_Estadio_Azteca_-_2026_-_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Estadio_Azteca",
+   "article": "Estadio Azteca"
   }
  },
  {
@@ -781,7 +1024,8 @@
    "title": "erster lockdown / fernsehsender paul nipkow",
    "date": "2024-06-19",
    "url": "https://www.ndr.de/media/erster-lockdown-fernsehsender-paul-nipkow,audio1658362.html"
-  }
+  },
+  "wiki": "de:Funkturm_Berlin"
  },
  {
   "id": 50,
@@ -797,6 +1041,12 @@
    "title": "turkmenische weltrekorde / nine-month world cruise",
    "date": "2024-05-29",
    "url": "https://www.ndr.de/media/turkmenische-weltrekorde-nine-month-cruise,audio1642806.html"
+  },
+  "wiki": "en:Ashgabat",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/View_of_Ashgabat_%2842376779291%29.jpg/330px-View_of_Ashgabat_%2842376779291%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Ashgabat",
+   "article": "Ashgabat"
   }
  },
  {
@@ -813,6 +1063,12 @@
    "title": "hollywood / zur party – mit @lukas.alexander.vh",
    "date": "2024-05-22",
    "url": "https://www.ndr.de/media/hollywood-zur-party-mit-lukasalexandervh,audio1638772.html"
+  },
+  "wiki": "en:Hollywood_Sign",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Hollywood_sign_%288485145044%29.jpg/330px-Hollywood_sign_%288485145044%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Hollywood_Sign",
+   "article": "Hollywood Sign"
   }
  },
  {
@@ -845,6 +1101,12 @@
    "title": "nyad / stärkste frau deutschlands – mit @ilona_hartmann",
    "date": "2024-03-13",
    "url": "https://www.ndr.de/media/nyad-staerkste-frau-deutschlands-mit-ilonahartmann,audio1592050.html"
+  },
+  "wiki": "en:Key_West",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Southernmost_point_buoy%2C_NE_view.jpg/330px-Southernmost_point_buoy%2C_NE_view.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Key_West",
+   "article": "Key West"
   }
  },
  {
@@ -861,6 +1123,12 @@
    "title": "angry german kid / coral castle",
    "date": "2024-03-06",
    "url": "https://www.ndr.de/media/angry-german-kid-coral-castle,audio1586980.html"
+  },
+  "wiki": "en:Coral_Castle",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Coral_Castle_1.jpg/330px-Coral_Castle_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Coral_Castle",
+   "article": "Coral Castle"
   }
  },
  {
@@ -877,7 +1145,8 @@
    "title": "weißer euter von kuba / mothman",
    "date": "2024-02-21",
    "url": "https://www.ndr.de/media/weisse-euter-mothman,audio1576850.html"
-  }
+  },
+  "wiki": "en:Ubre_Blanca"
  },
  {
   "id": 56,
@@ -893,6 +1162,12 @@
    "title": "weißer euter von kuba / mothman",
    "date": "2024-02-21",
    "url": "https://www.ndr.de/media/weisse-euter-mothman,audio1576850.html"
+  },
+  "wiki": "en:Mothman",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Mothman_Artist%27s_Impression.png/330px-Mothman_Artist%27s_Impression.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Mothman",
+   "article": "Mothman"
   }
  },
  {
@@ -909,6 +1184,12 @@
    "title": "ikea heights / rolf die hand",
    "date": "2024-01-24",
    "url": "https://www.ndr.de/media/ikea-heights-rolf-die-hand,audio1556754.html"
+  },
+  "wiki": "en:Burbank,_California",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Burbank_media_district_from_Griffith_Park_2015-11-07.jpg/330px-Burbank_media_district_from_Griffith_Park_2015-11-07.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Burbank%2C_California",
+   "article": "Burbank, California"
   }
  },
  {
@@ -925,6 +1206,12 @@
    "title": "wunder von chile / überraschung",
    "date": "2024-01-17",
    "url": "https://www.ndr.de/media/wunder-von-chile-ueberraschung,audio1551972.html"
+  },
+  "wiki": "en:2010_Copiapó_mining_accident",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Mina_San_Jos%C3%A9_de_Copiap%C3%B3_en_2010.jpg/330px-Mina_San_Jos%C3%A9_de_Copiap%C3%B3_en_2010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/2010_Copiap%C3%B3_mining_accident",
+   "article": "2010 Copiapó mining accident"
   }
  },
  {
@@ -941,6 +1228,12 @@
    "title": "fettberge / niagara daredevils",
    "date": "2023-12-13",
    "url": "https://www.ndr.de/media/fettberge-niagara-devils,audio1528926.html"
+  },
+  "wiki": "en:Fatberg",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Fatberg_at_Museum_of_London.jpg/330px-Fatberg_at_Museum_of_London.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Fatberg",
+   "article": "Fatberg"
   }
  },
  {
@@ -957,6 +1250,12 @@
    "title": "fettberge / niagara daredevils",
    "date": "2023-12-13",
    "url": "https://www.ndr.de/media/fettberge-niagara-devils,audio1528926.html"
+  },
+  "wiki": "en:Horseshoe_Falls",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Aerial_view_of_the_Canadian_Falls_%28Horseshoe_Falls%29_and_the_Hornblower_Niagara_Cruises_boat%3B_Niagara_Falls.JPG/330px-Aerial_view_of_the_Canadian_Falls_%28Horseshoe_Falls%29_and_the_Hornblower_Niagara_Cruises_boat%3B_Niagara_Falls.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Horseshoe_Falls",
+   "article": "Horseshoe Falls"
   }
  },
  {
@@ -973,6 +1272,12 @@
    "title": "rossmann-romane / parkplatzkönig",
    "date": "2023-11-29",
    "url": "https://www.ndr.de/media/rossmann-romane-parkplatzkoenig,audio1518962.html"
+  },
+  "wiki": "en:Exhumation_and_reburial_of_Richard_III_of_England",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/The_King_In_The_Car_Park_-_Page_15_-_Figure_12.png/330px-The_King_In_The_Car_Park_-_Page_15_-_Figure_12.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Exhumation_and_reburial_of_Richard_III_of_England",
+   "article": "Exhumation and reburial of Richard III of England"
   }
  },
  {
@@ -989,6 +1294,12 @@
    "title": "wunderhenne / miss baba",
    "date": "2023-11-08",
    "url": "https://www.ndr.de/media/wunderhenne-miss-baba-,audio1503596.html"
+  },
+  "wiki": "de:Niederroßla",
+  "image": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/0/05/Wappen_Niederrossla.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://de.wikipedia.org/wiki/Niederro%C3%9Fla",
+   "article": "Niederroßla"
   }
  },
  {
@@ -1005,6 +1316,12 @@
    "title": "atarifriedhof / magnus hirschfeld",
    "date": "2023-10-18",
    "url": "https://www.ndr.de/media/atarifriedhof-magnus-hirschfeld,audio1489024.html"
+  },
+  "wiki": "en:Atari_video_game_burial",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Atari_E.T._Dig-_Alamogordo%2C_New_Mexico_%2814036097792%29.jpg/330px-Atari_E.T._Dig-_Alamogordo%2C_New_Mexico_%2814036097792%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Atari_video_game_burial",
+   "article": "Atari video game burial"
   }
  },
  {
@@ -1021,6 +1338,12 @@
    "title": "atarifriedhof / magnus hirschfeld",
    "date": "2023-10-18",
    "url": "https://www.ndr.de/media/atarifriedhof-magnus-hirschfeld,audio1489024.html"
+  },
+  "wiki": "de:Institut_für_Sexualwissenschaft",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Bucherverbrennung-book-burning-Nazi-1933-Institute.jpg/330px-Bucherverbrennung-book-burning-Nazi-1933-Institute.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Institut_f%C3%BCr_Sexualwissenschaft",
+   "article": "Institut für Sexualwissenschaft"
   }
  },
  {
@@ -1037,6 +1360,12 @@
    "title": "tessas geburtstag / adolphe sax mit musik von @lyschkomusik",
    "date": "2023-09-27",
    "url": "https://www.ndr.de/media/tessas-geburtstag-adolphe-sax-mit-musik-von-lyschkomusik,audio1474328.html"
+  },
+  "wiki": "en:Adolphe_Sax",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Adolphe_Sax_4a.jpg/330px-Adolphe_Sax_4a.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Adolphe_Sax",
+   "article": "Adolphe Sax"
   }
  },
  {
@@ -1053,6 +1382,12 @@
    "title": "berlinmuren / batdance",
    "date": "2023-09-20",
    "url": "https://www.ndr.de/media/berlinmuren-batdance,audio1469296.html"
+  },
+  "wiki": "de:Gedenkstätte_Berliner_Mauer",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Berlin%2C_Bernauer_Stra%C3%9Fe%2C_%C3%9Cberblick_2014-07.jpg/330px-Berlin%2C_Bernauer_Stra%C3%9Fe%2C_%C3%9Cberblick_2014-07.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Gedenkst%C3%A4tte_Berliner_Mauer",
+   "article": "Gedenkstätte Berliner Mauer"
   }
  },
  {
@@ -1069,6 +1404,12 @@
    "title": "furries / joseph merrick – mit @aminatabelli",
    "date": "2023-09-13",
    "url": "https://www.ndr.de/media/furries-joseph-merrick-mit-aminatabelli,audio1464316.html"
+  },
+  "wiki": "en:Joseph_Merrick",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Joseph_Merrick_carte_de_visite_photo%2C_c._1889.jpg/330px-Joseph_Merrick_carte_de_visite_photo%2C_c._1889.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Joseph_Merrick",
+   "article": "Joseph Merrick"
   }
  },
  {
@@ -1085,6 +1426,12 @@
    "title": "tet-stadt / pfeilstorch",
    "date": "2023-08-30",
    "url": "https://www.ndr.de/media/tet-stadt-pfeilstorch,audio1454654.html"
+  },
+  "wiki": "de:Bahlsen",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/de/thumb/2/23/Bahlsen_alte_Produkte.jpg/330px-Bahlsen_alte_Produkte.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Bahlsen",
+   "article": "Bahlsen"
   }
  },
  {
@@ -1101,6 +1448,12 @@
    "title": "tet-stadt / pfeilstorch",
    "date": "2023-08-30",
    "url": "https://www.ndr.de/media/tet-stadt-pfeilstorch,audio1454654.html"
+  },
+  "wiki": "de:Pfeilstorch",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Rostocker_Pfeilstorch.jpg/330px-Rostocker_Pfeilstorch.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Pfeilstorch",
+   "article": "Pfeilstorch"
   }
  },
  {
@@ -1117,6 +1470,12 @@
    "title": "who let the dogs out / elfenbeauftragte",
    "date": "2023-06-14",
    "url": "https://www.ndr.de/media/who-let-the-dogs-out-elfenbeauftragte,audio1401470.html"
+  },
+  "wiki": "en:Hafnarfjörður",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Hafnarfj%C3%B6r%C3%B0ur%2C_Iceland_2017.jpg/330px-Hafnarfj%C3%B6r%C3%B0ur%2C_Iceland_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Hafnarfj%C3%B6r%C3%B0ur",
+   "article": "Hafnarfjörður"
   }
  },
  {
@@ -1133,6 +1492,12 @@
    "title": "sirianer / ballonfest 1986",
    "date": "2023-05-31",
    "url": "https://www.ndr.de/media/sirianer-ballonfest-1986,audio1391622.html"
+  },
+  "wiki": "en:Public_Square_(Cleveland)",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Public_Square_Cleveland_2022.png/330px-Public_Square_Cleveland_2022.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Public_Square%2C_Cleveland",
+   "article": "Public Square, Cleveland"
   }
  },
  {
@@ -1149,6 +1514,12 @@
    "title": "bundesjugendspiele / alligator saturn",
    "date": "2023-05-24",
    "url": "https://www.ndr.de/media/bundesjugendspiele-alligator-saturn-,audio1387150.html"
+  },
+  "wiki": "en:Saturn_(alligator)",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Alligator_mississippiensis.jpg/330px-Alligator_mississippiensis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Saturn_(alligator)",
+   "article": "Saturn (alligator)"
   }
  },
  {
@@ -1165,6 +1536,12 @@
    "title": "i wanna marry \"harry\" / schlumpfdorf",
    "date": "2023-05-03",
    "url": "https://www.ndr.de/media/i-wanna-marry-harry-schlumpfdorf,audio1372432.html"
+  },
+  "wiki": "en:Júzcar",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/J%C3%BAzcar_M%C3%A1laga_Andalusia_Spain_smurf_town.jpg/330px-J%C3%BAzcar_M%C3%A1laga_Andalusia_Spain_smurf_town.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/J%C3%BAzcar",
+   "article": "Júzcar"
   }
  },
  {
@@ -1181,6 +1558,12 @@
    "title": "heilige vorhaut / judasziege",
    "date": "2023-04-26",
    "url": "https://www.ndr.de/media/heilige-vorhaut-judasziege,audio1368020.html"
+  },
+  "wiki": "en:Calcata",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Borgo_Calcata.jpg/330px-Borgo_Calcata.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Calcata",
+   "article": "Calcata"
   }
  },
  {
@@ -1197,6 +1580,12 @@
    "title": "heilige vorhaut / judasziege",
    "date": "2023-04-26",
    "url": "https://www.ndr.de/media/heilige-vorhaut-judasziege,audio1368020.html"
+  },
+  "wiki": "en:Santiago_Island_(Galápagos)",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Santiago_Island_from_space.jpg/330px-Santiago_Island_from_space.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Santiago_Island_(Gal%C3%A1pagos)",
+   "article": "Santiago Island (Galápagos)"
   }
  },
  {
@@ -1261,6 +1650,12 @@
    "title": "leon löwentraut / marathon 1904 - mit @tarkanbagci",
    "date": "2023-03-01",
    "url": "https://www.ndr.de/media/leon-loewentraut-marathon-mit-tarkanbagci,audio1329052.html"
+  },
+  "wiki": "en:Francis_Olympic_Field",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Gates_to_Francis_Field_-_Danforth_Campus_of_Washington_University_in_St._Louis.jpg/330px-Gates_to_Francis_Field_-_Danforth_Campus_of_Washington_University_in_St._Louis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Francis_Olympic_Field",
+   "article": "Francis Olympic Field"
   }
  },
  {
@@ -1277,6 +1672,12 @@
    "title": "sexdelfin / glitzerverschwörung",
    "date": "2023-02-08",
    "url": "https://www.ndr.de/media/sexdelfin-glitzerverschwoerung,audio1313844.html"
+  },
+  "wiki": "en:Saint_Thomas,_U.S._Virgin_Islands",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/View_of_St._Thomas.jpg/330px-View_of_St._Thomas.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Saint_Thomas%2C_U.S._Virgin_Islands",
+   "article": "Saint Thomas, U.S. Virgin Islands"
   }
  },
  {
@@ -1293,6 +1694,12 @@
    "title": "toilettengeist / wachs-hitler",
    "date": "2023-02-01",
    "url": "https://www.ndr.de/media/toilettengeist-wachs-hitler,audio1308770.html"
+  },
+  "wiki": "de:Neutraubling",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/DEU_Neutraubling_COA.svg/langde-330px-DEU_Neutraubling_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Neutraubling",
+   "article": "Neutraubling"
   }
  },
  {
@@ -1309,6 +1716,12 @@
    "title": "toilettengeist / wachs-hitler",
    "date": "2023-02-01",
    "url": "https://www.ndr.de/media/toilettengeist-wachs-hitler,audio1308770.html"
+  },
+  "wiki": "en:Madame_Tussauds",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/WaxMuseumMadameTussaudsLondon.JPG/330px-WaxMuseumMadameTussaudsLondon.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Madame_Tussauds",
+   "article": "Madame Tussauds"
   }
  },
  {
@@ -1325,6 +1738,12 @@
    "title": "the kardashians / affenselfie",
    "date": "2023-01-04",
    "url": "https://www.ndr.de/media/the-kardashians-affenselfie,audio1285874.html"
+  },
+  "wiki": "en:Monkey_selfie_copyright_dispute",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Macaca_nigra_self-portrait_large.jpg/330px-Macaca_nigra_self-portrait_large.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://en.wikipedia.org/wiki/Monkey_selfie_copyright_dispute",
+   "article": "Monkey selfie copyright dispute"
   }
  },
  {
@@ -1373,7 +1792,8 @@
    "title": "spezi-krieg / armie hammer",
    "date": "2022-10-18",
    "url": "https://www.ndr.de/media/spezi-krieg-armie-hammer,audio1234868.html"
-  }
+  },
+  "wiki": "de:Spezi"
  },
  {
   "id": 87,
@@ -1405,6 +1825,12 @@
    "title": "keshas geister / exorzismus in unterfranken",
    "date": "2022-09-14",
    "url": "https://www.ndr.de/media/keshas-geister-exorzismus-in-unterfranken-,audio1211246.html"
+  },
+  "wiki": "de:Klingenberg_am_Main",
+  "image": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/DEU_Klingenberg_COA.svg/langde-330px-DEU_Klingenberg_COA.svg.png?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "page": "https://de.wikipedia.org/wiki/Klingenberg_am_Main",
+   "article": "Klingenberg am Main"
   }
  }
 ]
