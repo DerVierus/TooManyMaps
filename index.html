@@ -134,7 +134,14 @@
   #list .meta { font-size: 12px; color: var(--muted); }
   #list .dist { flex: none; font-size: 12px; font-weight: 600; color: var(--orange); }
 
-  footer { padding: 10px 16px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--line); }
+  footer { position: relative; padding: 10px 34px 10px 16px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--line); }
+  footer.hidden { display: none; }
+  #hide-note {
+    position: absolute; top: 6px; right: 8px; width: 20px; height: 20px; padding: 0;
+    border-radius: 50%; background: var(--chrome); color: var(--muted);
+    font: 14px/20px system-ui, sans-serif; font-weight: 400;
+  }
+  #hide-note:hover { color: var(--ink); filter: none; }
 
   /* ---------- Marker & Cluster ---------- */
   .dot {
@@ -156,6 +163,18 @@
   }
   .win .leaflet-popup-content { margin: 0; width: 300px !important; font-size: 14px; line-height: 1.45; }
   .win .leaflet-popup-tip { background: #fff; }
+  /* Gesten auf dem Fenster gehen an die Karte durch (verschieben, zoomen) – nur Links und Buttons
+     bleiben klickbar. So lässt sich die Karte auch auf kleinen Displays bei offenem Fenster bewegen. */
+  .win, .win * { pointer-events: none !important; }
+  .win a, .win button { pointer-events: auto !important; }
+  /* Zweiter Tab im Popup = anderes Thema derselben Folge. */
+  button.tab.other {
+    font: inherit; font-size: 12px; font-weight: 400; border: 0; border-radius: 9px 9px 0 0;
+    cursor: pointer; color: rgba(255,255,255,.95); background: rgba(255,255,255,.18);
+    flex: 0 3 auto; min-width: 76px; max-width: 150px;
+  }
+  button.tab.other:hover { background: rgba(255,255,255,.34); filter: none; }
+  button.tab.other:disabled { cursor: default; opacity: .6; background: rgba(255,255,255,.12); }
   .photo { position: relative; aspect-ratio: 16 / 9; background: var(--grad); overflow: hidden; }
   .photo img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
   .photo .ph {
@@ -188,6 +207,15 @@
   .actions .secondary { background: var(--chrome); color: var(--ink); }
 
   #toggle { display: none; }
+
+  /* Sehr kleine Handys: Fenster kompakter, damit es samt Titelleiste auf den Bildschirm passt. */
+  @media (max-width: 720px) and (max-height: 720px) {
+    .win .addressbar { display: none; }
+    .win .photo { aspect-ratio: 5 / 2; }
+    .page .ep { padding: 6px 10px; }
+    .actions { margin-top: 8px; }
+    .leaflet-control-attribution { font-size: 9px; max-width: 70%; }
+  }
 
   @media (max-width: 720px) {
     body { flex-direction: column-reverse; }
@@ -223,7 +251,8 @@
   </div>
   <div class="count" id="count"></div>
   <ul id="list"></ul>
-  <footer>
+  <footer id="note">
+    <button id="hide-note" type="button" aria-label="Hinweis ausblenden" title="Hinweis ausblenden">×</button>
     Kein offizielles Angebot von NDR oder too many tabs. Die Ortszuordnung ist aus den Folgentiteln und -beschreibungen abgeleitet und kann danebenliegen.
     Karte: OpenFreeMap / OpenStreetMap-Mitwirkende, Fotos: Wikipedia/Wikimedia Commons.
   </footer>
@@ -283,7 +312,7 @@ function popupHtml(p) {
     <div class="titlebar">
       <div class="lights"><button class="light-close" type="button" aria-label="Schließen" title="Schließen">×</button><i></i><i></i></div>
       <div class="tab active"><span class="fav"></span><span>${esc(p.topic)}</span></div>
-      ${randomTabHtml()}
+      ${otherTabHtml(p)}
     </div>
     <div class="addressbar">
       <span class="nav">←→⟳</span>
@@ -337,17 +366,40 @@ function distKm(a, b) {
   return 2 * R * Math.asin(Math.sqrt(h));
 }
 
+// Ein einziges, eigenständiges Popup (nicht am Marker gebunden): Es bleibt offen, auch wenn der
+// Marker beim Verschieben aus dem Bild gerät oder in einen Cluster wandert. Geschlossen wird es
+// nur über den roten Punkt oder wenn ein anderer Ort geöffnet wird.
+const popup = L.popup({
+  className: 'win', closeButton: false, closeOnClick: false, autoClose: false,
+  maxWidth: 300, minWidth: 260, autoPanPadding: [20, 20],
+});
+
+function openPlace(p) {
+  map.closePopup(popup);
+  openId = p.id;
+  popup.setLatLng([p.lat, p.lng]).setContent(popupHtml(p)).openOn(map);
+}
+
 function focus(p) {
+  // Ort ist durch die Suche ausgeblendet (z. B. über den „anderen Tab“ angesteuert): Suche leeren.
+  if (!shownPlaces.includes(p)) { qEl.value = ''; render(); }
   // Erst nah genug ranzoomen, damit das Popup auch bei Orten weit im Norden Platz hat.
   if (map.getZoom() < 5) map.setView([p.lat, p.lng], 5, { animate: false });
-  cluster.zoomToShowLayer(p.marker, () => p.marker.openPopup());
+  cluster.zoomToShowLayer(p.marker, () => openPlace(p));
   document.querySelectorAll('#list li').forEach(li => li.classList.toggle('active', li.dataset.id == p.id));
 }
 
-function randomTabHtml() {
-  const name = nextRandom ? nextRandom.name : 'Zufälliger Tab';
-  return `<button class="tab random" type="button" title="Zufälliger Tab: ${esc(name)}">` +
-    `<span class="dice">🎲</span><span class="label">${esc(name)}</span></button>`;
+// Das andere Thema derselben Folge (z. B. „wiener zentralfriedhof“ zu „lugner city“).
+// Liegt es auf der Karte, öffnet der Tab diesen Ort; sonst ist er nur grau und nicht klickbar.
+function otherTabHtml(p) {
+  const norm = t => t.toLowerCase().replace(/[‘’]/g, "'").trim();
+  const other = p.episode.title.replace(/\s+[–-]\s+mit .*$/i, '').split(' / ')
+    .map(t => t.trim()).find(t => t && norm(t) !== norm(p.topic));
+  if (!other) return '';
+  const target = places.find(q => q.episode.url === p.episode.url && norm(q.topic) === norm(other));
+  return target
+    ? `<button class="tab other" type="button" data-id="${target.id}" title="Zum anderen Tab der Folge: ${esc(target.name)}"><span class="fav"></span><span>${esc(other)}</span></button>`
+    : `<button class="tab other" type="button" disabled title="Dieses Thema hat keinen Ort auf der Karte"><span class="fav"></span><span>${esc(other)}</span></button>`;
 }
 
 function pickRandom(excludeId) {
@@ -375,9 +427,13 @@ document.addEventListener('click', e => {
   if (e.target.closest('.tab.random')) {
     e.preventDefault(); e.stopPropagation();
     goRandom();
+  } else if (e.target.closest('.tab.other')) {
+    e.preventDefault(); e.stopPropagation();
+    const id = e.target.closest('.tab.other').dataset.id;
+    if (id) focus(places.find(p => p.id == id));
   } else if (e.target.closest('.light-close')) {
     e.preventDefault(); e.stopPropagation();
-    map.closePopup();
+    map.closePopup(popup);
   }
 });
 
@@ -430,6 +486,13 @@ document.getElementById('near').addEventListener('click', () => {
   }, () => alert('Standort konnte nicht ermittelt werden.'));
 });
 
+const note = document.getElementById('note');
+try { if (localStorage.getItem('tmm-hide-note') === '1') note.classList.add('hidden'); } catch (e) {}
+document.getElementById('hide-note').addEventListener('click', () => {
+  note.classList.add('hidden');
+  try { localStorage.setItem('tmm-hide-note', '1'); } catch (e) {}
+});
+
 const panel = document.getElementById('panel');
 document.getElementById('toggle').addEventListener('click', () => {
   panel.classList.toggle('collapsed');
@@ -440,8 +503,6 @@ document.getElementById('toggle').addEventListener('click', () => {
 map.on('popupclose', () => { openId = null; });
 
 map.on('popupopen', e => {
-  // Leaflet feuert popupopen erst auf der Karte, dann am Marker – daher die ID hier direkt setzen.
-  if (e.popup._source && e.popup._source.placeId) openId = e.popup._source.placeId;
   // Der Zufalls-Tab darf nie auf den gerade offenen Ort zeigen.
   if (nextRandom && nextRandom.id === openId) {
     nextRandom = pickRandom(openId);
@@ -451,7 +512,9 @@ map.on('popupopen', e => {
   panel.classList.add('collapsed');
   map.invalidateSize();
   e.popup.update();
-  map.panInside(e.popup.getLatLng(), { paddingTopLeft: [20, 520] });
+  // Platz fürs Fenster über dem Punkt schaffen (auf sehr kleinen Displays so viel wie möglich).
+  const room = Math.min(e.popup.getElement().offsetHeight + 40, map.getSize().y - 30);
+  map.panInside(e.popup.getLatLng(), { paddingTopLeft: [20, room] });
 });
 
 fetch('data/places.json')
@@ -461,8 +524,7 @@ fetch('data/places.json')
     places.forEach(p => {
       p.haystack = [p.name, p.region, p.topic, p.episode.title, p.info].join(' ').toLowerCase();
       p.marker = L.marker([p.lat, p.lng], { icon: dotIcon, title: p.name, alt: p.name })
-        .bindPopup(() => popupHtml(p), { className: 'win', closeButton: false, maxWidth: 300, minWidth: 260, autoPanPadding: [20, 20] });
-      p.marker.placeId = p.id;
+        .on('click', () => openPlace(p));
     });
     render();
   })
